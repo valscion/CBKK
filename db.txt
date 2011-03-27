@@ -29,14 +29,14 @@ CREATE TABLE IF NOT EXISTS `cbkk_codes` (
   `type` int(11) NOT NULL,
   `category` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=12 ;
 
 --
 -- Vedos taulusta `cbkk_codes`
 --
 
 INSERT INTO `cbkk_codes` (`name`, `code`, `description`, `author`, `id`, `added`, `type`, `category`) VALUES
-('clear()', 'Function clear()\r\n	For p.PADDLE = Each PADDLE\r\n		Delete p\r\n	Next p\r\n	For b.BALL = Each BALL\r\n		Delete b\r\n	Next b\r\n	For br.BRICK = Each BRICK\r\n		Delete br\r\n	Next br\r\nEndFunction', 'Tyhjent‰‰ pelin objektit.', 'Sly_Jack0', 1, '2010-08-16 15:52:51', 0, 7),
+('clear()', 'Function clear()\r\n	For p.PADDLE = Each PADDLE\r\n		Delete p\r\n	Next p\r\n	For b.BALL = Each BALL\r\n		Delete b\r\n	Next b\r\n	For br.BRICK = Each BRICK\r\n		Delete br\r\n	Next br\r\nEndFunction', 'Tyhjent?pelin objektit.', 'Sly_Jack0', 1, '2010-08-16 15:52:51', 0, 7),
 ('Line()', 'Function(x1,y1,x2,y2)\r\n   Line x1,y1,x2,y2\r\n   Return True\r\nEndFunction', 'Pirt√§√§ viivan', 'testi', 2, '2010-08-30 15:33:42', 0, 3),
 ('Testikoodi', 'SCREEN 800,600\r\n\r\n//Odota nappia\r\nWaitKey', 'Moi', '1337', 3, '2010-09-01 18:53:41', 0, 8),
 ('Maastogeneraattori', 'SCREEN 1024,768\r\n\r\nDim contour(ScreenWidth())\r\n\r\nGlobal gMap\r\n\r\ngenerateContour()\r\ncreateForeground()\r\n\r\nRepeat\r\n	DrawImage gMap,0,0\r\n	DrawScreen\r\nForever\r\n\r\n\r\nFunction generateContour()\r\n\r\n	Dim rand1 As Float, rand2 As Float, rand3 As Float, rand4 As Float\r\n	Dim offset As Float, peakheight As Float, flatness As Float, height As Float\r\n	\r\n	rand1 = Rnd(1) + 1\r\n	rand2 = Rnd(1) + 2\r\n	rand3 = Rnd(1) + 3\r\n	\r\n	offset = ScreenHeight() / 2\r\n	peakheight = ScreenHeight() / 4\r\n	flatness = ScreenWidth() / 8\r\n	\r\n	For x = 0 To ScreenWidth()\r\n	\r\n		height = peakheight / rand1 * Sin((Float(x) / flatness * rand1 + rand1)  * (180 / PI))\r\n		height = height + peakheight / rand2 * Sin((Float(x) / flatness * rand2 + rand2)  * (180 / PI))\r\n		height = height + peakheight / rand3 * Sin((Float(x) / flatness * rand3 + rand3)  * (180 / PI))\r\n\r\n		height = height + offset\r\n		\r\n		contour(x) = Int(height)\r\n	\r\n	Next x\r\n\r\nEndFunction\r\n\r\nFunction createForeground()\r\n\r\n	gMap = MakeImage(ScreenWidth(),ScreenHeight())\r\n	\r\n	DrawToImage gMap\r\n	\r\n		For x = 0 To ScreenWidth()\r\n			Line x,contour(x),x,ScreenHeight()\r\n		Next x\r\n	\r\n	DrawToScreen\r\n	\r\nEndFunction', 'Luo maaston', '1337', 4, '2010-09-03 07:31:10', 0, 6),
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cbkk_comments` (
   `codeId` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=10 ;
 
 --
 -- Vedos taulusta `cbkk_comments`
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `cbkk_users` (
   `hash` varchar(40) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=7 ;
 
 --
 -- Vedos taulusta `cbkk_users`
