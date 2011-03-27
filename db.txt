@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `cbkk_codes` (
   `type` int(11) NOT NULL,
   `category` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Vedos taulusta `cbkk_codes`
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `cbkk_comments` (
   `codeId` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Vedos taulusta `cbkk_comments`
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `cbkk_users` (
   `hash` varchar(40) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8_general_ci AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Vedos taulusta `cbkk_users`
