@@ -1,2 +1,5 @@
 # Estet‰‰n repoon menev‰t muokkaukset database_account.php tiedostolle.
-inc/database_account.php
+www/inc/database_account.php
+
+# Perkeleen windows.
+Thumbs.db
