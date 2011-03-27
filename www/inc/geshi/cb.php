@@ -81,7 +81,7 @@ $language_data = array(
             'objectinteger','objectlife','objectorder','objectplaying','objectsight',
             'objectsizex','objectsizey','objectsoverlap','objectx','objecty','opentoedit',
             'opentoread','opentowrite','peekbyte','peekfloat','peekint','peekshort',
-            'pickedangle','pickedobject','pickedx','pickedy','rand','read','readbyte‰',
+            'pickedangle','pickedobject','pickedx','pickedy','rand','read','readbyte√§',
             'readfloat','readint','readline','readshort','readstring','replace','right',
             'rightkey','rnd','rounddown','ruondup','rset','screendepth','screenheight',
             'screenwidth','sin','soundplaying','sqrt','str','string','strinsert',

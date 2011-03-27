@@ -16,12 +16,12 @@
             $stmt->bind_param("ssss",$nickname,$pass,$em,$hash);
             $stmt->execute();
 
-            mail($em,"CBKK rekisteröityminen","Kiitos rekisteröitymisestäsi!\n\n
+            mail($em,"CBKK rekisterÃ¶ityminen","Kiitos rekisterÃ¶itymisestÃ¤si!\n\n
                 Voit aktivoida tunnuksesi vierailemalla osoitteessa:\n
                 http://cbkk.viuhka.fi/activate.php?hash=$hash\n\n
                 Tunnuksesi: $nickname\n
                 Salasanasi: $passNoCrypt\n\n
-                Salasanat ovat kryptattu tietokantaan, joten niitä ei voi palauttaa.","From: CBKK");
+                Salasanat ovat kryptattu tietokantaan, joten niitÃ¤ ei voi palauttaa.","From: CBKK");
             
             $_SESSION['back'] = "./";
             echo "<meta HTTP-EQUIV='REFRESH' content='0; url=../index.php?pId=valmis&t=1' />";
@@ -30,7 +30,7 @@
         }
     } else {
         echo "<meta HTTP-EQUIV='REFRESH' content='5; url=../' />";
-        echo "Tiedot eivät olleet oikein!";
+        echo "Tiedot eivÃ¤t olleet oikein!";
     }
     
 ?>

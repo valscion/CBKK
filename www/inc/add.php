@@ -19,7 +19,7 @@
     if (notEmpty($_POST['code'])) {
         $c = stripslashes(htmlspecialchars($_POST['code'],ENT_NOQUOTES));
     } else {
-        die("Syˆt‰ koodi!");
+        die("Sy√∂t√§ koodi!");
     }
     
     if (notEmpty($_POST['category'])) {
@@ -34,7 +34,7 @@
         $stmt->bind_param("ssssi",$name,$c,$desc,$adder,$cat);
         $stmt->execute();
         
-        echo "Koodi lis‰tty onnistuneesti!";
+        echo "Koodi lis√§tty onnistuneesti!";
         
         echo "<meta HTTP-EQUIV='REFRESH' content='2; url=../' />";
     } else {
