@@ -1,10 +1,9 @@
 <?php
-	$host = "localhost";
-	$db = "cbkk";
-	$user = "admin";
-	$password = "admin1";
-	$conn = null;
+	// Tästä tiedostosta haetaan muuttujiin $host, $db, $user ja $password arvot.
+	// Tätä tiedostoa EI laiteta mukaan git-repoon!
+	require( "database_account.php" );
 	
+	$conn = null;
 	$conn = new mysqli($host,$user,$password,$db);
 	
 	if ($result = $conn->query("SELECT category,COUNT(name) FROM codes GROUP BY category")) {
