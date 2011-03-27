@@ -6,7 +6,10 @@
     $conn = null;
     $conn = new mysqli($host,$user,$password,$db);
     
-    if ($result = $conn->query("SELECT category,COUNT(name) FROM codes GROUP BY category")) {
+    // Tietokannan kaikkien taulujen prefix, selkeyttää vähän.
+    define( 'TABLE_PREFIX', 'cbkk_' );
+    
+    if ($result = $conn->query('SELECT category,COUNT(name) FROM ' . TABLE_PREFIX . 'codes GROUP BY category')) {
         while ($row = $result->fetch_array()) {
             $catCount[$row['category']] = $row['COUNT(name)'];
         }

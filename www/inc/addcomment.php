@@ -7,7 +7,7 @@
     $user = $_SESSION['currentUser'];
     $cId = $_POST['code'];
     
-    if ($stmt = $conn->prepare("INSERT INTO comments(author,content,codeId) VALUES (?,?,?)")) {
+    if ($stmt = $conn->prepare("INSERT INTO " . TABLE_PREFIX . "comments(author,content,codeId) VALUES (?,?,?)")) {
         $stmt->bind_param("ssi",$user,$comment,$cId);
         $stmt->execute();
         

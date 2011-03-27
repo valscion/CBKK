@@ -2,11 +2,11 @@
     
     $cat = $_GET['cat'];
     
-    $query = "SELECT type,name,description,author,added,id FROM codes WHERE category='$cat' ORDER BY id DESC";
+    $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category='$cat' ORDER BY id DESC";
     
     echo "<h1>" . $categoryArray[$cat] . "</h1>";
     
-    if ($stmt = $conn->prepare("SELECT type,name,description,author,added,id FROM codes WHERE category = ? ORDER BY id DESC")) {
+    if ($stmt = $conn->prepare("SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY id DESC")) {
         $stmt->bind_param("i",$cat);
         $stmt->execute();
         

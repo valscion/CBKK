@@ -16,10 +16,10 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `codes`
+-- Rakenne taululle `cbkk_codes`
 --
 
-CREATE TABLE IF NOT EXISTS `codes` (
+CREATE TABLE IF NOT EXISTS `cbkk_codes` (
   `name` text NOT NULL,
   `code` text NOT NULL,
   `description` text NOT NULL,
@@ -32,10 +32,10 @@ CREATE TABLE IF NOT EXISTS `codes` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
--- Vedos taulusta `codes`
+-- Vedos taulusta `cbkk_codes`
 --
 
-INSERT INTO `codes` (`name`, `code`, `description`, `author`, `id`, `added`, `type`, `category`) VALUES
+INSERT INTO `cbkk_codes` (`name`, `code`, `description`, `author`, `id`, `added`, `type`, `category`) VALUES
 ('clear()', 'Function clear()\r\n	For p.PADDLE = Each PADDLE\r\n		Delete p\r\n	Next p\r\n	For b.BALL = Each BALL\r\n		Delete b\r\n	Next b\r\n	For br.BRICK = Each BRICK\r\n		Delete br\r\n	Next br\r\nEndFunction', 'Tyhjent‰‰ pelin objektit.', 'Sly_Jack0', 1, '2010-08-16 15:52:51', 0, 7),
 ('Line()', 'Function(x1,y1,x2,y2)\r\n   Line x1,y1,x2,y2\r\n   Return True\r\nEndFunction', 'Pirt√§√§ viivan', 'testi', 2, '2010-08-30 15:33:42', 0, 3),
 ('Testikoodi', 'SCREEN 800,600\r\n\r\n//Odota nappia\r\nWaitKey', 'Moi', '1337', 3, '2010-09-01 18:53:41', 0, 8),
@@ -51,10 +51,10 @@ INSERT INTO `codes` (`name`, `code`, `description`, `author`, `id`, `added`, `ty
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `comments`
+-- Rakenne taululle `cbkk_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `comments` (
+CREATE TABLE IF NOT EXISTS `cbkk_comments` (
   `author` varchar(15) NOT NULL,
   `content` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -64,10 +64,10 @@ CREATE TABLE IF NOT EXISTS `comments` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
--- Vedos taulusta `comments`
+-- Vedos taulusta `cbkk_comments`
 --
 
-INSERT INTO `comments` (`author`, `content`, `date`, `codeId`, `id`) VALUES
+INSERT INTO `cbkk_comments` (`author`, `content`, `date`, `codeId`, `id`) VALUES
 ('1337', 'Testi', '2010-09-04 17:03:06', 4, 1),
 ('1337', 'asmfosf', '2010-09-04 23:16:47', 4, 2),
 ('1337', 'asfgasg', '2010-09-04 23:20:49', 4, 3),
@@ -81,10 +81,10 @@ INSERT INTO `comments` (`author`, `content`, `date`, `codeId`, `id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `users`
+-- Rakenne taululle `cbkk_users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE IF NOT EXISTS `cbkk_users` (
   `nick` varchar(15) NOT NULL,
   `password` varchar(40) NOT NULL,
   `email` text NOT NULL,
@@ -95,10 +95,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Vedos taulusta `users`
+-- Vedos taulusta `cbkk_users`
 --
 
-INSERT INTO `users` (`nick`, `password`, `email`, `active`, `hash`, `id`) VALUES
+INSERT INTO `cbkk_users` (`nick`, `password`, `email`, `active`, `hash`, `id`) VALUES
 ('asd', 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', 'a@b.com', 0, 'be76c69fe407c14fb05d8d56d3c5327e2c456b25', 1),
 ('asd', '3da541559918a808c2402bba5012f6c60b27661c', 'a@b.com', 0, '74fe00c364520280c2e17d1787d3765b2e711fa8', 2),
 ('testi', 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', 'a@b.com', 0, '4bf91c41cd3118622ba2d7bc06388b543fa1f73e', 3),

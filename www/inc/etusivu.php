@@ -1,5 +1,5 @@
 <?php
-    if ($result = $conn->query("SELECT id FROM codes")) {
+    if ($result = $conn->query("SELECT id FROM " . TABLE_PREFIX . "codes")) {
         $rows = $result->num_rows;
     }
     
@@ -10,7 +10,7 @@
     
     echo "<h2>Viisi uusinta koodia</h2>";
     
-    if ($stmt = $conn->prepare("SELECT type,name,description,category,author,added,id FROM codes ORDER BY id DESC LIMIT 5")) {
+    if ($stmt = $conn->prepare("SELECT type,name,description,category,author,added,id FROM " . TABLE_PREFIX . "codes ORDER BY id DESC LIMIT 5")) {
         $stmt->execute();
         
         $stmt->bind_result($type,$name,$desc,$cat,$author,$added,$id);
@@ -30,7 +30,7 @@
     
     echo "<h2>Viisi uusinta kommenttia</h2>";
     
-    if ($stmt = $conn->prepare("SELECT comments.author,comments.content,comments.date,comments.codeId,codes.name FROM comments,codes WHERE comments.codeId = codes.id ORDER BY comments.id DESC LIMIT 5")) {
+    if ($stmt = $conn->prepare("SELECT comments.author,comments.content,comments.date,comments.codeId,codes.name FROM " . TABLE_PREFIX . "comments,codes WHERE comments.codeId = codes.id ORDER BY comments.id DESC LIMIT 5")) {
         $stmt->execute();
         
         $stmt->bind_result($author,$content,$date,$cId,$cName);

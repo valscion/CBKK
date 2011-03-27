@@ -6,7 +6,7 @@
     $pass = sha1(htmlspecialchars($_POST['password']));
     $nickname = htmlspecialchars($_POST['nick']);
     
-    if ($stmt = $conn->prepare("SELECT nick,password,active FROM users WHERE nick = ? LIMIT 1")) {
+    if ($stmt = $conn->prepare("SELECT nick,password,active FROM " . TABLE_PREFIX . "users WHERE nick = ? LIMIT 1")) {
         $stmt->bind_param("s",$nickname);
         $stmt->execute();
         

@@ -3,7 +3,7 @@
     
     $h = htmlspecialchars($_GET['hash']);
     
-    if ($stmt = $conn->prepare("UPDATE users SET active = 1 WHERE hash = ?")) {
+    if ($stmt = $conn->prepare("UPDATE " . TABLE_PREFIX . "users SET active = 1 WHERE hash = ?")) {
         $stmt->bind_param("s",$h);
         $stmt->execute();
         

@@ -28,9 +28,9 @@
     
     $adder = $_SESSION['currentUser'];
     
-    $query = "INSERT INTO codes(name,code,description,author,category) VALUES('$name','$c','$desc','$adder','$cat')";
+    $query = "INSERT INTO " . TABLE_PREFIX . "codes(name,code,description,author,category) VALUES('$name','$c','$desc','$adder','$cat')";
     
-    if($stmt = $conn->prepare("INSERT INTO codes(name,code,description,author,category) VALUES(?,?,?,?,?)")) {
+    if($stmt = $conn->prepare("INSERT INTO " . TABLE_PREFIX . "codes(name,code,description,author,category) VALUES(?,?,?,?,?)")) {
         $stmt->bind_param("ssssi",$name,$c,$desc,$adder,$cat);
         $stmt->execute();
         
