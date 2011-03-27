@@ -3,3 +3,6 @@ www/inc/database_account.php
 
 # Perkeleen windows.
 Thumbs.db
+
+# Ei me tarvita logeja mukaan repoon.
+*.log
