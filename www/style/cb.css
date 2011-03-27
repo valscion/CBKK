@@ -19,8 +19,16 @@ table.coolbasic tbody tr td.de1 pre {
     width: 2em;
 }
 
+table.coolbasic tbody tr td.de1 pre.de1 {
+    min-width: 100%;
+    overflow: auto;
+    /* Estetään oikean laidan scrollbarin näkyminen laittamalla lisää tilaa alas */
+    padding-bottom: 5px;
+}
+
 table.coolbasic tbody tr td.de1 {
     background-color: #E7F0F8;
+    overflow: hidden;
 }
 
 .coolbasic a {
