@@ -70,7 +70,7 @@
                                     $count = $catCount[$i];
                                 else
                                     $count = 0;
-                                echo "<li><a href='index.php?pId=listaa&cat=" . $i . "'>" . $categoryArray[$i] . "</a> (" . $count . ")</li>";
+                                echo "<li><a href='index.php?pId=listaa&amp;cat=" . $i . "'>" . $categoryArray[$i] . "</a> (" . $count . ")</li>";
                             }
                         ?>
                     </ul>

@@ -19,8 +19,8 @@
             echo "<tr><th class='cName'>Koodin nimi</th><th class='cCat'>Kategoria</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAddded'>Lis&auml;tty</th></tr>";
         
             while ($stmt->fetch()) {
-                echo "<tr><td><a href='index.php?pId=naytakoodi&cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>&quot;" . substr($desc,0,40) . "...&quot;</p></td>
-                    <td class='cCat'><a href='index.php?pId=listaa&cat=" . $cat . "'>" . $categoryArray[$cat] . "</a></td><td class='cAuthor'>" . $author . "</td>
+                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>&quot;" . substr($desc,0,40) . "...&quot;</p></td>
+                    <td class='cCat'><a href='index.php?pId=listaa&amp;cat=" . $cat . "'>" . $categoryArray[$cat] . "</a></td><td class='cAuthor'>" . $author . "</td>
                     <td class='cAdded'>" . date('d.m.Y',strtotime($added)) . "<br />" . date('H:i:s',strtotime($added)) .  "</td></tr>";
             }
         echo "</table>";
@@ -39,7 +39,7 @@
             echo "<tr><th class='cName'>Koodi ja kommentti</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAdded'>Lis&auml;tty</th></tr>";
             
             while ($stmt->fetch()) {
-                echo "<tr><td><a href='index.php?pId=naytakoodi&cId=" . $cId . "'>" . $cName . "</a><p class='tableDesc'>&quot;" . substr($content,0,40) . "...&quot;</p></td>
+                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $cId . "'>" . $cName . "</a><p class='tableDesc'>&quot;" . substr($content,0,40) . "...&quot;</p></td>
                     <td class='cAuthor'>" . $author . "</td><td class='cAdded'>" . date('d.m.Y',strtotime($date)) . "<br />" . date('H:i:s',strtotime($date)) . "</td></tr>";
             }
         echo "</table>";

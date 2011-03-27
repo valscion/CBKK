@@ -16,7 +16,7 @@
             echo "<tr><th class='cName'>Koodin nimi</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAdded'>Lis&auml;tty</th></tr>";
             
             while($stmt->fetch()) {
-                echo "<tr><td><a href='index.php?pId=naytakoodi&cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . substr($desc,0,40) . "...</p></td>
+                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . substr($desc,0,40) . "...</p></td>
                         <td>" . $author . "</td><td>" . date('d.m.Y',strtotime($added)) . "</td></tr>";
             }
         echo "</table>";
