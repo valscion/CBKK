@@ -5,4 +5,7 @@
     $db = "databasename";
     $user = "user";
     $password = "password";
+    
+    // Taulujen prefix. Vaihda jos haluat ;)
+    define( 'TABLE_PREFIX', 'cbkk_' );
 ?>

@@ -1,13 +1,16 @@
 <?php
-    // Tästä tiedostosta haetaan muuttujiin $host, $db, $user ja $password arvot.
+    // Tästä tiedostosta haetaan muuttujiin $host, $db, $user ja $password arvot,
+    // sekä vakioon TABLE_PREFIX arvo.
     // Tätä tiedostoa EI laiteta mukaan git-repoon!
     require( "database_account.php" );
     
     $conn = null;
     $conn = new mysqli($host,$user,$password,$db);
     
-    // Tietokannan kaikkien taulujen prefix, selkeyttää vähän.
-    define( 'TABLE_PREFIX', 'cbkk_' );
+    // Tarkistetaan että onko sitä prefixiä edes laitettu. Jos ei, niin laitetaan se tyhjäksi.
+    if ( !defined( 'TABLE_PREFIX' ) ) {
+        define( 'TABLE_PREFIX', '' );
+    }
     
     if ($result = $conn->query('SELECT category,COUNT(name) FROM ' . TABLE_PREFIX . 'codes GROUP BY category')) {
         while ($row = $result->fetch_array()) {
