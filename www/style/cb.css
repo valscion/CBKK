@@ -1,4 +1,4 @@
-.cb {
+.coolbasic {
     width: 100%;
     height: 100px;
     
@@ -6,6 +6,14 @@
     font-size: 10pt;
     
     border: 1px solid black;
+}
+
+.coolbasic a {
+    text-decoration: none;
+}
+
+.coolbasic a:hover {
+    text-decoration: underline;
 }
 
 pre.de1 {

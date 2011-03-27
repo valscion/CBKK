@@ -18,7 +18,8 @@
         echo $conn->error;
     }
     
-    $language = 'cb';
+    // $language = 'cb';
+    $language = 'CoolBasic';
     
     $geshi = new GeSHi(htmlspecialchars_decode($source),$language);
     
@@ -26,6 +27,7 @@
     $geshi->set_header_type(GESHI_HEADER_PRE_TABLE);
     $geshi->enable_line_numbers(GESHI_NORMAL_LINE_NUMBERS);
     $geshi->set_tab_width(4);
+    $geshi->set_link_target('_blank');
     
     //echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
     echo $geshi->parse_code();
