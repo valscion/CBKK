@@ -1,4 +1,6 @@
-<?php 
+<?php
+    require_once('config.php');
+
     session_start(); 
     include_once "inc/database.php";
     

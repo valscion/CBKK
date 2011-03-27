@@ -1,5 +1,6 @@
-# Estetään repoon menevät muokkaukset database_account.php tiedostolle.
+﻿# Estetään repoon menevät muokkaukset käyttäjäkohtaisille tiedostoille.
 www/inc/database_account.php
+www/config.php
 
 # Perkeleen windows.
 Thumbs.db

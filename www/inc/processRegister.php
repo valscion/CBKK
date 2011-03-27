@@ -1,4 +1,5 @@
 <?php
+    require_once( '../config.php' );
     session_start();
 
     include_once "../inc/database.php";
@@ -17,8 +18,8 @@
             $stmt->execute();
 
             mail($em,"CBKK rekisteröityminen","Kiitos rekisteröitymisestäsi!\n\n
-                Voit aktivoida tunnuksesi vierailemalla osoitteessa:\n
-                http://cbkk.viuhka.fi/activate.php?hash=$hash\n\n
+                Voit aktivoida tunnuksesi vierailemalla osoitteessa:\n"
+                . $config['root_url'] . "activate.php?hash=$hash\n\n
                 Tunnuksesi: $nickname\n
                 Salasanasi: $passNoCrypt\n\n
                 Salasanat ovat kryptattu tietokantaan, joten niitä ei voi palauttaa.","From: CBKK");
