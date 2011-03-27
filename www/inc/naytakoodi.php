@@ -29,7 +29,7 @@
     $geshi->set_tab_width(4);
     $geshi->set_link_target('_blank');
     
-    //echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
+    echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
     echo $geshi->parse_code();
     
     $query = "SELECT author,content,date FROM " . TABLE_PREFIX . "comments WHERE codeId='$cId' ORDER BY id DESC";

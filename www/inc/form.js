@@ -147,7 +147,7 @@ function validateCInput() {
     
 function selectCode(a) {
   // Get ID of code block
-  var e = a.nextSibling.getElementsByTagName('PRE')[0];
+  var e = a.nextSibling.getElementsByTagName('PRE')[1];
   // Not IE
   if (window.getSelection) {
     var s = window.getSelection();
