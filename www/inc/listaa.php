@@ -6,7 +6,7 @@
     
     echo "<h1>" . $categoryArray[$cat] . "</h1>";
     
-    if ($stmt = $conn->prepare("SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY id DESC")) {
+    if ($stmt = $conn->prepare("SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY name ASC")) {
         $stmt->bind_param("i",$cat);
         $stmt->execute();
         
