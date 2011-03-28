@@ -2,12 +2,21 @@
     
     $cat = $_GET['cat'];
     
-    $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category='$cat' ORDER BY id DESC";
-    
-    echo "<h1>" . $categoryArray[$cat] . "</h1>";
-    
-    if ($stmt = $conn->prepare("SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY name ASC")) {
-        $stmt->bind_param("i",$cat);
+    if ($cat == 'search') {
+        $q = "%" . $_GET['q'] . "%";
+        $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE name LIKE ? OR description LIKE ? ORDER BY name ASC";
+        echo "<h1>Haun tulokset</h1>";
+    } else {
+        $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY name ASC";
+        echo "<h1>" . $categoryArray[$cat] . "</h1>";
+    }
+
+    if ($stmt = $conn->prepare($query)) {
+        if ($cat == 'search') {
+            $stmt->bind_param("ss",$q,$q);
+        } else {
+            $stmt->bind_param("i",$cat);
+        }
         $stmt->execute();
         
         $stmt->bind_result($type,$name,$desc,$author,$added,$id);

@@ -108,16 +108,7 @@ a:hover {
     width: 160px;
 }
 
-#nav {
-    padding-top: 10px;
-    
-    border-top: 2px solid;
-    border-color: #0f4e7e;
-    
-    margin-bottom: 10px;
-}
-
-#cats {
+#nav, #search, #cats {
     padding-top: 10px;
     
     border-top: 2px solid;

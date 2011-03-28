@@ -51,13 +51,25 @@
                     <h3>Navigointi</h3>
                     <ul>
                         <li><a href="./">Etusivu</a></li>
-                        <li><a href="index.php?pId=haku">Haku</a></li>
-                        
                         <?php
                             if(isset($_SESSION['currentUser'])) {
                                 echo "<li><a href='index.php?pId=lisaa'>Lis&auml;&auml koodi</a></li>";
                             }
                         ?>
+                    </ul>
+                </div>
+                
+                <div id="search">
+                    <h3>Haku</h3>
+                    <ul>
+                        <li>
+                            <form action='index.php?pId=listaa' method='get'>
+                                <input type='hidden' name='pId' value='listaa' />
+                                <input type='hidden' name='cat' value='search' />
+                                <input type='text' name='q' id='q' class='text' />
+                                <input type='submit' value='Hae' />
+                            </form>
+                        </li>
                     </ul>
                 </div>
                 
