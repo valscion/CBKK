@@ -11,8 +11,8 @@
     $em = htmlspecialchars(getPost('email'));
     $hash = generateHash();
     
-    //if (validateForm() == true) {
-        // Tarkistetaan, ettei samalla nimimerkillä ole jo käyttäjää.
+    if (validateForm() == true) {
+         Tarkistetaan, ettei samalla nimimerkillä ole jo käyttäjää.
         if ( $stmtchk = $conn->prepare("SELECT * FROM " . $config['db_prefix'] . "users WHERE nick = ?") ) {
             $stmtchk->bind_param("s",$nickname);
             $stmtchk->execute();
@@ -46,9 +46,9 @@
         } else {
             echo $conn->error;
         }
-    /*} else {
+    } else {
         echo "<meta HTTP-EQUIV='REFRESH' content='5; url=../' />";
         echo "Tiedot eivät olleet oikein!";
-    }*/
+    }
     
 ?>
