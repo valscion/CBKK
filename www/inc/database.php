@@ -1,18 +1,10 @@
 <?php
-    // Tästä tiedostosta haetaan muuttujiin $host, $db, $user ja $password arvot,
-    // sekä vakioon TABLE_PREFIX arvo.
-    // Tätä tiedostoa EI laiteta mukaan git-repoon!
-    require( "database_account.php" );
+    require_once( '../config.php' );
     
     $conn = null;
-    $conn = new mysqli($host,$user,$password,$db);
+    $conn = new mysqli( $config['db_host'], $config['db_user'], $config['db_password'], $config['db_name'], $config['db_port'] );
     
-    // Tarkistetaan että onko sitä prefixiä edes laitettu. Jos ei, niin laitetaan se tyhjäksi.
-    if ( !defined( 'TABLE_PREFIX' ) ) {
-        define( 'TABLE_PREFIX', '' );
-    }
-    
-    if ($result = $conn->query('SELECT category,COUNT(name) FROM ' . TABLE_PREFIX . 'codes GROUP BY category')) {
+    if ($result = $conn->query('SELECT category,COUNT(name) FROM ' . $config['db_prefix'] . 'codes GROUP BY category')) {
         while ($row = $result->fetch_array()) {
             $catCount[$row['category']] = $row['COUNT(name)'];
         }

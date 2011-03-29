@@ -13,7 +13,7 @@
     
     if (validateForm() == true) {
     
-        if ($stmt = $conn->prepare("INSERT INTO " . TABLE_PREFIX . "users(nick,password,email,hash) VALUES (?,?,?,?)")) {
+        if ($stmt = $conn->prepare("INSERT INTO " . $config['db_prefix'] . "users(nick,password,email,hash) VALUES (?,?,?,?)")) {
             $stmt->bind_param("ssss",$nickname,$pass,$em,$hash);
             $stmt->execute();
 

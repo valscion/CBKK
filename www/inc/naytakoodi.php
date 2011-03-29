@@ -3,7 +3,7 @@
     
     $codeId = $_GET['cId'];
     
-    if ($stmt = $conn->prepare("SELECT name,code,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE id = ? LIMIT 1")) {
+    if ($stmt = $conn->prepare("SELECT name,code,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE id = ? LIMIT 1")) {
         $stmt->bind_param("i",$codeId);
         $stmt->execute();
         
@@ -32,13 +32,13 @@
     echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
     echo $geshi->parse_code();
     
-    $query = "SELECT author,content,date FROM " . TABLE_PREFIX . "comments WHERE codeId='$cId' ORDER BY id DESC";
+    $query = "SELECT author,content,date FROM " . $config['db_prefix'] . "comments WHERE codeId='$cId' ORDER BY id DESC";
     
     echo "<h2>Kommentit</h2>";
     
     $stmt->fetch();
     
-    if ($stmt = $conn->prepare("SELECT author,content,date FROM " . TABLE_PREFIX . "comments WHERE codeId = ? ORDER BY id ASC")) {
+    if ($stmt = $conn->prepare("SELECT author,content,date FROM " . $config['db_prefix'] . "comments WHERE codeId = ? ORDER BY id ASC")) {
         $stmt->bind_param("i",$codeId);
         $stmt->execute();
         

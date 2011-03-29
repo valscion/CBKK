@@ -4,10 +4,10 @@
     
     if ($cat == 'search') {
         $q = "%" . $_GET['q'] . "%";
-        $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE name LIKE ? OR description LIKE ? ORDER BY name ASC";
+        $query = "SELECT type,name,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE name LIKE ? OR description LIKE ? ORDER BY name ASC";
         echo "<h1>Haun tulokset</h1>";
     } else {
-        $query = "SELECT type,name,description,author,added,id FROM " . TABLE_PREFIX . "codes WHERE category = ? ORDER BY name ASC";
+        $query = "SELECT type,name,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE category = ? ORDER BY name ASC";
         echo "<h1>" . $categoryArray[$cat] . "</h1>";
     }
 
