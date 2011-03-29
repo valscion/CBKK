@@ -1,6 +1,6 @@
 #codeblock {
     width: 100%;
-    max-height: 420pt;
+    max-height: 420pt; /* 560px, 42 riviä tekstiä */
     overflow: auto;
     border: 1px solid black;
     

@@ -13,6 +13,11 @@ $(document).ready(function(){
     var startWidth = jQobjLn.width();
     if( $.browser.msie ) {
         jQobjLn.width( startWidth + 20 );
+        $('#codeblock').css('max-height', 'none');
+        if( $('#codeblock').height() > 560 )
+        {
+            $('#codeblock').height(560);
+        }
     } else {
         jQobjLn.width( jQobjLn.textWidth() + startWidth - 10 );
     }
