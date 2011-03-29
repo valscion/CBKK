@@ -30,7 +30,7 @@
     $geshi->set_link_target('_blank');
     
     echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
-    echo $geshi->parse_code();
+    echo '<div id="codeblock">'.$geshi->parse_code().'</div>';
     
     $query = "SELECT author,content,date FROM " . $config['db_prefix'] . "comments WHERE codeId='$cId' ORDER BY id DESC";
     

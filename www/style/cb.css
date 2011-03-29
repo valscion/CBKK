@@ -1,34 +1,29 @@
-.coolbasic {
+#codeblock {
+    width: 100%;
+    max-height: 420pt;
+    overflow: auto;
+    border: 1px solid black;
+    
     font-family: Courier New, monospace;
     font-size: 10pt;
     background: rgb(231,240,248);
-    border: 1px solid black;
     
-    width: 100%;
     margin: 0;
 }
 
-.coolbasic pre {
-    font-family: Courier New,monospace;
-    font-size: 10pt;
-    margin: 0;
+#codeblock td, #codeblock th {
+    border: 0;
 }
 
-table.coolbasic tbody tr td.de1 pre {
-    /* Tämä estää laatikon valumisen liian suureksi. Ei vaikuta muuhun sisältöön. */
-    width: 2em;
-}
-
-table.coolbasic tbody tr td.de1 pre.de1 {
-    min-width: 100%;
-    overflow: auto;
-    /* Estetään oikean laidan scrollbarin näkyminen laittamalla lisää tilaa alas */
-    padding-bottom: 5px;
-}
-
-table.coolbasic tbody tr td.de1 {
+#codeblock td.de1 {
     background-color: #E7F0F8;
-    overflow: hidden;
+    border-left: 1px solid black;
+}
+
+#codeblock .ln {
+    background: rgb(159,193,221);
+    width: 1em;
+    text-align: right;
 }
 
 .coolbasic a {
@@ -39,14 +34,9 @@ table.coolbasic tbody tr td.de1 {
     text-decoration: underline;
 }
 
-.ln {
-    background: rgb(159,193,221);
-    width: 1em;
-    text-align: right;
-}
 
 /* Avainsanojen ynnä muiden väritys ja muu tyylitys */
-.kw1, .kw2, .kw3, .kw4 {
+.kw1, .kw2 {
     color: #0000ca;
 }
 
