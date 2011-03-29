@@ -1,5 +1,11 @@
 <?php
-    require_once( 'config.php' );
+    if( dirname($_SERVER['SCRIPT_FILENAME']) == dirname( __FILE__ ) ) {
+        $configpath = '../config.php';
+    } else {
+        $configpath = 'config.php';
+    }
+    
+    require_once( $configpath );
     
     $conn = null;
     $conn = new mysqli( $config['db_host'], $config['db_user'], $config['db_password'], $config['db_name'], $config['db_port'] );
