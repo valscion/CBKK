@@ -13,7 +13,7 @@
         
         echo "<h2>" . $name . "</h2>";
         echo "<p class='small'>Lis&auml;&auml;j&auml;: " . $author . " Lis&auml;tty: " . date('d.m.Y',strtotime($added)) ."</p>";
-        echo "<pre>" . $desc . "</pre>";
+        echo "<div class='description'>" . nl2br( $desc, false ) . "</div>";
     } else {
         echo $conn->error;
     }
@@ -51,7 +51,7 @@
                 echo "<h4>" . $author . "</h4>";
                 echo "<p class='small'>" . date('H:i:s d.m.Y',strtotime($date)) . "</p>";
                 
-                echo "<pre>" . $content . "</pre>";
+                echo "<div class='comment_content'>" . nl2br( $content, false ) . "</div>";
             echo "</div>";
             
             $i++;

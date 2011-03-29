@@ -34,13 +34,6 @@ p.error {
     margin-top: 0;
 }
 
-pre {
-    font-family: Verdana,Tahoma,sans-serif;
-    font-size: 0.9em;
-    
-    margin: 15px 0;
-}
-
 td,th {
     border: 1px solid black;
     
@@ -152,7 +145,14 @@ p.tableDesc {
     margin: 5px 0;
 }
 
-.comment1 {
+.description, .comment_content {
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 0.9em;
+    
+    margin: 15px 0;
+}
+
+.comment0, .comment1 {
     margin-bottom: 3px;
     
     padding: 5px;
@@ -165,16 +165,7 @@ p.tableDesc {
 }
 
 .comment0 {
-    margin-bottom: 3px;
-    
-    padding: 5px;
-    background: #a4d7ff;
-    
-    border: 1px solid black;
-    
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
+    background-color: #a4d7ff;
 }
 
 .bold {
