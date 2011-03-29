@@ -11,6 +11,7 @@
 <html lang="fi">
     <head>
         <meta charset="utf-8" />
+        <meta content="IE=8" http-equiv="X-UA-Compatible" />
         
         <title>CoolBasic koodikirjasto</title>
         

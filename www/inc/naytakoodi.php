@@ -31,6 +31,7 @@
     
     echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
     echo '<div id="codeblock">'.$geshi->parse_code().'</div>';
+    echo '<script src="' . $config['root_url'] . 'js/naytakoodi.js"></script>';
     
     $query = "SELECT author,content,date FROM " . $config['db_prefix'] . "comments WHERE codeId='$cId' ORDER BY id DESC";
     

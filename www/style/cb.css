@@ -17,13 +17,25 @@
 
 #codeblock td.de1 {
     background-color: #E7F0F8;
-    border-left: 1px solid black;
 }
 
-#codeblock .ln {
+#codeblock td.de1 pre {
+    position: relative;
+}
+
+#codeblock td.ln {
+    padding: 0;
+}
+
+#codeblock td.ln pre {
     background: rgb(159,193,221);
-    width: 1em;
     text-align: right;
+    padding: 10px;
+    position: relative;
+    border-right: 1px solid black;
+    width: 20010px;
+    margin-left: -20000px;
+    z-index: 3;
 }
 
 .coolbasic a {
