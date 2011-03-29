@@ -19,7 +19,8 @@
         <link rel="stylesheet" type="text/css" href="style/cb.css" />
 
         
-        <script type="text/javascript" src="inc/form.js"></script>
+        <script type="text/javascript" src="js/form.js"></script>
+        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
     </head>
     
     <body>
