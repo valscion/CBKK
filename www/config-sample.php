@@ -20,7 +20,7 @@ $config['db_name']     = 'databasename';
 $config['db_user']     = 'username';
 $config['db_password'] = 'password';
 $config['db_prefix']   = 'cbkk_'; // Taulujen prefix. Voi olla tyhjäkin.
-$config['db_port']     = 3306 // Oletus 3306. Vaihda vain jos tiedät mitä olet tekemässä.
+$config['db_port']     = 3306; // Oletus 3306. Vaihda vain jos tiedät mitä olet tekemässä.
 
 
 

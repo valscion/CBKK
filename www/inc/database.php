@@ -1,5 +1,5 @@
 <?php
-    require_once( '../config.php' );
+    require_once( 'config.php' );
     
     $conn = null;
     $conn = new mysqli( $config['db_host'], $config['db_user'], $config['db_password'], $config['db_name'], $config['db_port'] );
