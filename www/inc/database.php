@@ -20,13 +20,13 @@
     $categoryArray[1] = "Matematiikka";
     $categoryArray[2] = "Merkkijonot";
     $categoryArray[3] = "Sekalaiset";
-    $categoryArray[4] = "K&auml;ytt&ouml;liittym&auml;";
+    $categoryArray[4] = "Käyttöliittymä";
     $categoryArray[5] = "Tiedostot";
     $categoryArray[6] = "Algoritmit";
     $categoryArray[7] = "Objektit";
-    $categoryArray[8] = "Sy&ouml;tteet";
-    $categoryArray[9] = "&Auml;&auml;ni & musiikki";
-    $categoryArray[10] = "J&auml;restelm&auml;";
+    $categoryArray[8] = "Syötteet";
+    $categoryArray[9] = "Ääni & musiikki";
+    $categoryArray[10] = "Järjestelmä";
     $categoryArray[11] = "Kartat";
     $categoryArray[12] = "Kamera";
     $categoryArray[13] = "Muisti";

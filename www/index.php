@@ -78,14 +78,15 @@
                     <h3>Kategoriat</h3>
                     <ul>
                         <?php
-                            $cats = count($categoryArray);
+                            $sortedArr = array_flip( $categoryArray );
+                            ksort( $sortedArr );
                             
-                            for($i = 0; $i < $cats; $i++) {
-                                if (isset($catCount[$i]))
-                                    $count = $catCount[$i];
+                            foreach( $sortedArr as $cat => $catId ) {
+                                if (isset($catCount[$catId]))
+                                    $count = $catCount[$catId];
                                 else
                                     $count = 0;
-                                echo "<li><a href='index.php?pId=listaa&amp;cat=" . $i . "'>" . $categoryArray[$i] . "</a> (" . $count . ")</li>";
+                                echo '<li><a href="index.php?pId=listaa&amp;cat=' . $catId . '">' . $cat . '</a> (' . $count . ')</li>';
                             }
                         ?>
                     </ul>
