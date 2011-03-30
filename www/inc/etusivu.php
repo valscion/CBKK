@@ -30,7 +30,8 @@
     
     echo "<h2>Viisi uusinta kommenttia</h2>";
     
-    if ($stmt = $conn->prepare("SELECT comments.author,comments.content,comments.date,comments.codeId,codes.name FROM " . $config['db_prefix'] . "comments,codes WHERE comments.codeId = codes.id ORDER BY comments.id DESC LIMIT 5")) {
+    $prfx = $config['db_prefix'];
+    if ($stmt = $conn->prepare("SELECT {$prfx}comments.author,{$prfx}comments.content,{$prfx}comments.date,{$prfx}comments.codeId,{$prfx}codes.name FROM {$prfx}comments,{$prfx}codes WHERE {$prfx}comments.codeId = {$prfx}codes.id ORDER BY {$prfx}comments.id DESC LIMIT 5")) {
         $stmt->execute();
         
         $stmt->bind_result($author,$content,$date,$cId,$cName);
