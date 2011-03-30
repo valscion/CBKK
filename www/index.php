@@ -27,7 +27,7 @@
         
         <div id="container">
             
-            <div id="header"><a href="./" class='logo'></a></div>
+            <div id="header"><a href="./" class='logo' alt='CBKK' title='Coolbasic koodikirjasto'></a></div>
             
             <div id="sidebar">
                 <div id="login">

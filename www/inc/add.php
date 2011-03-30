@@ -3,21 +3,29 @@
     
     include_once "../inc/database.php";
 
-    
     if (notEmpty($_POST['cName'])) {
-        $name = stripslashes(htmlspecialchars($_POST['cName']));
+        if( get_magic_quotes_gpc() )
+            $name = stripslashes(htmlspecialchars($_POST['cName']));
+        else
+            $name = htmlspecialchars($_POST['cName']);
     } else {
         die("Anna koodille nimi!");
     }
     
     if (notEmpty($_POST['description'])) {
-        $desc = stripslashes(htmlspecialchars($_POST['description']));
+        if( get_magic_quotes_gpc() )
+            $desc = stripslashes(htmlspecialchars($_POST['description']));
+        else
+            $desc = htmlspecialchars($_POST['description']);
     } else {
         die("Anna koodille kuvaus!");
     }
     
     if (notEmpty($_POST['code'])) {
-        $c = stripslashes(htmlspecialchars($_POST['code'],ENT_NOQUOTES));
+        if( get_magic_quotes_gpc() )
+            $c = stripslashes(htmlspecialchars($_POST['code'],ENT_NOQUOTES));
+        else
+            $c = htmlspecialchars($_POST['code'],ENT_NOQUOTES);
     } else {
         die("Syötä koodi!");
     }
