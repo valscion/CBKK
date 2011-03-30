@@ -33,8 +33,7 @@ $(document).ready(function(){
         jQobjLn.width( jQobjLn.textWidth() + 20000 );
     }
     if( disableAnimation == false ) {
-        $('#codeblock').scroll(function(event){
-            event.preventDefault();
+        $('#codeblock').scroll(function(){
             var scrollAmount = $('#codeblock').scrollLeft();
             jQobjLn.animate( { left:scrollAmount }, { queue:false, duration:400 } );
         });

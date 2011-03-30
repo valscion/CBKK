@@ -78,10 +78,7 @@
                     <h3>Kategoriat</h3>
                     <ul>
                         <?php
-                            $sortedArr = array_flip( $categoryArray );
-                            ksort( $sortedArr );
-                            
-                            foreach( $sortedArr as $cat => $catId ) {
+                            foreach( $sortedCategories as $cat => $catId ) {
                                 if (isset($catCount[$catId]))
                                     $count = $catCount[$catId];
                                 else

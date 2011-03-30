@@ -32,6 +32,11 @@
     $categoryArray[13] = "Muisti";
     $categoryArray[14] = "Efektit";
     
+    // Tehdään aakkosjärjestyksessä oleva kategoriataulukko, jossa
+    // avain on kategoria ja arvo on kategorian ID.
+    $sortedCategories = array_flip( $categoryArray );
+    ksort( $sortedCategories );
+    
     $iconArray[0] = "style/img/icon_f.png";
     
     function getPost($key) {
