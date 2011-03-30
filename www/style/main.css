@@ -171,4 +171,19 @@ p.tableDesc {
 .bold {
     font-weight: bold;
 }
+
+a.button {
+    padding: 4px;
+    border: 1px solid black;
+    margin-right: 4px;
+    
+    color: black;
+    text-decoration: none;
+    
+    background: rgb(159,193,221);
+}
+
+a.button:hover {
+    background: #E7F0F8;
+}
     

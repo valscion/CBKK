@@ -29,7 +29,7 @@
     $geshi->set_tab_width(4);
     $geshi->set_link_target('_blank');
     
-    echo "<a href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
+    echo "<a class='button' href='#' onclick='selectCode(this); return false;'>Valitse kaikki</a>";
     echo '<div id="codeblock">'.$geshi->parse_code().'</div>';
     echo '<script src="' . $config['root_url'] . 'js/naytakoodi.js"></script>';
     
