@@ -77,6 +77,9 @@
                 <div id="cats">
                     <h3>Kategoriat</h3>
                     <ul>
+                        <li><a href="index.php?pId=listaa&amp;cat=all&amp;sort=name">Kaikki</a></li>
+                    </ul>
+                    <ul>
                         <?php
                             foreach( $sortedCategories as $cat => $catId ) {
                                 if (isset($catCount[$catId]))
