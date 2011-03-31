@@ -1,3 +1,6 @@
+<?php 
+    include_once( 'database.php' );
+?>
 <h1>Lis&auml;&auml; uusi koodi</h1>
 
 <form action='inc/add.php' method='post' onsubmit='return validateCInput()'>
@@ -12,21 +15,13 @@
     
     Kategoria: 
     <select id='category' name='category'>
-        <option value='6'>Algoritmit</option>
-        <option value='14'>Efektit</option>
-        <option value='0'>Grafiikka</option>
-        <option value='10'>J&auml;restelm&auml;</option>
-        <option value='12'>Kamera</option>
-        <option value='11'>Kartat</option>
-        <option value='4'>K&auml;ytt&ouml;liittym&auml;</option>
-        <option value='1'>Matematiikka</option>
-        <option value='2'>Merkkijonot</option>
-        <option value='13'>Muisti</option>
-        <option value='7'>Objektit</option>
-        <option value='3'>Sekalaiset</option>
-        <option value='8'>Sy&ouml;tteet</option>
-        <option value='5'>Tiedostot</option>
-        <option value='9'>&Auml;&auml;ni & musiikki</option>
+<?php
+    foreach( $sortedCategories as $cat => $catId ) {
+        echo "\n        "; // Sisennykset on mukavia.
+        echo '<option value="' . $catId . '">' . $cat . '</option>';
+    }
+?>
+
     </select><br />
 
     <input type='submit' value='Lis&auml;&auml; koodi' />

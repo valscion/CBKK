@@ -27,7 +27,7 @@
         
         <div id="container">
             
-            <div id="header"><a href="./" class='logo'></a></div>
+            <div id="header"><a href="./" class='logo' alt='CBKK' title='Coolbasic koodikirjasto'></a></div>
             
             <div id="sidebar">
                 <div id="login">
@@ -78,10 +78,7 @@
                     <h3>Kategoriat</h3>
                     <ul>
                         <?php
-                            $sortedArr = array_flip( $categoryArray );
-                            ksort( $sortedArr );
-                            
-                            foreach( $sortedArr as $cat => $catId ) {
+                            foreach( $sortedCategories as $cat => $catId ) {
                                 if (isset($catCount[$catId]))
                                     $count = $catCount[$catId];
                                 else
