@@ -10,20 +10,10 @@
     
     echo "<h2>Viisi uusinta koodia</h2>";
     
-    if ($stmt = $conn->prepare("SELECT type,name,description,category,author,added,id FROM " . $config['db_prefix'] . "codes ORDER BY id DESC LIMIT 5")) {
+    if ($stmt = $conn->prepare("SELECT type,name,category,description,author,added,id FROM " . $config['db_prefix'] . "codes ORDER BY id DESC LIMIT 5")) {
         $stmt->execute();
         
-        $stmt->bind_result($type,$name,$desc,$cat,$author,$added,$id);
-        
-        echo "<table class='codeTable'>";
-            echo "<tr><th class='cName'>Koodin nimi</th><th class='cCat'>Kategoria</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAddded'>Lis&auml;tty</th></tr>";
-        
-            while ($stmt->fetch()) {
-                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>&quot;" . substr($desc,0,40) . "...&quot;</p></td>
-                    <td class='cCat'><a href='index.php?pId=listaa&amp;cat=" . $cat . "'>" . $categoryArray[$cat] . "</a></td><td class='cAuthor'>" . $author . "</td>
-                    <td class='cAdded'>" . date('d.m.Y',strtotime($added)) . "<br />" . date('H:i:s',strtotime($added)) .  "</td></tr>";
-            }
-        echo "</table>";
+        listCodes($stmt,true);
     } else {
         echo $conn->error;
     }
