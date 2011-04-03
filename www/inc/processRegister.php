@@ -12,7 +12,7 @@
     $hash = generateHash();
     
     if (validateForm() == true) {
-         Tarkistetaan, ettei samalla nimimerkillä ole jo käyttäjää.
+        // Tarkistetaan, ettei samalla nimimerkillä ole jo käyttäjää.
         if ( $stmtchk = $conn->prepare("SELECT * FROM " . $config['db_prefix'] . "users WHERE nick = ?") ) {
             $stmtchk->bind_param("s",$nickname);
             $stmtchk->execute();
