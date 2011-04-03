@@ -12,13 +12,13 @@
         $sort = $_GET['sort'];
         
         echo "<form action='index.php' method='get'>";
-            echo "J‰rjest‰: ";
+            echo "J√§rjest√§: ";
             echo "<input type='hidden' name='pId' value='listaa' />";
             echo "<input type='hidden' name='cat' value='all' />";
             echo "<select name='sort'>";
                 echo "<option value='name'>Nimi</option>";
-                echo "<option value='author'>Lis‰‰j‰</option>";
-                echo "<option value='added'>P‰iv‰ys</option>";
+                echo "<option value='author'>Lis√§√§j√§</option>";
+                echo "<option value='added'>P√§iv√§ys</option>";
             echo "</select>";
             echo "<input type='submit' value='Listaa' />";
         echo "</form>";
