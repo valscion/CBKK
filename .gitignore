@@ -1,5 +1,4 @@
 ﻿# Estetään repoon menevät muokkaukset käyttäjäkohtaisille tiedostoille.
-www/inc/database_account.php
 www/config.php
 
 # Perkeleen windows.
