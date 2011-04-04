@@ -54,12 +54,14 @@ AUTO_INCREMENT=10;
 --
 CREATE TABLE IF NOT EXISTS `cbkk_users`
   (
-     `nick`     VARCHAR(15) NOT NULL,
-     `password` VARCHAR(40) NOT NULL,
-     `email`    TEXT NOT NULL,
-     `active`   TINYINT(4) NOT NULL DEFAULT '0',
-     `hash`     VARCHAR(40) NOT NULL,
-     `id`       INT(11) NOT NULL AUTO_INCREMENT,
+     `nick`      VARCHAR(15) NOT NULL,
+     `password`  VARCHAR(40) NOT NULL,
+     `email`     TEXT NOT NULL,
+     `active`    BOOLEAN NOT NULL DEFAULT FALSE,
+     `hash`      VARCHAR(40) NOT NULL,
+     `joined`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+     `lastlogin` TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+     `id`        INT(11) NOT NULL AUTO_INCREMENT,
      PRIMARY KEY (`id`)
   )
 ENGINE=myisam
