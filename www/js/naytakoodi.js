@@ -39,5 +39,5 @@ $(document).ready(function(){
         });
     }
     
-    $('#codeblock > table.coolbasic > tbody > tr.li1 > td.de1 > pre.de1 > a').colorbox({width:'800px', height:'80%', iframe:true});
+    $('#codeblock a').colorbox({width:'800px', height:'80%', iframe:true});
 });
