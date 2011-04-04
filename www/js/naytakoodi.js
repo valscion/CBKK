@@ -38,4 +38,6 @@ $(document).ready(function(){
             jQobjLn.animate( { left:scrollAmount }, { queue:false, duration:400 } );
         });
     }
+    
+    $('#codeblock > table.coolbasic > tbody > tr.li1 > td.de1 > pre.de1 > a').colorbox({width:'800px', height:'80%', iframe:true});
 });
