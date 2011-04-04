@@ -1,0 +1,180 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>koodirakenteet</b></font></p>
+<H2>FOR</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Muodostaa silmukan, jota toistetaan tietty määrä kertoja. Silmukkaan liitetään muuttuja, joka käy läpi kaikki arvot alkuarvon ja lopetusarvon väliltä.</p>
+
+<p>Rakenne on ihanteellinen, kun halutaan lisätä monen muuttujan arvoa tai hallita esim. kaikkia taulukon elementtejä. Jos haluat selata TYYPIN jäsenet läpi, käytä erikoismuotoiltua For-lauseketta (<b>Each</b>-komento). Lisätietoja myöhemmin tässä oppaassa.</p>
+
+<p>Voit valinnaisesti määrittää myös hyppyvälin käyttämällä <b>STEP</b>-sanaa. Tämän arvon on oltava vakio, eli positiivinen tai negatiivinen luku. Voit hyppiä esimerkiksi 2 askelta kerralla, tai selata lukuja alaspäin kohti nollaa miinusmerkkisellä hyppyvälillä.</p>
+
+<p>Silmukasta voidaan rikkoutua kesken kaiken pois komennolla <b>Exit</b>.</p>
+
+<p><b>Silmukka päätetään komentoon NEXT.</b> Pääsilmukaksi For...Next -rakenteesta ei ole.</p>
+
+<p>Esimerkki valkaisee asiaa.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+FOR muuttuja = alkuarvo TO loppuarvo [STEP hyppyväli]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'koodia<br>
+NEXT sama_muuttuja
+</font>
+</td>
+</tr></table>
+<p>
+Step-arvo on valinnainen, ja se on oletuksellisesti yksi.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="../language/core.html#while">TOINEN SELITYS</a>, 
+<a href="each.html">FOR ... EACH</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">SCREEN</font> 300,500<br>
+<br>
+<font color="#40FFFF">Print</font> "ITERATE 1 -> 10"<br>
+<font color="#40FFFF">Print</font><br>
+<br>
+<font color="#40FFFF">Print</font> "-- STEP BY 1 ----------"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">' Tulosta arvot 1-10 </font></font><br>
+<font color="#40FFFF">For</font> t= 1 <font color="#40FFFF">To</font> 10 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Print</font> t <br>
+<font color="#40FFFF">Next</font> t<br>
+<br>
+<font color="#40FFFF">Print</font> "-- STEP BY 2 ----------"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">' Tulosta arvot 1,3,5,7,9  </font></font><br>
+<font color="#40FFFF">For</font> t= 1 <font color="#40FFFF">To</font> 10 <font color="#40FFFF">Step</font> 2 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Print</font> t <br>
+<font color="#40FFFF">Next</font> t<br>
+<br>
+<font color="#40FFFF">Print</font> "-- VALUES 1 -> Random ------------"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">' Tulosta arvot lähtien 1- joku satunnainen luku väliltä (2,10) </font></font><br>
+<font color="#40FFFF">For</font> t= 1 <font color="#40FFFF">To</font> <font color="#40FFFF">Rand</font>(2,10) <font color="#40FFFF">Step</font> 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Print</font> t <br>
+<font color="#40FFFF">Next</font> t<br>
+<br>
+<font color="#40FFFF">Print</font> "-- VALUES 1 -> 4 ------------"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">' Tulostaa arvot 1-4 </font></font><br>
+<font color="#40FFFF">For</font> t= 1 <font color="#40FFFF">To</font> 6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Print</font> t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> t> 3 <font color="#40FFFF">Then</font> <font color="#40FFFF">Exit</font><br>
+<font color="#40FFFF">Next</font> t<br>
+<br>
+<font color="#40FFFF">WaitKey</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

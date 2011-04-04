@@ -134,7 +134,7 @@ $language_data = array (
         ),
     'URLS' => array(
         1 => '',
-        2 => 'http://www.coolbasic.com/cbmanual/commands/{FNAMEL}.html'
+        2 => '/cbmanual/commands/{FNAMEL}.html'
         ),
     'OOLANG' => false,
     'OBJECT_SPLITTERS' => array(

@@ -1,0 +1,183 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Kartat</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>LOADMAP</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Tämä funktio lataa kartan levyltä muistiin. Kartta ilmestyy saman tien ruudulle oletuspaikkaan (0,0). Tilekartat piirretään aina keskitettynä ja ne käyttävät maailman koordinaatteja. Huomaa, että vain yksi kartta kerrallaan voi olla ladattuna. Jos teet tai lataat uuden kartan, entinen tuhotaan ensin.</p>
+
+<p><font color="#ff0000">Tilekarttoja tehdään <b>Tilester</b>-ohjelmalla, joka tulee CoolBasicin mukana. Löydät sen CoolBasicin valikoista. Tilesterillä on myös suomenkielinen manuaali, jonka löydät Tilesterin kansiosta (Ohjelmatiedostot tai Program Files ja Tilester).</font></p>
+
+<p>Tilekartoissa on aina neljä kerrosta: tausta, päällys, törmäys ja data. Vain kaksi ensimmäistä piirretään. Objektit sijoitetaan näiden kahden väliin, joten päälliskerrokseen on mahdollista luoda piiloja, joiden alle pelaajat ja muut esineet voivat kätkeytyä. Voit kytkeä tarpeettomien kerroksien piirtämisen pois päältä lisänopeuden saavuttamiseksi. Kts. komento <b>SetMap</b>.</p>
+
+<p>Tilekarttojen piirtämiseen käytetään <b>tilesettiä</b>. Se on iso kuva, joka sisältää paljon pienempiä kuvia. Ne on sijoitettu saumattomasti vieri viereen samaan tapaan kuin animoiduissa kuvasarjoissa (kts. komento LoadAnimImage). Tätä settiä voi jopa vaihtaa lennossa, ja muuttaa kartan sävytystä tai ulkonäköä dramaattisesti. Tilesetti voi olla <font color="red" size="1"><b>BMP/JPG/PNG/TGA-kuva</b></font>. Voit myös merkkijonon sijasta antaa kuvamuuttujan, jos setti on jo ladattu kuvana muistiin.</p>
+
+<p>Törmäyskerros sisältää tiedon niistä kohdista, joiden päältä ei voi kävellä. Tähän kerrokseen on siis tallennettu kaikki kentän "seinät". Käytä Tilesterin HIT-kerrosta luodaksesi nämä tiedot.</p>
+
+<p>Data-kerrokseen voidaan tallentaa lisätietoa kartasta. Esimerkiksi ns. trigger-zonet, joiden päälle astuessaan pelaaja laukaisee jonkin tapahtuman. Myös hidastavaa mutaa tai polttavaa laavaa tai säteilyä voidaan koodata kartan data-kerrokseen. Data-kerros sisältää erilaisia lukuja. Data-kerrokseen pääsee käsiksi funktioilla <b>GetMap</b> ja <b>GetMap2</b>. <font color="red">Datakerros on tarkoitettu edistyneille käyttäjille, ja se on yleensä aloittelijoille turha.</font></p>
+
+<p>Tilekarttaan käytetään normaaleita objekti-komentoja: Voit poistaa kartan komennolla <b>DeleteObject</b> tai siirtää sen toiseen paikkaan komennolla <b>PositionObject</b>.</p>
+
+<p>Kartta niin ikään animoidaan komennolla <b>PlayObject</b> tai <b>LoopObject</b>. Ei ole väliä, kumpaa käytät, kartta pysyy animoituna kunnes se pysäytetään komennolla <b>StopObject</b>. Poikkeuksena fremejen aloitus- ja lopetusarvoilla ei karttojen kanssa ole merkitystä, vaan kartat animoidaan sen omien määritysten mukaan. Sen sijaan voit vaikuttaa animointinopeuteen. Tosin sekin poikkeaa hieman normaalien objektien animoinnista. Animaation nopeus määritetään sekunteina, joten numero 1 animoi karttaa joka sekunti, numero 2 vain joka toinen sekunti. 0.1 kymmenen kertaa sekunnissa jne.</p>
+
+<p>Karttaan asetetaan törmäys- ja poimintaominaisuudet normaaleilla objektikomennoilla.</p>
+
+<p>Tilekartat kannattaa yleensä ladata ennen muita objekteja, jotta kartta piirtyy kaikkien alle.</p>
+
+<p>Funktio palauttaa nollan, jos kuvaa ei voitu ladata.</p>
+
+<p><b><font color="#ff0000">Älä koskaan lataa kovalevyltä mitään silmukan sisällä! Tätä komentoa tulisi käyttää vain ohjelman alussa.</font><b></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+LOADMAP (tiedostonimi, tilesetti)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tiedostonimi</b> = Merkkijono: Ladattavan kartan nimi tai polku.
+<li><b>tilesetti</b> = Merkkijono: Kartan tilesetti-kuvan nimi tai polku. / Kokonaisluku: Kuvamuuttuja, jos setti on jo ladattu kuvana muistiin
+</p>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="makemap.html">MAKEMAP</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40 <font color="#00FF00">'limit game performance</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load map and animate it (2 times a second)</font></font><br>
+map= <font color="#40FFFF">LoadMap</font>("Media\cdm2.til","Media\tileset.bmp")<br>
+<font color="#40FFFF">PlayObject</font> map,0,0,0.5<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load the character and setup a collision for it </font></font><br>
+guy= <font color="#40FFFF">LoadObject</font>("Media\soldier.bmp",72)<br>
+<font color="#40FFFF">SetupCollision</font> guy,map,2,4,2<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'The game </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Control the guy</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy,5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy, -5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy,4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy, -4<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Stick camera to the guy</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneCameraPosition</font> guy<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstmap.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

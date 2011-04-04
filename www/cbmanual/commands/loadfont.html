@@ -1,0 +1,185 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Teksti</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>LOADFONT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Lataa fontin muistiin. Fontti haetaan automaattisesti Windowsin omasta fonttihakemistosta, joten sinun ei tarvitse kirjoittaa tiedostopolkua tai edes tiedostopäätettä.</p>
+
+<p>Fontti voi olla TrueType-fontti tai rasterifontti, mutta symbolisia fontteja, kuten WingDings tai WebDings ei tueta.</p>
+
+<p>Voit vaikuttaa fontin ulkonäköön määrittämällä jo latausvaiheessa sen erikoismuotoilut, kuten lihavointi, kursivointi ja alleviivaus. Näitä ei voi jälkikäteen muuttaa, vaan sinun on ladattava sama fontti erikseen eri muotoiluvalitsimilla.</p>
+
+<p>Fontti pitää vielä aktivoida tekstikomentojen käyttöön komennolla <b>SetFont</b>.</p>
+
+<p><b><font color="#ff0000">Älä koskaan lataa kovalevyltä mitään silmukan sisällä! Tätä komentoa tulisi käyttää vain ohjelman alussa.</font><b></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+LOADFONT (nimi, [koko], [lihavointi], [kursivointi], [alleviivaus])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>nimi</b> = Merkkijono, joka määrittää ladattavan fontin nimen ilman tiedostopäätettä.
+<li><b>koko</b> <font color="#ff0000" size="1">(valinnainen)</font> = Fontin koko kokonaislukuna. Oletuksena 13.
+<li><b>lihavointi</b> <font color="#ff0000" size="1">(valinnainen)</font> = <b>ON</b> päällä tai <b>OFF</b> pois. Oletuksena pois päältä.
+<li><b>kursivointi</b> <font color="#ff0000" size="1">(valinnainen)</font> = <b>ON</b> päällä tai <b>OFF</b> pois. Oletuksena pois päältä.
+<li><b>alleviivaus</b> <font color="#ff0000" size="1">(valinnainen)</font> = <b>ON</b> päällä tai <b>OFF</b> pois. Oletuksena pois päältä.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="setfont.html">SETFONT</a>,
+<a href="deletefont.html">DELETEFONT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+arial=<font color="#40FFFF">LoadFont</font>("arial",20)<br>
+impact=<font color="#40FFFF">LoadFont</font>("impact",28)<br>
+system=<font color="#40FFFF">LoadFont</font>("fixedsys")<br>
+coolb=<font color="#40FFFF">LoadFont</font>("coolb")<br>
+verdana=<font color="#40FFFF">LoadFont</font>("verdana",18,<font color="#40FFFF">ON</font>,<font color="#40FFFF">OFF</font>,<font color="#40FFFF">ON</font>) <font color="#00FF00">'bold and underlined</font><br>
+times=<font color="#40FFFF">LoadFont</font>("times new roman",20,<font color="#40FFFF">OFF</font>,<font color="#40FFFF">ON</font>) <font color="#00FF00">'italic</font><br>
+courier=<font color="#40FFFF">LoadFont</font>("courier new",40)<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cborange<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> arial<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 40,20,"I'll look into it"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cblightgreen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> impact<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 100,100,"A sound plan!"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbyellow<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> system<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 260,270,"Dead man walking"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbcyan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> system<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 20,200,"This..is..my BOOMSTICK!"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbsilver<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> verdana<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 70,220,"What do you want?!"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cblightred<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> times<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 150,180,"Night beckons"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbgreen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetFont</font> courier<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CenterText</font> 200,130,"Don't worry, be happy!"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lsttext.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

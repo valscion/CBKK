@@ -1,0 +1,207 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Omat tyypit</h2>
+
+<font color="#ff0000"><H4>Tyypit ovat hyv‰st‰, k‰yt‰ tyyppej‰</H4></font>
+
+<p>
+CoolBasicin tyypeill‰ voit muodostaa <b>kokoelman ammuksia, vihollisia, botteja, mit‰ vain.</b> T‰m‰ on viel‰kin yksinkertaisempi tapa hallita suurta joukkoa erilaisia kohteita kuin taulukointi.
+</p>
+
+<p>
+Ohjelman alussa tyyppi pit‰‰ m‰‰ritell‰. Se onnistuu <b>TYPE...END TYPE-lohkossa</b>, jonka sis‰‰n kirjoitetaan <b>FIELD</b>-sanojen avulla lista muuttujia. Aina kun uusi kokoelman j‰sen luodaan, se perii kaikki n‰m‰ muuttujat, ja ne ovat k‰ytett‰viss‰si - <b>jokaiselle objektille on yksilˆlliset muuttujat</b>, vaikkakin kaikilla j‰senill‰ on saman nimiset muuttujat.
+</p>
+
+<p>
+Kokoelmat muodostavat ns. linkitettyj‰ listoja, joiden keskelt‰, lopusta ja alusta voi poistaa j‰seni‰ ilman, ett‰ v‰liin j‰‰ tyhji‰ kohtia. T‰m‰ ei onnistu taulukoissa siirt‰m‰tt‰ taulukon elementtej‰ t‰ytt‰m‰‰n tyhj‰ksi muodostunut paikka. Esimerkiksi: <br><br>Alussa on t‰llainen lista: "1, 2, 3, 4, 5". Kun poistat j‰senen kolme, lista n‰ytt‰‰kin t‰llaiselta: "1, 2, 4, 5". T‰m‰ on ihanteellinen tapa hallita erilaisia efektej‰ tai liikkuvia kohteita.
+</p>
+
+<font color="#ff0000"><H4>Nyt meni yli hilseen</H4></font>
+
+<p>
+Otetaan esimerkki: Kuvitellaan, ett‰ peliss‰si on plasmakiv‰‰ri, joka ampuu nopeita sarjoja kuumennettua plasmaa. Aina kun painat liipaisinta, luodaan uusi ammus, joka liikkuu eteenp‰in, kunnes tˆrm‰‰ johonkin. Nyt sinun pit‰isi jotenkin hallita kaikkia ammuksia: liikuttaa niit‰ ja tarkastaa tˆrm‰‰v‰tkˆ ne johonkin. T‰m‰n voisi tehd‰ taulukoilla, mutta se on tyyppeihin verrattuna tyˆl‰st‰.
+</p>
+
+<p>
+Oletetaan, ett‰ haluat toteuttaa ammukset objekteilla, mik‰ on yksinkertaisin tapa. Aina kun ammus luodaan, pit‰‰ siis luoda uusi ammusobjekti, asettaa sille tˆrm‰ys, sijoittaa ja kohdistaa se oikein jne. T‰llaisen ammusj‰rjestelm‰n perusta on tietysti kokoelma (tyyppi). Luodaan sellainen ohjelman alussa:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+Type AMMUKSET<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Field obj<br>
+End Type
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Nyt meill‰ on kokoelma, jonka nimi on <b>"AMMUKSET"</b>. Siin‰ on yksi kentt‰, nimelt‰‰n <b>obj</b>. Aina kun uusi ammus lis‰t‰‰n kokoelmaan, se saa oman <b>obj</b>-muuttujansa, johon talletetaan objektin kopio. Pelin alussa lataat ns. master-objektin (ammus-kuva), ja piilotat sen (ShowObject). Master-object on ladattu muuttujaan <b>"ammus"</b>.
+</p>
+
+<p>
+<b>Uusi j‰sen lis‰t‰‰n kokoelmaan komennolla NEW.</b> Koodina se tapahtuu seuraavasti (t‰m‰ siis aina kun uusi ammus luodaan):
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+pati<b>.AMMUKSET</b> = <font color="#0000ff">New</font> (<b>AMMUKSET</b>)<br>
+pati<b>\obj</b> = <font color="#0000ff">CloneObject</font> (ammus)<br>
+<br>
+<font color="#008800">'Asetetaan patin tˆrm‰ys kentt‰‰n</font><br>
+<font color="#0000ff">SetupCollision</font> pati<b>\obj</b>, kartta, 2, 4, 1<br>
+<br>
+<font color="#008800">'Aseta pati samaan paikkaan miss‰ pelaaja on</font><br>
+<font color="#0000ff">CloneObjectPosition</font> pati<b>\obj</b>, pelaaja<br>
+<font color="#0000ff">CloneObjectOrientation</font> pati<b>\obj</b>, pelaaja<br>
+<font color="#0000ff">ResetObjectCollision</font> pati<b>\obj</b>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+T‰m‰ koodi luo uuden j‰senen. Se lis‰t‰‰n aina listan viimeiseksi. <b>Kiinnit‰ huomiota erityisesti kahteen ensimm‰iseen riviin.</b> Lis‰ksi muuttujan "pati" tyypiksi pit‰‰ m‰‰ritell‰ kokoelma. Siksi muuttujan per‰‰n kirjoitetaan piste ja kokoelman nimi. T‰t‰ ei tarvitse kirjoittaa jatkossa.
+</p>
+
+<p>
+Tyyppimuuttujan kenttiin p‰‰see k‰siksi <b>\</b>-merkill‰. K‰yt‰t muuten muuttujaa normaaliin tapaan.
+</p>
+
+<font color="#ff0000"><H4>Listan l‰pik‰yminen</H4></font>
+
+<p>
+Oletkin jo tutustunut For...Next-rakenteeseen (jos et ole, tee se nyt ja palaa t‰nne myˆhemmin). Sen avulla voidan helposti k‰yd‰ l‰pi kaikki taulukon j‰senet. Samaan tapaan voidaan k‰yd‰ l‰pi myˆs kaikki kokoelman j‰senet. Rakenne muuttuu vain hieman toisenn‰kˆiseksi:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<font color="#0000ff">For</font> pati<b>.AMMUKSET</b> = <font color="#0000ff"><b>Each</font> AMMUKSET</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">MoveObject</font> pati\obj, 1<br>
+<font color="#0000ff">Next</font> pati
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Oheinen koodi liikuttaa KAIKKIA ammuksia eteenp‰in yhdell‰. Samalla voit tarkastaa jokaisen ammuksen tˆrm‰yksen, ja tarvittaessa tuhoamaan sen (DeleteObject ja sitten Delete pati). Listan voi tuhota n‰in:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<font color="#0000ff">For</font> pati<b>.AMMUKSET</b> = <font color="#0000ff"><b>Each</font> AMMUKSET</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">DeleteObject</font> pati\obj<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000ff">Delete</font> pati<br>
+<font color="#0000ff">Next</font> pati
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+<b>On eritt‰in t‰rke‰‰, ett‰ muistat vapauttaa j‰seniin sidotun median. Muuten niihin ei p‰‰se koskaan k‰siksi ja se syˆ tietokoneen muistia, koska niit‰ ei voi vapauttaa.</b>
+</p>
+
+<font color="#ff0000"><H4>Tyyppien ominaisuuksia</H4></font>
+
+<p>
+Field-sanalla m‰‰ritell‰‰n kokoelman muuttujat. N‰m‰ voivat olla myˆs desimaali- tai merkkijonotyyppisi‰. Esim. <b>Field x#</b> m‰‰ritt‰‰ desimaalikent‰n. Sit‰ kutsutaan <b>\x</b> tai <b>\x#</b>.
+</p>
+
+<p>
+Kun haluat poistaa j‰senen (tˆrm‰yksen sattuessa), komennat vain <b>Delete pati</b> (edellisen esimerkin mukaan). Sit‰ ennen on hyv‰ poistaa objekti muistista: <b>DeleteObject pati\obj</b>
+</p>
+
+<p>
+Uusi j‰sen lis‰t‰‰n aina listan per‰‰n. Voit liikkua listan sis‰ll‰ <b>Before</b>() ja <b>After</b>() -funktioilla. Esim. <b>Pati = Before(Pati)</b>. Lis‰‰ tietoa kyseisten komentojen oppaasta.
+</p>
+
+<p>
+Voit kerralla siirty‰ listan alkuun tai loppuun <b>First</b>() ja <b>Last</b>() -funktioilla. Esim. <b>Pati = First(AMMUKSET)</b>. Lis‰‰ tietoa kyseisten komentojen oppaasta.
+</p>
+
+<p>
+Et voi siirty‰ listan ulkopuolelle. Muuten ohjelma kaatuu muistivuotoon. Siten, jos osoitin on listan viimeisess‰ j‰seness‰, et voi komentaa Pati=After(Pati), ja k‰ytt‰‰ olematonta j‰sent‰. Voit est‰‰ t‰m‰n testaamalla, onko lista lopussa: <b>If After(Pati)<>NULL Then ON_OLEMASSA Else EI_OLEMASSA</b>.
+</p>
+
+<p>
+Voit siirt‰‰ elementtej‰ paikasta toiseen <b>Insert</b>-komennolla. Uusi (ja siten viimeinen) listan j‰sen voidaan siirt‰‰ ensimm‰iseksi: <b>Insert Pati, First(AMMUKSET)</b> tai vaikkapa <b>Insert Pati, After(First(AMMUKSET))</b>. T‰llainen kikkailu on edistyneemmille k‰ytt‰jille.
+</p>
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

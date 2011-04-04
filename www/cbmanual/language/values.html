@@ -1,0 +1,162 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Merkkijonot ja arvot</h2>
+
+<font color="#ff0000"><H4>Arvoja, arvoja, arvoja</H4></font>
+
+<p>
+Muuta ei tietokoneessa liikukaan kuin arvoja. Kokonaislukuja, desimaalilukuja ja merkkijonoja. Muuttujatkin ovat vain arvojen säilytyspaikkoja. Kaikki pyörii arvojen ympärillä.
+</p>
+
+<font color="#ff0000"><H4>Merkkijonot</H4></font>
+
+<p>
+Noin yleensä tietokone käsittelee lähinnä numeerisia arvoja. Merkkijonot muodostavat suuren poikkeuksen. Sen sijaan, että merkkijonomuuttujaan sijoitettaisiin jokin lukuarvo, siihen tallennetaan sanoja tai lauseita. CoolBasic ei mitenkään rajoita merkkijonojen pituutta. Otetaan esimerkki (merkkijonot on värjätty sinisiksi):
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>jono$</b> = <font color="#0000ff">"Halo"</font><br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;Text 0, 0, <b>jono</b><br>
+<b>4</b>&nbsp;&nbsp;&nbsp;&nbsp;Text 0, 20, <font color="#0000ff">"Don't you worry, baby. I'm an expert."</font><br>
+<b>5</b> <br>
+<b>6</b>&nbsp;&nbsp;&nbsp;&nbsp;DrawScreen<br>
+<b>7</b> <br>
+<b>8</b>&nbsp;&nbsp;&nbsp;&nbsp;WaitKey
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Puhuimme jo muuttujista ja niiden esityksestä ($-merkki). Jos et ole vielä lukenut kohtaa "Muuttujat", tee se nyt.
+</p>
+
+<p>
+Huomaa ensiksi, että merkkijono "Halo" on kirjoitettu <b>lainausmerkkeihin</b>. Älä unohda niitä! Merkkijonot värjätään CoolBasicin editointitilassa erivärisiksi, joten ne on helppo huomata. Lainausmerkit ovat merkkijonon tunnus. Rivillä 1 merkkijono sijoitetaan merkkijonomuuttujaan, joka sitten tulostetaan rivillä 3. Kuten huomaat, merkkijono voidaan myös suoraan tulostaa, kun se välitetään Text-komennolle sellaisenaan rivillä 4.
+</p>
+
+<font color="#ff0000"><H4>Arvojen käyttäminen</H4></font>
+
+<p>
+Useimmat käskyt vaativat lukuja tai muuttujia, eli parametreja. Ei ole juuri väliä kumpaa käytät, koska <b>muuttujan tilalle ilmestyy ohjelman suoritusvaiheessa sen arvo</b>. Tämä on tärkeää ymmärtää. Samalla tavalla funktion tilalle ilmestyy sen palauttama arvo, joten <b>Abs(-5) on tosi asiassa 5.</b>
+</p>
+
+<p>
+CoolBasic ymmärtää myös heksa-arvoja. Ne kirjoitetaan koodiin samalla tapaa kuin mikä tahansa luku. Heksa-arvo tunnistetaan sen edessä olevasta dollarimerkistä ($). Tämä ohjelma tulostaa luvun 255.
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;Text 0, 0, <b><font color="#0000ff">$FF</font></b><br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;DrawScreen<br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;WaitKey
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Suurin sallittu Heksa-arvo on $80000000, eli 2 147 483 643.
+</p>
+
+<font color="#ff0000"><H4>Arvojen laskutoimitukset</H4></font>
+
+<p>
+<li>Jos esimerkiksi kahdesta laskettavasta arvosta yksikin on desimaaliluku, tuloksena on desimaaliluku. Esim. kokonaisluku + desimaaliluku = desimaaliluku. Sama pätee esim. miinus-,kerto- ja jakolaskutoimituksille.
+<li>Merkkijonoille ei voi suorittaa kuin plus-laskun, mikä yhdistää kaksi merkkijonoa toisiinsa.
+<li>Yleensä lukuja ja merkkijonoja ei voi käsitellä yhdessä laskutoimituksessa. Poikkeuksena plus-lasku. Pidä siis luvut erillään ja merkkijonot erillään.
+</p>
+
+<font color="#ff0000"><H4>Arvojen vertailu</H4></font>
+
+<p>
+<li>Voit verrata kahta arvoa toisiinsa ja tutkia kumpi on isompi tai ovatko ne samanlaisia. Esimerkiksi: If A < B Then.
+<li>Katso myös loogiset operaattorit AND, OR, XOR ja NOT manuaalin KOMENNOT/Matematiikka -osasta.
+</p>
+
+<font color="#ff0000"><H4>Arvojen raja-arvot (rajoitteet)</H4></font>
+
+<p>
+<li>Kokonaisluvut (ja heksat) voivat olla väliltä: [-2147483647 , 2147483647].
+<li>Desimaaliluvut voivat olla väliltä: 3.4E +/- 38 (7 numeroa).
+<li>Lyhyet kokonaisluvut <font face=courier>(<font color="#0000ff">As Short</font>)</font> voivat olla väliltä [0 , 65536].
+<li>Tavut <font face=courier>(<font color="#0000ff">As Byte</font>)</font> voivat olla väliltä [0 , 255].
+<li>Merkkijonoilla ei ole pituusrajoitusta.
+</p>
+
+<hr>
+
+<p>Opit lisää sitä mukaa kuin ohjelmoit ja törmäät esimerkkikoodeihin.</p>
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

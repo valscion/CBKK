@@ -1,0 +1,220 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>SETUPCOLLISION</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Tässä se on. Kaikkien rakastama automaattinen törmäyksentunnistus. Etkä tarvitse juuri muuta kuin tämän komennon! Tällä komennolla esittelet CoolBasicille mitkä objektit voivat törmätä keskenään ja siten eivät voi mennä päällekkäin tai kulkea lävitse. Tämä tapahtuu esittelemällä CoolBasicille kaksi objektia, törmäyksen tyypit sekä menettelytapa törmäyksen sattuessa. Aivan kaikkia mahdollisia törmäysyhdistelmiä ei ole vielä saatavilla, mutta niitä lisätään tulevissa ohjelmapäivityksissä. Voit esitellä seuraavat törmäykset:</p>
+
+<p>
+<table width="350" bgcolor="white" border="1"><tr>
+
+<td><font face="verdana,arial" size="2"><b>Törmäävä</b></font></td>
+<td><font face="verdana,arial" size="2"><b>-&gt;</b></font></td>
+<td><font face="verdana,arial" size="2"><b>Törmättävä</b></font></td>
+<td><font face="verdana,arial" size="2"><b>Menettelytavat</b></font></td>
+<td><font face="verdana,arial" size="2"><b>Esitys</b></font></td>
+
+</tr><tr>
+
+<td><font face="verdana,arial" size="2"><img src="box.gif"><br>(laatikko)<br><b>1</b></font></td>
+<td><font face="verdana,arial" size="2"><b>-&gt;</b></font></td>
+<td><font face="verdana,arial" size="2"><img src="box.gif"><br>(laatikko)<br><b>1</b></font></td>
+<td><font face="verdana,arial" size="2">liukuva<br><b>2</b></font></td>
+<td><font face="verdana,arial" size="2">1,1,2</font></td>
+
+</tr><tr>
+
+<td><font face="verdana,arial" size="2"><img src="box.gif"><br>(laatikko)<br><b>1</b></font></td>
+<td><font face="verdana,arial" size="2"><b>-&gt;</b></font></td>
+<td><font face="verdana,arial" size="2"><img src="static.gif"><br>(kartta)<br><b>4</b></font></td>
+<td><font face="verdana,arial" size="2">liukuva<br><b>2</b></font></td>
+<td><font face="verdana,arial" size="2">1,4,2</font></td>
+
+</tr><tr>
+
+<td><font face="verdana,arial" size="2"><img src="ball.gif"><br>(pallo)<br><b>2</b></font></td>
+<td><font face="verdana,arial" size="2"><b>-&gt;</b></font></td>
+<td><font face="verdana,arial" size="2"><img src="ball.gif"><br>(pallo)<br><b>2</b></font></td>
+<td><font face="verdana,arial" size="2">pysähdys (1)<br>liukuva (2)</font></td>
+<td><font face="verdana,arial" size="2">2,2,1<br>2,2,2</font></td>
+
+</tr><tr>
+
+<td><font face="verdana,arial" size="2"><img src="ball.gif"><br>(pallo)<br><b>2</b></font></td>
+<td><font face="verdana,arial" size="2"><b>-&gt;</b></font></td>
+<td><font face="verdana,arial" size="2"><img src="static.gif"><br>(kartta)<br><b>4</b></font></td>
+<td><font face="verdana,arial" size="2">pysähdys (1)<br>liukuva (2)</font></td>
+<td><font face="verdana,arial" size="2">2,4,1<br>2,4,2</font></td>
+
+</tr></table>
+</p>
+
+<p>Jos et tajunnut taulukosta mitään, otetaan esimerkki. Haluat pallo-pallo -törmäyksen. Haluat sen liukuvana. Joten katsot taulukosta... se on siis 2,2,2.</p>
+
+<p>Karttaa tai liikkumatonta pelimaailmaa koskevat törmäykset kannattaa esitellä viimeiseksi.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+SETUPCOLLISION objektimuuttuja, kohde_objekti, lähdetyyppi, kohdetyyppi, menettelytapa
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>objektimuuttuja</b> = Se objekti, jonka pitäisi törmätä johonkin.
+<li><b>kohde_objekti</b> = Se objekti, <b>johon</b> voidaan törmätä.
+<li><b>lähdetyyppi</b> = Minkätyyppinen törmäys lähdeobjektilla on? 1=laatikko, 2=pallo.
+<li><b>kohdetyyppi</b> = Minkätyyppinen törmäys kohdeobjektilla on? 1=laatikko, 2=pallo.
+<li><b>menettelytapa</b> = Miten menetellään törmäyksen sattuessa? 1=pysähdy, 2=liukuva.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="countcollisions.html">COUNTCOLLISIONS</a>
+<a href="clearcollisions.html">CLEARCOLLISIONS</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load map </font></font><br>
+map=<font color="#40FFFF">LoadMap</font>("Media\testmap.til","Media\negative.bmp")<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load player </font></font><br>
+guy=<font color="#40FFFF">LoadObject</font>("Media\guy.bmp",72)<br>
+<font color="#40FFFF">PositionObject</font> guy,0, -40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load a neutral unit </font></font><br>
+fellow=<font color="#40FFFF">LoadObject</font>("Media\guy.bmp",72)<br>
+<font color="#40FFFF">PositionObject</font> fellow, -100, -40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'setup a circle-circle sliding collision to the fellow </font></font><br>
+<font color="#40FFFF">SetupCollision</font> guy,fellow,2,2,2<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'setup a collision between the player and map </font></font><br>
+<font color="#40FFFF">SetupCollision</font> guy,map,1,4,2<br>
+<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy,5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy, -5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy,3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy, -3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'camera follow</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">UpdateGame</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneCameraPosition</font> guy<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

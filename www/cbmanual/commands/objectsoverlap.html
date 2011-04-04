@@ -1,0 +1,194 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>OBJECTSOVERLAP</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Kertoo, ovatko kaksi objektia millään tavoin kosketuksissa toistensa kanssa.</p>
+
+<p><b>Laatikkokosketus</b><br>
+Objektien päällä on näkymätön laatikko, joka rajaa objektit samaan tapaan kuin niiden kuvarajat. Tämä voi olla epätarkka joidenkin objektien kohdalla <font color="#ff0000">(kts. komennon ImagesCollide esimerkki)</font>.
+</p>
+
+<p><b>Pallokosketus</b><br>
+Objektien päällä on näkymätön pallo. Kosketustapa vastaa kahden biljardipallon törmäystä. Tähän vaikuttaa objektien halkaisijat, joita voidaan vaihtaa komennolla <b>ObjectRange</b>. Tämä on suositeltava kosketustapa, ja yleensä tarkka.
+</p>
+
+<p><b>Pikselikosketus</b><br>
+Kaikkein tarkin kosketustapa. Tarkastus on pikselintarkka, ja se ottaa huomioon objektien kulmat ja jopa animaatio-framen. Tarkastus on myös kaikkein raskain.
+</p>
+
+
+<p>Palauttaa 1, jos päällekkäisyyttä esiintyy, muutoin nolla.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+OBJECTSOVERLAP (obj1, obj2, [tapa])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>obj1</b> = Ensimmäinen objekti.
+<li><b>obj2</b> = Toinen objekti.
+<li><b>tapa</b> <font color="#ff0000" size="1">(valinnainen)</font><br>
+<font size="1" color="#ff0000"><b>1</b> = Laatikkokosketus (oletus)<br>
+<b>2</b> = Pallokosketus<br>
+<b>3</b> = Pikselikosketus<br>
+</font>
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<font color="#40FFFF">ShowMouse</font> <font color="#40FFFF">OFF</font><br>
+<font color="#40FFFF">DrawToWorld</font> <font color="#40FFFF">ON</font><br>
+<br>
+soldier=<font color="#40FFFF">LoadObject</font>("Media\soldier.bmp",360)<br>
+<font color="#40FFFF">ObjectRange</font> soldier,46<br>
+<br>
+target=<font color="#40FFFF">LoadObject</font>("Media\crosshair.bmp")<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'some text </font></font><br>
+<font color="#40FFFF">Color</font> cbblack<br>
+<font color="#40FFFF">AddText</font> "1 = Box-based"<br>
+<font color="#40FFFF">AddText</font> "2 = Circle-based"<br>
+<font color="#40FFFF">AddText</font> "3 = Pixel-based"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'default </font></font><br>
+method=1<br>
+<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Change mode</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkey1) <font color="#40FFFF">Then</font> method=1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkey2) <font color="#40FFFF">Then</font> method=2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkey3) <font color="#40FFFF">Then</font> method=3<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TurnObject</font> soldier,1<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Select</font> method<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 1 <font color="#00FF00">'box</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> <font color="#40FFFF">ObjectX</font>(target) -8,<font color="#40FFFF">ObjectY</font>(target)+8,16,16,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> <font color="#40FFFF">ObjectX</font>(soldier) -23,<font color="#40FFFF">ObjectY</font>(soldier)+23,46,46,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 100,250,"Overlap (box): "+<font color="#40FFFF">ObjectsOverlap</font>(soldier,target,1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 2 <font color="#00FF00">'circle</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> <font color="#40FFFF">ObjectX</font>(target) -8,<font color="#40FFFF">ObjectY</font>(target)+8,16,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> <font color="#40FFFF">ObjectX</font>(soldier) -23,<font color="#40FFFF">ObjectY</font>(soldier)+23,46,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 100,250,"Overlap (circle): "+<font color="#40FFFF">ObjectsOverlap</font>(soldier,target,2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 3 <font color="#00FF00">'pixel</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 100,250,"Overlap (pixel): "+<font color="#40FFFF">ObjectsOverlap</font>(soldier,target,3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">End</font> <font color="#40FFFF">Select</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PositionObject</font> target,<font color="#40FFFF">MouseX</font>() -200, -<font color="#40FFFF">MouseY</font>()+150<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

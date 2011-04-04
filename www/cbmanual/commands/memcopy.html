@@ -1,0 +1,153 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Muisti</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>MEMCOPY</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Kopioi osan muistipalasta toiseen muistipalaan.</p>
+
+<p>Kopiointi on paljon nopeampi kuin sama operaatio tavu tavulta.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+MEMCOPY lähde, sijainti1, kohde, sijainti2, määrä
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>lähde</b> = Se muuttuja, mihin muistipala luotiin. Muistipalikka <b>josta</b> kopioidaan.
+<li><b>sijainti1</b> = Sijainti lähdepalassa. 0=ensimmäinen, (KOKO-1)=viimeinen. Kokonaisluku.
+<li><b>kohde</b> = Se muuttuja, mihin muistipala luotiin. Muistipalikka <b>johon</b> kopioidaan.
+<li><b>sijainti2</b> = Sijainti kohdepalassa. 0=ensimmäinen, (KOKO-1)=viimeinen. Kokonaisluku.
+<li><b>määrä</b> = Kuinka monta tavua kopioidaan. Kokonaisluku.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'create a memory block with 64K bytes </font></font><br>
+mem=<font color="#40FFFF">MakeMEMblock</font>(64000)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'fill half of the memblock with crap </font></font><br>
+<font color="#40FFFF">For</font> i=0 <font color="#40FFFF">To</font> 32000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PokeByte</font> mem,i,<font color="#40FFFF">Rand</font>(255)<br>
+<font color="#40FFFF">Next</font> i<br>
+<br>
+<font color="#40FFFF">Text</font> 0,0,"Press any key to copy..."<br>
+<font color="#40FFFF">DrawScreen</font><br>
+<font color="#40FFFF">WaitKey</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'duplicate the crap in the memblock </font></font><br>
+<font color="#40FFFF">MemCopy</font> mem,0,mem,32000,32000<br>
+<br>
+<font color="#40FFFF">Text</font> 0,0,"Copying ready."<br>
+<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">WaitKey</font><br>
+<br>
+<font color="#40FFFF">DeleteMEMblock</font> mem<br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstmem.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

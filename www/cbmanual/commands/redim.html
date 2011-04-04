@@ -1,0 +1,146 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>REDIM</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>
+Uudelleenvenyttää taulukkoa. Ulottuvuuksien määrää ei voi muuttaa, mutta joskus koon muuttaminen on esim. muistin kannalta hyödyllistä. Tai kun pitää varata taulukko uudelleen tietylle määrälle vihollisia (joiden määrä vaihtelee kentittäin).
+</p>
+
+<p>
+Venytys-operaatio tuhoaa taulukon sisällön. Tämän voi estää komentamalla <b>ClearArray OFF</b>. Tämä ei kuitenkaan toistaiseksi toimi merkkijonotaulukoille.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DIM muuttuja (ulottuvuus1_elementit [,ulottuvuus2_elementit] [,ulottuvuus3_elementit} [,ulottuvuus4_elementit] [,ulottuvuus5_elementit])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>ulottuvuus1_elementit</b> = Kokonaisluku, joka määrittää ensimmäisen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus2_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää toisen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus3_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää kolmannen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus4_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää neljännen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus5_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää viidennen ulottuvuuden solujen määrän.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="cleararray.html">CLEARARRAY</a>, 
+<a href="dim.html">DIM</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Dim</font> ARRAY(8)<br>
+<br>
+<font color="#40FFFF">Redim</font> ARRAY(12)<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

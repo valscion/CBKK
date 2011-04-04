@@ -1,0 +1,179 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Syötteet</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>MOUSEWY</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Kertoo hiiren pystysijainnin pelimaailmassa, eli tämä funktio on objektiyhteensopiva.</p>
+
+<p>Tulos on kokonaisluku.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+MOUSEWY ()
+</font>
+</td>
+</tr></table>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="mousey.html">MOUSEY</a>, 
+<a href="mousewx.html">MOUSEWX</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<font color="#40FFFF">DrawToWorld</font> <font color="#40FFFF">ON</font><br>
+<br>
+<font color="#40FFFF">ShowMouse</font> <font color="#40FFFF">LoadImage</font>("Media\cursor.bmp")<br>
+<br>
+hero= <font color="#40FFFF">LoadObject</font>("Media\guy.bmp",18)<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'move camera with arrows</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TranslateCamera</font> <font color="#40FFFF">KeyDown</font>(205) -<font color="#40FFFF">KeyDown</font>(203),<font color="#40FFFF">KeyDown</font>(208) -<font color="#40FFFF">KeyDown</font>(200)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'rotate the game character</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TurnObject</font> hero, -40<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Lue hiiri</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;mx=<font color="#40FFFF">MouseX</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;my=<font color="#40FFFF">MouseY</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbwhite<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 10,10,"RuutuX:"+ mx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 10,30,"RuutuY:"+ my<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;worldx= <font color="#40FFFF">MouseWX</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;worldy= <font color="#40FFFF">MouseWY</font>()<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cborange<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 10,50,"Mouse World X:"+ worldx<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 10,70,"Mouse World Y:"+ worldy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'check if the coordinates overlap the object</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> worldx><font color="#40FFFF">ObjectX</font>(hero) -16 <font color="#40FFFF">And</font> worldx<<font color="#40FFFF">ObjectX</font>(hero)+16<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> worldy<<font color="#40FFFF">ObjectY</font>(hero)+16 <font color="#40FFFF">And</font> worldy><font color="#40FFFF">ObjectY</font>(hero) -16<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw a box around the object</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Remember DRAWTOWORLD!</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> 0,255,0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> <font color="#40FFFF">ObjectX</font>(hero) -16,<font color="#40FFFF">ObjectY</font>(hero)+16,32,32,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstinput.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

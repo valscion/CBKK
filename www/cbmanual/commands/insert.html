@@ -1,0 +1,165 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>INSERT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Siirtää listan jäsentä toiseen paikkaan. Voit esimerkiksi siirtää kokoelman viimeisen jäsenen ensimmäiseksi tai päinvastoin.</p>
+
+<p><font color="#ff0000" size="1"><b>Komento on tarkoitettu edistyneemmille käyttäjille. Sen hyöty tavalliselle peliohjelmoijalle jäänee vähäiseksi.</b></font></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+INSERT tyyppi_muuttuja, kohde
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tyyppi_muuttuja</b> = Jo valmis tyypitetty muuttuja, joka toimii osoittimena listaan.
+<li><b>kohde</b> = Toinen tyyppimuuttuja, joka osoittaa uuden paikan.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="first.html">FIRST</a>, 
+<a href="last.html">LAST</a>, 
+<a href="before.html">BEFORE</a>, 
+<a href="after.html">AFTER</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Type</font> test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Field</font> value<br>
+<font color="#40FFFF">End</font> <font color="#40FFFF">Type</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'First create 10 elements </font></font><br>
+<font color="#40FFFF">For</font> i=1 <font color="#40FFFF">To</font> 10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t.test= <font color="#40FFFF">New</font>(test)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t\value=i<br>
+<font color="#40FFFF">Next</font> i<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'change the order a little bit </font></font><br>
+t.test= <font color="#40FFFF">Last</font>(test) <br>
+<font color="#40FFFF">Insert</font> t, <font color="#40FFFF">First</font>(test)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Print them all </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> t.test= <font color="#40FFFF">Each</font> test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 10,i,t\value<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+16<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> t<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font> <br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

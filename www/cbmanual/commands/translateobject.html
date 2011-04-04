@@ -1,0 +1,227 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>TRANSLATEOBJECT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Liikuttaa objektia vaaka- ja pystysuunnassa piittaamatta sen kulmasta. Tämä on ihanteellinen tapa liikuttaa objektia määrätyssä kulmassa silloin kun se esimerkiksi pyörii matkalla.</p>
+
+<p>Parametrit kuvaavat nopeutta vaaka- ja pystykomponenteissa, joten käännetyssä kulmassa joudut soveltamaan <b>Sin</b>- ja <b>Cos</b>-funktioita.</p>
+
+<p>Z-arvon muuttaminen on edistyneemmille käyttäjille. Sen avulla voidaan teeskennellä syvyysvaikutelmaa, mikä saa objektin piirtymään sijaintinsa puolesta perspektiivissä taustaa vasten.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+TRANSLATEOBJECT objektimuuttuja, vaaka, pysty, <font color="#ff0000">[Z]</font>
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>objektimuuttuja</b> = Se muuttuja, mihin objekti ladattiin tai luotiin.
+<li><b>vaaka</b> = Lukuarvo, vaakanopeus.
+<li><b>pysty</b> = Lukuarvo, pystynopeus.
+<li><b>Z</b> <font color="#ff0000" size="1">(valinnainen, <b>edistyneemmille</b>)</font> = Lukuarvo, paljonko objekti liikkuu syvyyssuunnassa. Oletuksena nolla.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="moveobject.html">MOVEOBJECT</a>,
+<a href="positionobject.html">POSITIONOBJECT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Const</font> gravity=0.05<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Prevent the game from running too fast </font></font><br>
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load the ammunation, but hide it </font></font><br>
+fireball=<font color="#40FFFF">LoadObject</font>("Media\fireball.bmp",18)<br>
+<font color="#40FFFF">ShowObject</font> fireball,<font color="#40FFFF">OFF</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the cannon </font></font><br>
+cannon=<font color="#40FFFF">LoadObject</font>("Media\cannon.bmp",180)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the turret </font></font><br>
+turret=<font color="#40FFFF">LoadObject</font>("Media\turret.bmp")<br>
+<br>
+<font color="#40FFFF">PositionObject</font> turret, -160, -35<br>
+<font color="#40FFFF">PositionObject</font> cannon, -160, -35<br>
+<br>
+<br>
+<font color="#40FFFF">AddText</font> "Use arrows to aim"<br>
+<font color="#40FFFF">AddText</font> "SPACE to shoot"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Make "sky" </font></font><br>
+<font color="#40FFFF">ClsColor</font> cbdarkblue<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Initialize the game engine </font></font><br>
+permission=<font color="#40FFFF">True</font><br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'update controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> angle=angle+2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> angle=angle-2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> angle<10 <font color="#40FFFF">Then</font> angle=10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> angle>170 <font color="#40FFFF">Then</font> angle=170<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'update SHOOTING</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyspace) <font color="#40FFFF">And</font> permission=<font color="#40FFFF">True</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> fireball,<font color="#40FFFF">ON</font> <font color="#00FF00">'show the fireball</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'position and tilt it according to the cannon</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneObjectPosition</font> fireball,cannon <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneObjectOrientation</font> fireball,cannon<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'move a little bit away from the center</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">MoveObject</font> fireball,16<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permission=<font color="#40FFFF">False</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Calculate the movement (speed 2)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plusx#=<font color="#40FFFF">Cos</font>(angle)*3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plusy#=<font color="#40FFFF">Sin</font>(angle)*3<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update moving fireball</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> permission=<font color="#40FFFF">False</font> <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TranslateObject</font> fireball,plusx#,plusy#<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;plusy#=plusy-gravity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'rotate the fireball to left</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TurnObject</font> fireball,20<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'if the fireball goes outside screen, remove it</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">ObjectX</font>(fireball)< -200 <font color="#40FFFF">Or</font> <font color="#40FFFF">ObjectX</font>(fireball)>200 <font color="#40FFFF">Or</font> <font color="#40FFFF">ObjectY</font>(fireball)>150 <font color="#40FFFF">Or</font> <font color="#40FFFF">ObjectY</font>(fireball)< -50 <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> fireball,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permission=<font color="#40FFFF">True</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Turn the cannon</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">RotateObject</font> cannon,angle <br>
+<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw ground</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbgreen<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> 0,200,400,100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbwhite<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Line</font> 0,200,400,200<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

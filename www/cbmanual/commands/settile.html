@@ -1,0 +1,190 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Kartat</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>SETTILE</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Käytä tätä komentoa kartan rakentamisessa. Tämä komento animoi tilesetin, eli sen kuvan, jota käytetään tilekartan piirtämiseen. Jokaisella tilellä on oma järjestysnumeronsa, jotka alkavat kuvan vasemmasta ylälaidasta ja juoksevat lukusuuntaan - riviltä riville. Esimerkiksi:</p>
+
+<p>
+<table border=1 bgcolor="#ffffff"><tr>
+<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr>
+<td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr>
+<td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr><tr>
+<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr><tr>
+<td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr><tr>
+<td>31</td><td>32</td><td>33</td><td>34</td><td>35</td><td>36
+</td></tr></table>
+</p>
+
+<p>Voit animoida jokaisen tilen erikseen. Se tapahtuu antamalla tilen jälkeen animaatioon osallistuvien tilejen määrän. Esim. arvo 1 animoi tilen ja yhden sen jälkeen. Sekvenssin pituus on siis kaksi. Aseta tilen animointi pois numerolla 0 (tai OFF). Viimeistä tilesetin tileä ei voi animoida; sekvenssi ei kierrä tilesetin alkuun.</p>
+
+<p>Voit vaihtoehtoisesti asettaa sekvenssin hitauskertoimen, eli sen kuinka monta kertaa normaalia hitaammin animaatio kiertää. Numero 1 on normaali, ja 2 kaksinkertainen hitaus jne. Tämä mahdollistaa vaihtelevannopeuksiset sekvenssit. Oletuksena on 1 (normaali).</p>
+
+<p><font color="#ff0000" size="1"><b>Komento on tarkoitettu edistyneemmille käyttäjille.</b></font></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+SETTILE tile, pituus, hitaus
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tile</b> = Kokonaisluku. Tilen järjestysnumero (1, 2, 3, ...).
+<li><b>pituus</b> = Kokonaisluku. Montako tileä animoidun tilen jälkeen osallistuu sekvenssiin (0=ei animaatiota).
+<li><b>hitaus</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku. Hitauskerroin. Oletuksena 1.
+</p>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="makemap.html">MAKEMAP</a>, 
+<a href="editmap.html">EDITMAP</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'Create a tilemap </font></font><br>
+map=<font color="#40FFFF">MakeMap</font>(9,9,32,32)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'fill it randomly </font></font><br>
+<font color="#40FFFF">For</font> y=1 <font color="#40FFFF">To</font> 9<br>
+<font color="#40FFFF">For</font> x=1 <font color="#40FFFF">To</font> 9<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c=<font color="#40FFFF">Rand</font>(1,3)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> c=1 <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EditMap</font> map,0,x,y,2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ElseIf</font> c=2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EditMap</font> map,0,x,y,4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Else</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EditMap</font> map,0,x,y,6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<font color="#40FFFF">Next</font> x<br>
+<font color="#40FFFF">Next</font> y<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load a tileset and apply it to the map </font></font><br>
+tileset=<font color="#40FFFF">LoadImage</font>("Media\tileset.bmp")<br>
+<font color="#40FFFF">PaintObject</font> map,tileset<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Set some animation sequences </font></font><br>
+<font color="#40FFFF">SetTile</font> 2,1<br>
+<font color="#40FFFF">SetTile</font> 4,1,3 <font color="#00FF00">'slowness factor 3</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'-----------------</font></font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'animate map </font></font><br>
+<font color="#40FFFF">PlayObject</font> map,0,0,0.5<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstmap.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

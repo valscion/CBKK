@@ -1,0 +1,168 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Muisti</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>MAKEMEMBLOCK</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Varaa muistia ja luo siitä muistipalan, johon käyttäjä voi kirjoittaa ja lukea tietoa.</p>
+
+<p>Muistipaloja käytetään nopeisiin operaatioihin (esim. tiedontiivistys) ja parametrien välittämiseen DLL-tiedostoille.</p>
+
+<font size="1">
+<p>
+<li>Tietokoneen muisti on pitkä pötkö bittejä. Ne ovat muistin perusyksiköitä ja pienimpiä mahdollisia tietolokeroita.
+<li>Bitti voi olla joko nolla tai yksi.
+<li>Yksi tavu koostuu kahdeksasta bitistä. Kahdeksan bitin jonosta voidaan muodostaa 256 erilaista yhdistelmää, joten erilaisia tavuja on olemassa 256 kappaletta. Niiden numerointi menee 0-255.
+<li>Yksi merkki on yksi tavu. Siten esim. ASCII-merkistössä on 255 erilaista merkkiä/kirjainta + ns. nollamerkki.
+<li>Jokaisella tavulla on ns. muistiosoite. Niiden avulla muuttujien arvoja tallennetaan ja luetaan muistista. Muuttuja on siis ikään kuin muistilappu, joka sisältää muuttujalle varatun muistipaikan.
+</p>
+</font>
+
+<p>CoolBasicin avulla varattuun muistiin voidaan kirjoittaa tavuja, kahdenlaisia kokonaislukuja sekä desimaalilukuja. Huomaa, että kun kirjoitat/luet tietoa, ensimmäinen paikka on nolla ja viimeinen KOKO-1.</p>
+
+<p>On myös tärkeää pitää huoli siitä, että et kirjoita varatun muistialueen ulkopuolelle. Se saattaa kaataa ohjelman tai jopa koko järjestelmän.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+MAKEMEMBLOCK (koko)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>koko</b> = Muistipalan koko tavuina. Positiivinen kokonaisluku.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="pokebyte.html">POKEBYTE</a>,
+<a href="pokeint.html">POKEINT</a>,
+<a href="pokefloat.html">POKEFLOAT</a>,
+<a href="peekbyte.html">PEEKBYTE</a>,
+<a href="peekint.html">PEEKINT</a>,
+<a href="peekfloat.html">PEEKFLOAT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'Reserve memory for 8 bytes. </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'It's big enough to store two integer numbers. </font></font><br>
+mem=<font color="#40FFFF">MakeMEMblock</font>(8)<br>
+<br>
+<font color="#40FFFF">PokeInt</font> mem,0,8 <font color="#00FF00">'write number 8 at the beginning</font><br>
+<font color="#40FFFF">PokeInt</font> mem,4, -67 <font color="#00FF00">'write another number after the first one</font><br>
+<br>
+<font color="#40FFFF">Text</font> 10,10,<font color="#40FFFF">PeekInt</font>(mem,0) <font color="#00FF00">'read the first integer and print it</font><br>
+<font color="#40FFFF">Text</font> 10,30,<font color="#40FFFF">PeekInt</font>(mem,4) <font color="#00FF00">'read the second integer and print it</font><br>
+<br>
+<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">WaitKey</font><br>
+<br>
+<font color="#40FFFF">DeleteMEMblock</font> mem <font color="#00FF00">'free the memory we used</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstmem.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

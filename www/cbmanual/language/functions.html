@@ -1,0 +1,165 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Funktiot</h2>
+
+<font color="#ff0000"><H4>CoolBasicin omat funktiot</H4></font>
+
+<p>
+Jos et ole viel‰ lukenut kohtaa "Komennot", tee se nyt.
+</p>
+
+<p>
+CoolBasic v‰rj‰‰ komennot <b>ja funktiot</b> eriv‰risiksi kuin muu teksti. Tied‰t jo mik‰ on komento, mutta mit‰ eroa on funktiolla ja komennolla? Funktioillekin voidaan v‰litt‰‰ parametreja. <b>Funktiot palauttavat arvon</b>. T‰m‰ tarkoittaa sit‰, ett‰ funktion nimen tilalle ilmestyy ajon aikana sen palauttama arvo. Otetaan esimerkki:
+</p>
+
+<p>
+<font color="#0000FF">Funktio <b>Abs()</b> vaatii yhden parametrin, luvun. Se palauttaa t‰m‰n luvun positiivisena. Siten <b>Abs(-5)</b> tuleekin <b>5</b>. Joten <b>Print Abs(-5)</b> tulostaakin itse asiassa luvun <b>5</b>.</font>
+</p>
+
+<p>
+<b>Funktion nimen per‰‰n kirjoitetaan aina sulkeet</b>. Sulkeiden sis‰‰n kirjoitetaan parametriluettelo (aivan kuten komennoissa). Jos funktio ei vaadi yht‰‰n parametria, kirjoitetaan tyhj‰t sulkeet, esim. <b>TIMER()</b>.
+</p>
+
+<p>
+Manuaalissa komennot ja funktiot on eroteltu toisistaan.
+</p>
+
+
+<font color="#ff0000"><H4>Ohjelmoijan kirjoittamat funktiot</H4></font>
+
+<p>
+Ohjelmoija voi kirjoittaa omia funktioitaan, jos CoolBasicin valmiista valikoimista ei lˆydy sopivaa. T‰m‰ tapahtuu avainsanalla <b>Function</b>:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;luku = 5<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;Text 0, 0, <b><font color="#0000ff">KerroKahdella(luku)</font></b><br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;DrawScreen<br>
+<b>6</b> <br>
+<b>7</b>&nbsp;&nbsp;&nbsp;&nbsp;WaitKey<br>
+<b>8</b> <br>
+<b>9</b>&nbsp;&nbsp;&nbsp;&nbsp;End<br>
+<b>10</b> <br>
+<b>11</b>&nbsp;&nbsp;&nbsp;<font color="#008000">'----------- Funktiot -----------</font><br>
+<b>12</b> <br>
+<b>13</b>&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">Function KerroKahdella(jokin_luku)</font></b><br>
+<b>14</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jokin_luku = jokin_luku * 2<br>
+<b>15</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Return</b> jokin_luku<br>
+<b>16</b>&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">End Function</font></b>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Huomaa <b>Return</b>-k‰sky. Sen avulla arvo palautetaan. Jos t‰m‰ j‰tet‰‰n pois, funktio palauttaa oletusarvonsa, eli nollan (tai tyhj‰n merkkijonon, jos funktio on tyypilt‰‰n merkkijonofunktio).
+</p>
+
+<p>
+Yleens‰ kaikki funktiot kirjoitetaan ohjelman loppuun.
+</p>
+
+<p>
+<i>Ohjelmoijan kirjoittamien</i> funktioiden ei kuitenkaan ole pakko palauttaa arvoa. Niit‰ voidaan kutsua sellaisenaan, samalla tapaa kuin komentoa. Silloin on kuitenkin myˆs kirjoitettava sulkeet.
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">Tulosta_teksti‰ ()</font></b><br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;DrawScreen<br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;WaitKey<br>
+<b>6</b> <br>
+<b>7</b>&nbsp;&nbsp;&nbsp;&nbsp;End<br>
+<b>8</b> <br>
+<b>9</b>&nbsp;&nbsp;&nbsp;&nbsp;<font color="#008000">'----------- Funktiot -----------</font><br>
+<b>10</b> <br>
+<b>11</b>&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">Function Tulosta_teksti‰ ()</font></b><br>
+<b>12</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text 0, 0, "MOI!"<br>
+<b>13</b>&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">End Function</font></b>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Ohjelmoijan funktioille voidaan m‰‰ritell‰ rajaton m‰‰r‰ parametreja ja osa niist‰ voidaan esitt‰‰ valinnaisiksi. <b>Jos haluat funktion palauttavan esim. desimaaliluvun tai merkkijonon, kirjoitat tyyppitunnisteen funktion nimen loppuun</b>: <br> <font color="#0000ff" face="Courier">Function Yhdist‰_teksti$ (t1$, t2$)</font><br>
+</p>
+
+<p>
+<b>Lis‰tietoa <a href="../commands/function.html">Function-avainsanan oppaasta</a></b>.
+</p>
+
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

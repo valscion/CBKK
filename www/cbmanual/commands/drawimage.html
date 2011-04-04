@@ -1,0 +1,189 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Kuvat</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>DRAWIMAGE</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Piirtää <b>ennalta ladatun</b> kuvan ruudulle annettuihin koordinaatteihin. Tämä komento piirtää myös animoituja kuvia (sprite-sarjoja), jotka on ladattu käyttäen <b>LoadAnimImage</b>-funktiota. Tällöin koordinaattien perään kirjoitetaan vielä animaatio-framen numero (alkaen nollasta).</p>
+
+<p>Voit piirtää kuvia myös ruudun ulkopuolelle, koska komento osaa itse rajata piirrettävän alueen. Koordinaateiksi kelpaavat siten myös negatiiviset luvut.</p>
+
+<p>Kuva piirretään niin, että sen vasen yläkulma on annetuissa koordinaateissa. Siten (0,0) piirtää kuvan ruudun vasempaan yläreunaan.</p>
+
+<p>Kun kuva piirretään, sen läpinäkyvänä värinä toimii musta (arvoltaan 0,0,0). Tätä sanotaan maskiväriksi. Jos haluat läpinäkyvyyden eri värille, käytä <b>MaskImage</b>-komentoa. Voit myös täydellisesti kieltää läpinäkyvyyden millekään värille kirjoittamalla valinnaisen parametrin loppuun.</p>
+
+<p>Huomaa, että kuva on piirrettävä ruudulle joka kerta ennen DrawScreeniä. Yksi kerta ei riitä, tai kuva häviää.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DRAWIMAGE kuvamuuttuja, x, y, [frame], [läpinäkyvyys]
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>kuvamuuttuja</b> = Se muuttuja, joka sisältää kuvan.
+<li><b>x</b> = Kokonaisluku tai desimaaliluku. Kuvan sijainti leveyssuunnassa.
+<li><b>y</b> = Kokonaisluku tai desimaaliluku. Kuvan sijainti pystysuunnassa.
+<li><b>frame</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku. Kuvan animaatio-frame. Oletuksena nolla.
+<li><b>läpinäkyvyys</b> <font color="#ff0000" size="1">(valinnainen)</font><br>
+<font size="1" color="#ff0000">
+<b>0</b> = ei läpinäkyvyyttä<br>
+<b>1</b> = normaali läpinäkyvyys (oletus)<br>
+</p>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadimage.html">LOADIMAGE</a>,
+<a href="loadanimimage.html">LOADANIMIMAGE</a>,
+<a href="maskimage.html">MASKIMAGE</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load the map </font></font><br>
+themap=<font color="#40FFFF">LoadImage</font>("Media/map.bmp")<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load an animated image </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'Frame size is 30,25 \ start at the first \ 2 frames total </font></font><br>
+cow=<font color="#40FFFF">LoadAnimImage</font>("Media/animCow.bmp", 30, 25, 0, 2) <br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Default Position </font></font><br>
+x=200:y=150<br>
+<br>
+<font color="#40FFFF">While</font> <font color="#40FFFF">Not</font> <font color="#40FFFF">EscapeKey</font>()<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Upadte controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> x=x-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> x=x+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> y=y-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> y=y+1<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Fraw the map</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> themap,0,0<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Draw the cow</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> cow,x,y,cowframe<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Animate through frames 0 and 1</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">TIMER</font>()>cowtimer+100 <font color="#40FFFF">Then</font> <font color="#00FF00">'animate every 100 millisecs</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cowframe=cowframe+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> cowframe>1 <font color="#40FFFF">Then</font> cowframe=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cowtimer=<font color="#40FFFF">TIMER</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Wend</font><br>
+<br>
+<font color="#40FFFF">End</font><br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstimage.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

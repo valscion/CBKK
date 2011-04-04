@@ -1,0 +1,207 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>CLONEOBJECT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Kloonaa jo olemassa olevan objektin, ja sijoittaa sen pelimaailman keskelle. Vaikka kopioitava objekti olisi piilotettu, klooni ilmestyy näkyviin. Kulma ja sijainti nollataan. Kloonit perivät kaikki muut ominaisuudet isännältään.</p>
+
+<p>Kloonaaminen on erittäin nopeaa. Siksi usein tarvitut objektit kannattaa ennemmin kloonata kuin ladata uudestaan levyltä. Kloonatut objektit eivät myöskään kuluta tietokoneen muistia. Kloonaaminen on hyödyllistä esimerkiksi suurien vihollismäärien tai ammuksien hallintaan.</p>
+
+<p>Kloonatut objektit ovat riippuvaisia isännästään. Jos isäntä poistetaan, kloonit muuttuvat epäkelvollisiksi, ja kaatavat ohjelman. Siksi alkuperäinen objekti kannattaa ennemminkin piilottaa, eikä siihen kosketa sen jälkeen. Kaikki muut ovat klooneja. Tämä ns. <b>Master-objektin</b> olemus koskee kaikkia siitä tehtyjä klooneja. Muuttamalla master-objektin ulkonäköä myös kaikki kloonit muuttuvat. Oheinen esimerkki voi olla pitkä, mutta se näyttää mihin CloneObject soveltuu parhaiten.</p>
+
+<p><font color="blue"><i>One object to rule them all</i></font></p>
+
+<p><font color="blue"><i>Just don't kill the Master</i></font></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+CLONEOBJECT (objektimuuttuja)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>objektimuuttuja</b> = Se muuttuja, joka sisältää kloonattavan objektin.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadobject.html">LOADOBJECT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Type</font> BULLETS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Field</font> obj<br>
+<font color="#40FFFF">End</font> <font color="#40FFFF">Type</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'MAIN PROGRAM </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- </font></font><br>
+<br>
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the soldier, turning detail 72 </font></font><br>
+guy=<font color="#40FFFF">LoadObject</font>("Media\soldier.bmp",72)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the bullet (master-object) and hide it </font></font><br>
+bullet=<font color="#40FFFF">LoadObject</font>("Media\bullet.bmp")<br>
+<font color="#40FFFF">ShowObject</font> bullet,<font color="#40FFFF">OFF</font><br>
+<br>
+<font color="#40FFFF">ClsColor</font> cbdark<br>
+<br>
+<font color="#40FFFF">AddText</font> "Arrows to turn, SPACE to shoot"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'MAIN LOOP </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update turning</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy,5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy, -5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Shoot?</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyDown</font>(cbkeyspace) <font color="#40FFFF">And</font> reload=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newBullet.BULLETS= <font color="#40FFFF">New</font>(BULLETS)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newBullet\obj=<font color="#40FFFF">CloneObject</font>(bullet)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneObjectPosition</font> newBullet\obj,guy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneObjectOrientation</font> newBullet\obj,guy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'put the bullet at the end of the barrel</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">MoveObject</font> newBullet\obj,24 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reload=4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update all BULLETS (move them forward)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;i=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> iBullet.BULLETS= <font color="#40FFFF">Each</font> BULLETS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">MoveObject</font> iBullet\obj,6 <font color="#00FF00">'speed=6</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'delete bullet from collection if it</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'gets too far away</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">Distance2</font>(iBullet\obj,guy)>200 <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DeleteObject</font> iBullet\obj<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Delete</font> iBullet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i=i+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> iBullet<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update reloading</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> reload>0 <font color="#40FFFF">Then</font> reload=reload-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 30,30,"Bulets to update: "+i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Don't forget this :)</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

@@ -1,0 +1,268 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Komennot eli käskyt</h2>
+
+<font color="#ff0000"><H4>Kaiken avain</H4></font>
+
+<p>
+Ohjelmointikieli on sitä varten, että tietokonetta voidaan käskeä tekemään erilaisia tehtäviä. CoolBasic tarjoaa yli 300 komentoa ja funktiota tähän tarkoitukseen. Tässä joitakin komentoja:
+</p>
+
+<table border=1 bgcolor="#ffffff" width="380">
+<tr>
+<td>
+<font face="verdana,arial" size=2>
+<b>Komento</b>
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=2>
+<b>Käyttötarkoitus</b>
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+LoadImage
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Lataa kuvan muistiin.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+DrawImage
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Piirtää kuvan ruudulle.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+DrawScreen
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Päivittää näytön.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+PlaySound
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Soittaa musiikkia.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+WaitKey
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Odottaa, että jotain näppäintä painetaan.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+DeleteFile
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Poistaa tiedoston tai kansion.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+SetWindow
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Asettaa ikkunan otsikon.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+SCREEN
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Muuttaa näyttötilaa tai ikkunan kokoa.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+ShowMouse
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Asettaa hiirikursorin.
+</font>
+</td>
+
+</tr>
+</table>
+
+<p>
+Komennot ovat siis ikään kuin "rakennuspalikoita", joiden avulla rakennat pelisi.
+</p>
+
+<font color="#ff0000"><H4>Parametrit</H4></font>
+
+<p>
+Jotkin komennot vaativat parametreja, eli lukuja ja merkkijonoja. <b>Ne kirjoitetaan komennon perään ja erotellaan pilkulla</b>. Hyvä esimerkki on <i>PlaySound</i>. Voit komentaa "SoitaÄäni", mutta tässä vaiheessa pitää tarkentaa <i>mikä ääni soitetaan</i>. Parametrit ovat siis komennon tarvitsemaa lisätietoa. Jokaisen komennon tarvitsemat parametrit voi tarkistaa kyseisen komennon oppaasta, jolloin opit käskyjen oikean käyttötarkoituksen. CoolBasic ilmoittaa käännöksen aikana virheen, jos komennolle ei ole annettu sen tarvitsemia parametreja.
+</p>
+
+<p><font size=1>
+<li><font color="#ff0000">VÄÄRIN: </font>PlaySound
+<li><font color="#0000ff">OIKEIN: </font>PlaySound "ammus.wav"
+</font></p>
+
+<font color="#ff0000"><H4>Esitys</H4></font>
+
+<p>
+Lähtökohtana on se, että kirjoitat <b>yhden komennon</b> (parametreineen jos tarvis) <b>per rivi</b>. Näin koodi pysyy selkeänä. CoolBasic antaa sinun kuitenkin kirjoittaa useamman komennon yhdelle riville, mutta silloin ne on erotettava kaksoispisteellä:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;k = LoadImage ("Media\guy.bmp") <b><font color="#ff0000">:</font></b> MaskImage k, 255, 0, 255<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;Repeat<br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawImage k, 20, 20<br>
+<b>6</b> <br>
+<b>7</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawScreen<br>
+<b>8</b> <br>
+<b>9</b>&nbsp;&nbsp;&nbsp;&nbsp;Until EscapeKey()
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Yleensä tällaista esitystapaa käytetään vain If-lauseissa:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<b>If</b> A = B <b>Then</b> komento1 <b><font color="#ff0000">:</font></b> komento2 <b><font color="#ff0000">:</font></b> komento3 <b>Else</b> komento4 <b><font color="#ff0000">:</font></b> komento5<br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

@@ -1,0 +1,1187 @@
+﻿<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - glossary</TITLE>
+
+<STYLE type=text/css>
+   BODY {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   TABLE {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   A:link {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:visited {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:hover {COLOR: #6380FD; TEXT-DECORATION: underline}
+</STYLE>
+
+</HEAD>
+
+<style type="text/css">
+body {
+SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+SCROLLBAR-SHADOW-COLOR:#ffffff;
+SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+SCROLLBAR-ARROW-COLOR:#000000;
+SCROLLBAR-TRACK-COLOR:#dddddd;
+SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+</style>
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+
+<!{START} -->
+
+
+<h2>Käsitehakemisto</h2>
+
+
+
+<p>
+<b>2D aluekoordinaatit</b>		<br>
+   <font color=blue>
+   <i>2D Area Coordinates</i>
+   </font>
+
+	<br>
+   Aluekoordinaateissa sinun täytyy esittää neljä koordinaattia (<font color=#FF00FF face="courier">x1,y1,x2,y2</font>). Ensimmäiset kaksi ilmoittavat alueen vasemman yläkulman ja viimeiset kaksi oikean alakulman. Alueen <i>10,2,45,67</i>  korkeus on 65 ja leveys 35.
+
+</p>
+
+<p>
+<b>2D koordinaatit</b>		<br>
+   <font color=blue>
+   <i>2D Coordinates</i>
+   </font>
+
+	<br>
+   Koordinaatit kaksiulotteisessa koordinaatistossa ilmoitetaan kahdella akselilla: <font color=#FF00FF face="courier">X</font> vaakaan ja <font color=#FF00FF face="courier">Y</font> pystyyn. Koordinaatit (<font color=#FF00FF face="courier">0,0</font>) sijaitsevat näytön vasemmassa yläkulmassa. Oletusresoluutio on 400*300, jolloin ruudun oikean alareunan koordinaatit ovat (<font color=#FF00FF face="courier">400,300</font>). X ilmoitetaan aina ensin, ja se ilmaisee kuinka kaukana piste on näytön vasemmasta reunasta pikseleinä. Esimerkiksi 200 on näytön ikkunan puolessa välissä. Y vastaavasti ilmaisee kuinka kaukana piste on ruudun ylälaidasta, näin 150 ollen puolivälissä. </p>
+   <p>
+   Koordinaatit voivat olla myös maailman sisäisiä, jolloin ne eivät täysin vastaa ruudulla olevaa sijaintia. Saadaksesi lisätietoa, lue <font color=#FF00FF face="courier">Tilekartat</font>.
+
+</p>
+
+<p>
+<b>2D törmäys</b>		<br>
+   <font color=blue>
+   <i>2D Collision</i>
+   </font>
+
+	<br>
+   Kun kaksi suorakulmaisen muotoista aluetta menevät päällekkäin, tapahtuu törmäys. CoolBasic hoitaa tarvittaessa liukuvan  törmäyksentunnistuksen automaattisesti.
+
+</p>
+
+<p>
+<b>Aikaformaatti</b>		<br>
+   <font color=blue>
+   <i>Time Format</i>
+   </font>
+
+	<br>
+   Kun CoolBasicin komennot vaativat viiveen tai ajan esittämistä, se määritetään millisekunteina, joita on sekunnissa <font color=#FF00FF face="courier">1000</font> kappaletta.
+
+</p>
+
+<p>
+<b>Algoritmi</b>		<br>
+   <font color=blue>
+   <i>Algorithm</i>
+   </font>
+
+	<br>
+   On toimintaohje, sarja käskyjä, joiden avulla päästään tiettyyn tavoitteeseen. Esimerkiksi lukujen pistämiseen suuruusjärjestykseen on olemassa useita eri algoritmeja, osa tehokkaampia, osa yksinkertaisia, mutta hitaita. Algoritmin voi sijoittaa esimerkiksi funktioon.
+
+</p>
+
+<p>
+<b>Aliohjelma / Proseduuri</b>		<br>
+   <font color=blue>
+   <i>Procedure</i>
+   </font>
+
+	<br>
+   On joko funktio, joka ei palauta arvoa tai "hyppylohko", jonne hypätään GOSUB:in avulla. Erillinen osa ohjelmassasi, joka on erikoistunut tekemään itsenäisen asian.
+
+</p>
+
+<p>
+<b>Analoginen Joystick</b>		<br>
+   <font color=blue>
+   <i>Analogue Joystick</i>
+   </font>
+
+	<br>
+   Analoginen joystick on laite, joka antaa sinun lukea analogista dataa peliohjaimelta. Analogiset peliohjaimet ovat parempia kuin digitaaliset, koska ne palauttavat tarkan arvon siitä kuinka paljon laitteen ohjaimet poikkeavat 0-asennosta, kun taas digitaaliset palauttavat vain totuusarvon <font color=#FF00FF face="courier">Tosi/Epätosi</font> tietylle suunnalle.
+
+</p>
+
+<p>
+<b>Animoida</b>		<br>
+   <font color=blue>
+   <i>Animate</i>
+   </font>
+
+	<br>
+   Ohjelmoinnissa: Soittaa kuvasarjaa yksi kerrallaan siten, että syntyy liikettä.
+
+</p>
+
+<p>
+<b>ASCII-koodit</b>		<br>
+   <font color=blue>
+   <i>ASCII Codes</i>
+   </font>
+
+	<br>
+   Jokaisella merkillä tietokoneen merkistössä on myös numeerinen koodi välillä 0-255, joten merkistössä on tilaa 256 eri merkille. Numeerinen ASCII-koodi voidaan muuttaa kirjaimeksi ja päinvastoin. Valtaosaa merkeistä ei silti normaalikäytössä käyttäjälle näy, vaan merkistö sisältää myös erikoismerkkejä, joilla paikataan mm. eri maiden käyttämiä aakkosia. Merkkien <font color=#FF00FF face="courier">A-Z</font> ASCII-koodit sijoittuvat luvuille 65-89 ja vastaavasti 48-58 merkeille 0-9.
+   </p>
+   <p>
+   ASCII-koodeja voidaan soveltaa esimerkiksi tarkasteltaessa onko jokin merkki iso aakkonen. Sen sijaan, että kirjoittaisit sarjan <i>if-lausekkeita</i>, voit kirjoittaa ehtoon: <font color=#FF00FF face="courier">Asc(merkki$) >= 65 And Asc(merkki$) <= 89</font>.
+
+</p>
+
+<p>
+<b>Binäärijärjestelmä</b>		<br>
+   <font color=blue>
+   <i>Binary Base</i>
+   </font>
+
+	<br>
+   Binäärijärjestelmä poikkeaa meille tutusta kymmenjärjestelmästä siten, että sen kantalukuna on kaksi. Siksi tarvitaan esim. 8 bittiä, joilla voidaan koodata 256 erilaista lukua. Luvut muodostetaan niin, että jokainen bitti vastaa nousevaa lukua kahden potenssissa.
+
+<table border=1 bgcolor="white"><tr>
+<td>Vastaavat luvut</td><td>8</td><td>4</td><td>2</td><td>1</td>
+</tr><tr>
+<td>Binääri-esitys</td><td>0</td><td>1</td><td>1</td><td>0</td>
+</tr></table>
+<br>
+
+Näin lasketaan: summaan lisätään ylemmän rivin luku aina kun alemmalla rivillä on 1. Siten 0*8 + 1*4 + 1*2 + 0*1 on 6. 4 bitillä voidaan esittää maksimissaan 8+4+2+1= <b>16</b> (nolla mukana) erilaista lukuarvoa.
+
+</p>
+
+<p>
+<b>Bitti</b>		<br>
+   <font color=blue>
+   <i>Bit</i>
+   </font>
+
+	<br>
+   Pienin määrä tietoa, joka tietokoneen muistiin voidaan tallentaa. Bitti voi olla arvoltaan joko <font color=#FF00FF face="courier">nolla</font>  tai <font color=#FF00FF face="courier">yksi</font>. Sarja bittejä muodostaa binäärijärjestelmän, jonka avulla lukuja voidaan koodata  eri määrällä bittejä. Esimerkiksi 1 tavu (<font color=#FF00FF face="courier">256 erilaista</font>) voidaan koodata 8 bitillä. Saadaksesi lisätietoa, katso "<font color=#FF00FF face="courier">binäärijärjestelmä</font>".
+
+</p>
+
+<p>
+<b>Bittikartat</b>		<br>
+   <font color=blue>
+   <i>Bitmaps</i>
+   </font>
+
+	<br>
+   Bittikartta on muistista varattu tila, mihin tieto jokaisesta kuvan sisältämästä pikselistä on tallennettu. Tämä data muodostaa siis kuvan, joka voidaan näyttää ruudulla. Pikselin värisyvyydestä riippuen se koodataan muistiin 8-32 bitillä. CoolBasic tukee 256-värisiä bittikarttoja (8 bittiä) sekä <font color=#FF00FF face="courier">TrueColor</font>-bittikarttoja (16, 24 tai 32 bittiä).
+
+</p>
+
+<p>
+<b>BMP-formaatti</b>		<br>
+   <font color=blue>
+   <i>BMP File Format</i>
+   </font>
+
+	<br>
+   Bittikartta-tiedostot säilövät tietyn levyisen ja tietyn korkuisen kuvan, sekä sen värisyvyyden. Bittikartat voidaan tallentaa pakkaamattomana tai RLE (Run Length Encoding)-formaatissa. RLE-bittikartat voivat sisältää vain 256 väriä, mutta mitä enemmän kuvassa on yhtenäisiä värialueita, sitä pienempi tiedoston koosta tulee.
+
+</p>
+
+<p>
+<b>Datakerros</b>			<br>
+   <font color=blue>
+   <i>DATA Layer</i>
+   </font>
+
+	<br>
+   Tilekartan piirtämätön kerros, johon ohjelmoija tai kartan tekijä voi tallentaa tietoa kartasta. Tieto tallennetaan 32-bittisillä kokonaisluvuilla. Sovellusmahdollisuuksia on lukematon määrä. Edistyneille käyttäjille.
+</p>
+
+<p>
+<b>Datalista</b>			<br>
+   <font color=blue>
+   <i>DATA statements / Data List</i>
+   </font>
+
+	<br>
+   Ohjelmaan upotettua tietoa. Lisätietoa komento-oppaasta DATA.
+</p>
+
+<p>
+<b>Digitaalinen Joystick</b>		<br>
+   <font color=blue>
+   <i>Digital Joystick</i>
+   </font>
+
+	<br>
+   Digitaalinen Joystick on ohjauslaite, jolta saatavasta datasta voidaan päätellä mihin suuntaan ohjainta on liikutettu. Toisin kuin analoginen, digitaalinen joystick ei ilmaise, kuinka kauas 0-asennosta ohjain on liikutettu.
+
+</p>
+
+<p>
+<b>Dynaaminen</b>		<br>
+   <font color=blue>
+   <i>Dynamic</i>
+   </font>
+
+	<br>
+   Ohjelmoinnissa: Laajennettava, ei vakio-kokoinen. Uudelleenvenytettävä. Sen varaamaa muistia voidaan kasvattaa tai supistaa. Dynaamiset taulukot kasvavat tarpeen mukaan itsestään tai ne voidaan varata uudelleen tai jopa vapauttaa. Linkitetyt listat ovat dynaamisia; vaihtelevan kokoisia, venytettäviä.
+
+</p>
+
+<p>
+<b>Ehtolausekkeet</b>		<br>
+   <font color=blue>
+   <i>Conditions</i>
+   </font>
+
+	<br>
+   Ehtolauseke syntyy, kun verrataan kahta arvoa käyttäen vertailuoperaattoria (<font color=#FF00FF face="courier">=,<>,<,>,<=,>=</font>) tai loogista (<font color=#FF00FF face="courier">And,Or,Xor,Not</font>) operaattoria. Ehto evaluoituu aina Todeksi tai Epätodeksi (1/0).
+   <br><font color=#FF00FF face="courier">Esimerkkejä:</font><br>
+   <i>If A=10 Then Print "Variable 'A' is equal to TEN"</i><br>
+   <i>If A>10 Then Print "Variable 'A' is greater than TEN"</i><br>
+   <i>If A>=10 And B<20 Then Print "Variable 'A' is greater or equal to TEN and variable 'B' is less than 20"</i><br>
+
+</p>
+
+<p>
+<b>EXE</b>		<br>
+   <font color=blue>
+   <i>Executable</i>
+   </font>
+
+	<br>
+   Suoritettava ohjelma, joka voidaan ajaa itsenäisesti editorin ulkopuolella. Suoritettavilla ohjelmilla on yleensä tiedostopääte  <font color=#FF00FF face="courier">.EXE</font>. EXE-tiedostoja luodaan editorilla joko painamalla <font color=#FF00FF face="courier">F6</font>, valitsemalla Project-valikosta <font color=#FF00FF face="courier">Build .EXE</font> tai klikkaamalla pikakuvaketta työkalurivillä.
+
+</p>
+
+<p>
+<b>Fontit</b>		<br>
+   <font color=blue>
+   <i>Fonts</i>
+   </font>
+
+	<br>
+   Kokoelma kirjaimia, joilla voidaan kirjoittaa tekstejä erityyppisillä kirjaimilla. Fontti määrää miltä teksti näyttää.
+
+</p>
+
+<p>
+<b>Frame</b>		<br>
+   <font color=blue>
+   <i>Frame</i>
+   </font>
+
+	<br>
+   Animaation muodostavan kuvasarjan yksi osakuva.
+
+</p>
+
+<p>
+
+<p>
+<b>FTP</b>		<br>
+   <font color=blue>
+   <i>FTP</i>
+   </font>
+
+	<br>
+   Tiedostonsiirto-protokolla. FTP-komentoja käytetään lukemaan ja kirjoittamaan tietoa FTP-palvelimelle. FTP-komentoja voidaan siis käyttää moneen  tarkoitukseen: esimerkiksi päivitysten tarkastamiseen. FTP-palvelin vaatii käyttäjänimen ja salasanan, jotka tulee välittää palvelimelle ennen yhteyden muodostamista.
+
+</p>
+
+<b>Funktiot</b>		<br>
+   <font color=blue>
+   <i>User Defined Functions</i>
+   </font>
+
+	<br>
+   Sen lisäksi, että käyttäisit CoolBasicin omia funktioita, voit tehdä niitä myös itse. Funktiot upotetaan jonnekin kohtaa lähdekoodia, yleensä joko alkuun tai loppuun. Voit jopa rakentaa omia "komentoja" nopeuttamaan kehitystyötä. Funktiot voidaan nähdä pieninä ohjelmina ohjelmasi sisässä. Saadaksesi lisätietoja, katso <font color=#FF00FF face="courier">Function-komennon</font> komentokohtainen ohje.
+
+</p>
+
+<b>Globaali</b>		<br>
+   <font color=blue>
+   <i>Global</i>
+   </font>
+
+	<br>
+   Muuttuja, joka näkyy kaikkialla, myös funktioissa. Sitä voidaan myös muuttaa kaikkialla. Koko ohjelman yhteinen muuttuja. Katso myös "Lokaali".
+
+</p>
+
+<p>
+<b>Hypyt / Hyppyrakenne / Hyppyrakenteet</b>		<br>
+   <font color=blue>
+   <i>Jumps</i>
+   </font>
+
+	<br>
+   CoolBasicin komennoilla <font color=#FF00FF face="courier">GOTO</font> ja <font color=#FF00FF face="courier">GOSUB</font> voidaan hypätä tiettyyn kohtaan lähdekoodia. Nämä paikat erotetaan tunnistimella (kirjanmerkki), jonka perään on kirjoitettu kaksoispiste. Hypätystä kohdasta voidaan myös palata takaisin. Silloin käytetään <font color=#FF00FF face="courier">GOSUB-komentoa</font>. Lisätietoa hypyistä <font color=#FF00FF face="courier"> GOTO/GOSUB-käskyjen</font> komentokohtaisista ohjeista.
+
+</p>
+
+<p>
+<b>Jäsen</b>		<br>
+   <font color=blue>
+   <i>Pointer / Member</i>
+   </font>
+
+	<br>
+   CoolBasicin kokoelman jäsen, itsenäinen objekti listassa. Kts. myös tyyppi, kokoelma, tyyppimuuttuja, osoitin.
+
+</p>
+
+<p>
+<b>Kaaos</b>		<br>
+   <font color=blue>
+   <i>Chaos</i>
+   </font>
+
+	<br>
+   Partikkelilähteen ominaisuus, joka määrittelee kuinka paljon partikkelisuiku leviää. Kaaos, eli entropia merkitsee myös yleistä kaaosteoriaa: että kaikki on epätasapainossa, koska siihen vaikuttaa kaikki muu.
+
+</p>
+
+<p>
+<b>Kahteen suuntaan linkitetty lista</b>		<br>
+   <font color=blue>
+   <i>Double Linked List</i>
+   </font>
+
+	<br>
+   Listan jäsen sisältää osoittimen edelliseen ja jälkimmäiseen jäseneen. Yhteen suuntaan linkitetty lista sisältää osoittimen vain seuraavaan. Katso "TYYPPI".
+
+</p>
+
+<p>
+<b>Kamera</b>		<br>
+   <font color=blue>
+   <i>Camera</i>
+   </font>
+
+	<br>
+   Kamera kuvaa pelimaailman tapahtumia. Voit liikuttaa kameraa eri paikkoihin, ja esimerkiksi seurata tiettyä pelihahmoa.
+
+</p>
+
+<p>
+<b>Keskusmuisti</b>		<br>
+   <font color=blue>
+   <i>System Memory (RAM)</i>
+   </font>
+
+	<br>
+   Fyysinen muistikortti tietokoneesi emolevyllä. Tänne ladataan kaikki media sekä ohjelmat (myös Windows ja laiteajurit).
+
+</p>
+
+<p>
+<b>Kirjanmerkki / kirjamerkki</b>		<br>
+   <font color=blue>
+   <i>Label</i>
+   </font>
+
+	<br>
+   Tunniste jossain kohtaa koodia, jonka perään on HETI kirjoitettu kaksoispiste. Tähän kohtaan koodia voidaan hypätä GOTO- ja GOSUB-käskyjen avulla.
+   Katso myös: "Hypyt".
+
+</p>
+
+<p>
+<b>Kokonaisluku</b>		<br>
+   <font color=blue>
+   <i>Integer Numbers</i>
+   </font>
+
+	<br>
+   Luku ilman desimaalipistettä. Kokonaisluku voi saada arvoja n. -2 mrd - +2 mrd. Katso myös: "Tietotyypit".
+
+</p>
+
+<p>
+<b>Kommenti</b>		<br>
+   <font color=blue>
+   <i>Remarks / Comments</i>
+   </font>
+
+	<br>
+   Voit kirjoittaa kommentteja koodisi sekaan. Se on suositeltavaa. Kommentit eivät vaikuta ohjelman toimintaan mitenkään; käännösvaiheessa ne heitetään veks. Kommentoimalla koodiasi ymmärrät sitä jopa itse paremmin - ainakin jos pidät projektissasi tauon. Merkit (<font color=#FF00FF face="courier">'</font>) ja "<font color=#FF00FF face="courier">//</font>" toimivat kommenttitunnisteina. Kaikki mitä rivillä on näiden merkkien jälkeen, poistetaan käännösvaiheessa. Voit myös kommentoida useita rivejä, käyttämällä <font color=#FF00FF face="courier">REMSTART-</font> ja <font color=#FF00FF face="courier">REMEND-avainsanoja</font>.
+
+</p>
+
+<p>
+<b>Koordinaatti</b>		<br>
+   <font color=blue>
+   <i>Coordinates</i>
+   </font>
+
+	<br>
+   2D-avaruudessa kaksi lukua, jotka ilmaisevat pisteen paikkaa. Ruudulla koordinaatit lähtevät (0,0), joka on ruudun vasen yläkulma. Ne kasvavat alas/oikealle mentäessä. Ensiksi ilmoitetaan aina vaaka (X), ja sitten pysty (Y). Maailmakoordinaatit voivat olla myös negatiivisia:
+<br><br><img src="pics/screen.gif">&nbsp;&nbsp;&nbsp;&nbsp;<img src="pics/world.gif">
+
+</p>
+
+<p>
+<b>Kursori / Hiiriosoitin</b>		<br>
+   <font color=blue>
+   <i>Mouse Pointer</i>
+   </font>
+
+	<br>
+   On se pieni nuoli, joka liikkuu ympäriinsä samalla kun liikutat hiirtä. CoolBasicin avulla voidaan helposti tarkistaa kursorin koordinaatit tai mitä nappuloita on painettuna.
+
+</p>
+
+<p>
+<b>Kuvat</b>		<br>
+   <font color=blue>
+   <i>Images</i>
+   </font>
+
+	<br>
+   Kuvat ovat grafiikkaa, joka ladataan kovalevyltä tietokoneen muistiin. CoolBasic osaa lukea .JPG, .BMP, .TGA ja .PNG-tiedostoja. Kuvia voidaan luoda myös suoraan muistiin, jolloin uusi kuva on tyhjä (sisältää vain mustaa).
+
+</p>
+
+<p>
+<b>Laskulauseke</b>		<br>
+   <font color=blue>
+   <i>Expression</i>
+   </font>
+
+	<br>
+   Laskulauseke on matemaattinen laskutoimitus, joka muodostaa arvon. Laskulausekkeet voivat sisältää funktioita, jotka muodostavat paikalleen niiden paluuarvon, muuttujia, literaaleja (luvut), sekä matemaattisia operaattoreita <font color=#FF00FF face="courier">(+, -, *, /, ...)</font>, jotka laskevat joko jommallakummalla tai molemmilla puolillaan olevat luvut. Laskulausekkeen lopputulos on aina yksi luku tai merkkijono.
+
+</p>
+
+<p>
+<b>Literaali</b>		<br>
+   <font color=blue>
+   <i>Literal</i>
+   </font>
+
+	<br>
+   Ei-muuttuva luku, eli ohjelmaan koodattu luku, ei muuttuja. Literaaleja ei sallita funktiomäärittelyissä ja vakiot käyttäytyvät literaalien tapaan.
+
+</p>
+
+<p>
+<b>Linkitetty Lista</b>		<br>
+   <font color=blue>
+   <i>Linked List</i>
+   </font>
+
+	<br>
+   Listan jäsenet sisältävät osoittimet edelliseen ja jälkeiseen jäseneen. Katso "TYYPPI".
+
+</p>
+
+<p>
+<b>Lista</b>		<br>
+   <font color=blue>
+   <i>Linked List</i>
+   </font>
+
+	<br>
+   Katso "TYYPPI".
+
+</p>
+
+<b>Lokaali</b>		<br>
+   <font color=blue>
+   <i>Local</i>
+   </font>
+
+	<br>
+   Ns. normaali muuttuja. Ne eivät näy eikä niitä voi muuttaa toisissa funktioissa.
+
+</p>
+
+<p>
+<b>Lähde</b>		<br>
+   <font color=blue>
+   <i>Particle Source / Emitter</i>
+   </font>
+
+	<br>
+   Partikkelilähde, joka sinkoaa pieniä partikkeleita. Partikkelilähde toimii, kuin mikä tahansa objekti, ja sitä hallitaan tavallisilla objektikomennoilla. Kts. myös "Partikkeli".
+
+</p>
+
+<p>
+<b>Maski / Maskiväri</b>		<br>
+   <font color=blue>
+   <i>Mask</i>
+   </font>
+
+	<br>
+   Läpinäkyvyys. Se osa kuvasta, joka sisältää läpinäkyväksi määriteltyä väriä. Oletuksena kaikille kuville tämä on musta, mutta sitä voi muuttaa asiaan erikoistuneilla komennoilla.
+
+</p>
+
+<p>
+<b>Media (Datatiedostot)</b>		<br>
+   <font color=blue>
+   <i>Loading Media</i>
+   </font>
+
+	<br>
+   Mediaa ovat kaikki pelisi mukana toimitettavat tiedostot (<font color=#FF00FF face="courier">esim. BMP, AVI, TXT, MP3</font>), joista pelisi/ohjelmasi lataa tietoja tai muuten käyttää niitä. Esimerkiksi pelisi musiikit, kuvat, ja videot ladataan mediatiedostoista. Lataamisessa ne sijoitetaan tietokoneen muistiin ja ne voidaan vapauttaa sieltä milloin tahansa asiaan erikoistuneilla käskyillä.
+
+</p>
+
+<p>
+<b>Merkkijonot</b>		<br>
+   <font color=blue>
+   <i>Strings</i>
+   </font>
+
+	<br>
+   Merkkijonoja käytetään säilömään yksittäisiä merkkejä, sanoja tai lauseita. Ne tunnistetaan siitä, että ne on kirjoitettu tuplalainauksen sisään. Merkkijonoja voidaan yhdistellä (+)-operaattorilla. Merkkijonomuuttujat tunnistetaan niiden perään kirjoitetusta dollarimerkistä($). CoolBasicin merkkijonoilla ei ole pituusrajoitusta. Merkkijono voi olla myös tyhjä "". Muuttuja voidaan esittää merkkijonoksi myös <b>AS</b>-sanalla.
+
+</p>
+
+<p>
+<b>MID-formaatti</b>		<br>
+   <font color=blue>
+   <i>MID File Format</i>
+   </font>
+
+	<br>
+   MID on tekniikka, jonka avulla musiikkia voidaan nauhoittaa tai soittaa. MIDien etu on siinä, että kaikki soittimet ovat valmiiksi sijoitettu äänikortillesi, joten tiedostot ovat TODELLA pieniä. Periaatteessa MID-tiedostot sisältävät vain soitettavat nuotit ja voimakkuussäädöt.
+
+</p>
+
+<p>
+<b>Modulaarisuus / moduuli / koodimoduuli</b>		<br>
+   <font color=blue>
+   <i>Includes</i>
+   </font>
+
+	<br>
+   Modulaarisuus tarkoittaa sitä, että jaat ohjelmasi useaksi kokonaisuudekseen. Saman tyyppiset funktiot kannattaa ryhmitellä omiin moduuleihinsa. Nämä moduulit ladataan erillisistä tiedostoista <font color=#FF00FF face="courier">Include-komennon</font> avulla. Modulaarisuus tekee ohjelmastasi selkeämpää, kun osa koodista voidaan piilottaa muihin tiedostoihin, pois näkyvistä. Myös koodin ylläpito on helpompaa. Jos suunnittelet moduulit hyvin, voit käyttää moduuleitasi suoraan toisissakin ohjelmissa. Lisätietoa <font color=#FF00FF face="courier">Include-komennon</font> komentokohtaisesta ohjeesta.
+
+</p>
+
+<p>
+<b>Moduulimusiikki</b>		<br>
+   <font color=blue>
+   <i>Music Modules</i>
+   </font>
+
+	<br>
+   Tracker-formaattiin perustuva musiikkimuoto, johon on tallennettuna nuotit ja soittimet. Tiedostokoko on selvästi pienempi kuin aaltoääni-formaateissa (mp3, wav, ogg). Koska soittimet tallennetaan aaltoääninäytteinä, tiedostot ovat kuitenkin isompia kuin midit. Musiikki kuulostaa kuitenkin aina samalta äänikortista riippumatta. Eri formaatit osaavat tallentaa eri määrän yhtäaikaisia kanavia, jotkut muodot osaavat feidata tai loopata instrumentteja erikoisilla tavoilla. CoolBasic käyttää FMOD-kirjastoa moduulien toistamiseen.
+
+</p>
+
+<p>
+<b>Muisti</b>		<br>
+   <font color=blue>
+   <i>RAM Memory</i>
+   </font>
+
+	<br>
+   Tietokoneen sisällä oleva emolevyyn fyysisesti kytketty muistikortti. RAM-muistiin ladataan kaikki ohjelmat, laiteajurit ja ohjelmien käyttämä media (kuvat, äänet jne...) RAM-muisti on sähköinen, ja sen sisältö tuhoutuu sähkön katketessa. Muisti on pitkä pötkö muistipaikkoja, joista jokainen voi olla joko nolla tai yksi. Lisää tietoa Muistipala-komentojen oppaasta.
+
+</p>
+
+<p>
+<b>Negatiivinen</b>		<br>
+   <font color=blue>
+   <i>Negative</i>
+   </font>
+
+	<br>
+   Miinusmerkkinen, kielteinen.
+
+</p>
+
+<p>
+<b>Nollaosoitin</b>		<br>
+   <font color=blue>
+   <i>NULL Pointer</i>
+   </font>
+
+	<br>
+   Ei mitään. Sama, kuin, että seuraavaa/edellistä listan jäsentä ei ole olemassa. Käytä tätä tarkastellaksesi milloin lista on käyty läpi.
+
+</p>
+
+<p>
+<b>Näppäimistö</b>		<br>
+   <font color=blue>
+   <i>Keyboard</i>
+   </font>
+
+	<br>
+   Ohjainlaite, jonka näppäimet on jaettu kahteen pääryhmään. On "normaaleita" merkkejä (numerot, kirjaimet ja kirjoituksessa käytetyt symbolit), sekä erikoisnäppäimiä, kuten Control tai Alt. Erikoisnäppäimiä käytetään usein muodostamaan näppäinyhdistelmiä normaalien näppäinten kanssa.
+
+</p>
+
+<p>
+<b>Näyttötila</b>		<br>
+   <font color=blue>
+   <i>Display Modes</i>
+   </font>
+
+	<br>
+   Katso "Resoluutio"
+
+</p>
+
+<p>
+<b>Näytönohjain</b>		<br>
+   <font color=blue>
+   <i>Graphics cards</i>
+   </font>
+
+	<br>
+   Se kortti koneessasi, joka hoitaa grafiikan laskemisen (2D tai 3D) ja välittää sen näyttölaitteelle.
+
+</p>
+
+<p>
+<b>Objekti</b>			<br>
+   <font color=blue>
+   <i>Object</i>
+   </font>
+
+	<br>
+   Itsenäinen kokonaisuus, jolla on ominaisuuksia, kuten kulma, sijainti, koko jne. Objekteja ovat kaikki pelimaailman esineet, aseet, ammukset, pelaajat ja viholliset. Jokaista voi liikuttaa erikseen, ja ne voivat mm. törmätä keskenään. Objekteilla voi olla myös nimi (<font color=#FF00FF face="courier">ObjectString-käsky</font>), elinaika, poimittavuus ja erilaisia lukuarvoja. Objektit noudattavat maailmakoordinaatteja. Origo on ruudun keskellä (jos kamerakin on), ja koordinaatisto voi jatkua miinusmerkkisenä (x vasemmalle, y alas).
+
+</p>
+
+<p>
+<b>Ohjelma</b>			<br>
+   <font color=blue>
+   <i>Program</i>
+   </font>
+
+	<br>
+   Ohjelmoitu kokonaisuus, joka käännetään suoritettavaksi ohjelmaksi (.EXE-tiedostoksi).
+
+</p>
+
+<p>
+<b>Operaattori</b>			<br>
+   <font color=blue>
+   <i>Operator</i>
+   </font>
+
+	<br>
+   Merkki tai esitys, joka suorittaa kahdelle tai yhdelle arvolle (luvut, merkkijonot jne.) jonkin matemaattisen laskutoimituksen. Operaattoreita ovat esimerkiksi: +,-,*,/,>,<,=,And,Or,Xor
+
+</p>
+
+<p>
+<b>Operadi</b>			<br>
+   <font color=blue>
+   <i>Operad</i>
+   </font>
+
+	<br>
+   Luku tai muu arvo, joka osallistuu matemaattiseen operaatioon (kts. "operaattori").
+
+</p>
+
+<p>
+<b>Osoitin</b>			<br>
+   <font color=blue>
+   <i>Pointer</i>
+   </font>
+
+	<br>
+   Muuttuja, joka sisältää jonkin listan jäsenen muistiosoitteen. Tätä muuttujaa käytetään osoittamaan kokoelman (tyypin) jäseneen. Siten jäsenen muuttujiin päästään käsiksi.
+
+</p>
+
+<p>
+<b>Paluuarvo</b>			<br>
+   <font color=blue>
+   <i>Return Value / Evaluating</i>
+   </font>
+
+	<br>
+   Kun kutsut funktiota, joka palauttaa arvon, tämä arvo ilmestyy ohjelmasi suoritusaikana funktiokutsun paikalle. Kuvitellaan, että sinulla on funktio, joka kertoo annetun luvun kymmenellä. Silloin <font color=#FF00FF face="courier">Print 67+KerroKymmenella(5)</font> muodostuu tällaiseksi: <font color=#FF00FF face="courier">Print 67+50</font>.. ja laskeminen jatkuu siitä. CoolBasicin omat funktiot toimivat samaan tapaan. Olennaisinta onkin paluuarvon tyyppi.
+
+</p>
+
+<p>
+<b>Parametri</b>			<br>
+   <font color=blue>
+   <i>Parameter</i>
+   </font>
+
+	<br>
+   Kun välität komennolle tai funktiolle lukuja tai merkkijonoja, niitä kutsutaan parametreiksi. Seuraavassa esimerkissä on 2 parametria:<br>
+
+
+   <font color=#FF00FF face="courier">Min (2.0, muuttuja#)</font>
+
+   <br>Seuraavassa niitä on 5:<br>
+
+   <font color=#FF00FF face="courier">Ellipse 10,10,40,40,True</font>
+
+   <br>Seuraavassa ei yhtään<br>
+
+   <font color=#FF00FF face="courier">DrawScreen</font>
+
+</p>
+
+<p>
+<b>Parseri</b>			<br>
+   <font color=blue>
+   <i>Parser</i>
+   </font>
+
+	<br>
+   Kääntäjän osa, joka pilkkoo koodin pieniksi palasiksi, ja yrittää saada selvää siitä.
+
+</p>
+
+<p>
+<b>Partikkeli</b>			<br>
+   <font color=blue>
+   <i>Particle</i>
+   </font>
+
+	<br>
+   Pieni osanen. Peliohjelmoinnissa partikkeliefekteillä tarkoitetaan suuria määriä pieniä objekteja, jotka yhdessä saavat aikaan jonkin efektin. Tällaisia ovat esimerkiksi tupruttava savu, leimuava tuli, lumisade tai räjähdys, josta sinkoaa paljon pieniä tulipalloja. Jokainen lumisateen hiutale on partikkeli. Suurien määrien hallinta voi joskus olla vaikeaa, ja jokainen koodirivi vie ohjelmasi suorituskykyä. Siksi CoolBasicissa on sisäänrakennettu, erittäin nopea partikkelimoottori, joka päivittää ja piirtää kaikki partikkelit puolestasi automaattisesti. Kts. myös "Lähde".
+
+</p>
+
+<p>
+<b>Pelimaailma / maailma</b>			<br>
+   <font color=blue>
+   <i>Game World</i>
+   </font>
+
+	<br>
+   Pelimaailma on tyhjä avaruus, johon objekteja ladataan. Alussa siellä ei ole mitään, se on tyhjä. Kamera on aluksi origossa (keskipisteessä). Pelimaailmassa on erilaiset koordinaatit kuin ruudulla. Origon alapuolella y-koordinaatti on miinusmerkkinen. Kun haluat liikuttaa objektia ylös, kasvatat (et vähennä) sen y-koordinaattia. Pelimaailmassa on yksi kamera. Se kuvaa pelimaailman tapahtumia. Vain sen näköpiirissä olevat objektit piirretään. Objekti-kamera-suhde on tärkeää oivaltaa, jotta saat objekteista kaiken irti. Voit opiskella asiaa selaamalla objekti- ja kamera-komentojen esimerkkejä.
+
+</p>
+
+<p>
+<b>Peliohjaimet</b>			<br>
+   <font color=blue>
+   <i>Control Devices</i>
+   </font>
+
+	<br>
+   Peliohjaimia on monenlaisia aina Force Feedback-ohjaimista virtuaalikypäriin saakka. Niiden tyyppien vaihtelu on kirjavaa, mutta niiden tekninen käyttö vastaa normaalisti analogisia ohjaimia, kuten nappien painamista. Joillekin laitteille voidaan lähettää Force Feedback-dataa. CoolBasic ei tue Force Feedback-efektejä.
+
+</p>
+
+<p>
+<b>Pikseli</b>			<br>
+   <font color=blue>
+   <i>Pixel</i>
+   </font>
+
+	<br>
+   Kuvapiste. Koko ruutu muodostuu kuvapisteistä, ja niiden määrä riippuu näyttötilasta.
+
+</p>
+
+<p>
+<b>Poiminta</b>		<br>
+   <font color=blue>
+   <i>Picking</i>
+   </font>
+
+	<br>
+   Matemaattinen toimitus, jossa CoolBasic tarkastaa missä kohtaa pisteestä ammuttu luotisuora viiva leikkaa muita objekteja tai kartan. CoolBasicissa on myös kamerapoiminta, joka tarkastaa esimerkiksi mikä objekti on hiiriosoittimen alla.
+
+</p>
+
+<p>
+<b>Positiivinen</b>		<br>
+   <font color=blue>
+   <i>Positive</i>
+   </font>
+
+	<br>
+   Plusmerkkinen, myönteinen.
+
+</p>
+
+<p>
+<b>Puskuri</b>			<br>
+   <font color=blue>
+   <i>Buffer</i>
+   </font>
+
+	<br>
+   Näppäimistö/hiiripuskuri tarkoittaa väliaikaista tilaa, jonne kaikki painetut näppäimet lähetetään jonoksi, josta ohjelma niitä lukee. Puskurit voidaan tyhjentää CoolBasicissa siihen erikoistuneilla komennoilla.</p>
+<p>
+   Kuvapuskuri säilöö kuvan. Videopuskuri, eli näyttöpuskuri toimii väliaikaistilana grafiikan piirtämiselle. Lopuksi ruutu piirretään, ja puskurin sisältö kopioidaan näytölle. Tätä tekniikkaa kutsutaan tuplapuskuroinniksi, joka mahdollistaa sulavamman grafiikan.
+
+</p>
+
+<p>
+<b>Päällyskerros / Päällikerros</b>			<br>
+   <font color=blue>
+   <i>FRONT Layer / Foreground / Fore Layer</i>
+   </font>
+
+	<br>
+   Tilekartan viimeinen piirrettävä kerros, joka piirretään aivan objektien jälkeen.
+</p>
+
+<p>
+<b>Rasterifontti</b>			<br>
+   <font color=blue>
+   <i>Raster Font</i>
+   </font>
+
+	<br>
+   Bittikarttoihin perustuva fonttitiedosto. Rasterifontteja ei voi suurentaa, vaan niillä on vakiokoko. Yleensä rasterifontteja käytetään lähinnä koodieditoreissa, muualla ne ovat harvinaisia. Fonttien rakenne on hyvin tiivis. 8*10 pikselin kirjasin voidaan koodata 10 tavulla. Rasterifonttien bittikartat ovat 2-bittisiä (musta/valkoinen).
+
+</p>
+
+<p>
+<b>Reaaliluku (Desimaaliluku)</b>			<br>
+   <font color=blue>
+   <i>Float Values / Real Values</i>
+   </font>
+
+	<br>
+   Luku, joka VOI sisältää desimaalipisteen. Reaalilukumuuttuja erotellaan kirjoittamalla <font color=#FF00FF face="courier">"#"-merkki </font> muuttujan nimen perään.
+
+</p>
+
+<p>
+<b>Rekursio</b>			<br>
+   <font color=blue>
+   <i>Recursion</i>
+   </font>
+
+	<br>
+   Kun funktio tai aliohjelma kutsuu itseään, sitä kutsutaan rekursioksi, tarkemmin häntärekursioksi. Kuitenkin, jos funktio kutsuu itseään loputtomiin, se ei ikinä lopu, vaan syö ennen pitkään tietokoneen muistin. CoolBasicissa tällainen "resurssi-imu" ei onnistu, koska CoolBasicin pinotila ei ole dynaaminen. Niinpä rekursiivisen funktion tulisi sisältää ehto, joka lopettaa rekursion ja suorittaa varsinaisen "palaamisen".
+</p>
+
+<p>
+   Klassinen rekursion esimerkki on kertoman laskeminen. Luvun 4 kertoma on 4! eli 4*3*2*1. Vastaavasti luvun 10 kertoma olisi 10*9*8*7*6*5*4*3*2*1.
+   Rekursiivisesti se menisi näin:<br>
+<font color=#FF00FF face="courier">
+Print kertoma (6)<br>
+WaitKey<br>
+<br>
+<br>
+Function kertoma(n)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If n>1 Then Return n * kertoma (n-1) Else Return 1<br>
+<br>
+End Function<br>
+</font>
+
+
+</p>
+
+<p>
+<b>Resoluutio</b>			<br>
+   <font color=blue>
+   <i>Screen Resolution</i>
+   </font>
+
+	<br>
+   Nykyisen näyttötilan erottelukyky, eli se määrä, kuinka monta pikseliä vaakaan ja pystyyn näytönohjain pystyy piirtämään. Kaikki näytöt ja näytönohjaimet eivät tue suurempia resoluutioita kuin <font color=#FF00FF face="courier">1024*768</font>. Se pitää ottaa huomioon myös pelinsuunnittelussa.
+
+</p>
+
+<p>
+<b>RGB-arvot</b>			<br>
+   <font color=blue>
+   <i>Red Green Blue</i>
+   </font>
+
+	<br>
+   Värijärjestelmä, joka muodostuu kolmesta väristä. Värien arvoilla <font color=#FF00FF face="courier">0-255</font> voidaan ilmoittaa kaikki 16.7 miljoonaa väriä. Kolme lukua ilmoitetaan punaiselle, vihreälle ja siniselle (tässä järjestyksessä). Luku <font color=#FF00FF face="courier">0</font> (nolla) tarkoittaa sitä, että kyseisen komponentin väriä ei ole mukana yhtään. Vastaavasti <font color=#FF00FF face="courier">255</font> tarkoittaa täyttä. Tällä tavalla musta voidaan koodata <font color=#FF00FF face="courier">0,0,0</font> ja valkoinen <font color=#FF00FF face="courier">255,255,255</font>. Jos punainen komponentti saa täyden arvon (<font color=#FF00FF face="courier">255</font>), ja muut eivät mitään, on väri punainen. <font color=#FF00FF face="courier">0,255,0</font> taas on vihreä ja <font color=#FF00FF face="courier">0,0,255</font> sininen. Punaisen ja vihreän sekoituksesta tulee keltaista (<font color=#FF00FF face="courier">255,255,0</font>) ja <font color=#FF00FF face="courier">255,0,255</font> edustaa magentaa.
+
+</p>
+
+<p>
+<b>Rotaatio</b>			<br>
+   <font color=blue>
+   <i>Rotation</i>
+   </font>
+
+	<br>
+   Fys. termi, joka viittaa kääntymiseen.
+
+</p>
+
+<p>
+<b>Ruudun päivitys / FPS</b>			<br>
+   <font color=blue>
+   <i>Screen Refresh</i>
+   </font>
+
+	<br>
+   On tärkeää, että ruutu päivitetään sen jälkeen, kun sille on piirretty. Esimerkiksi, suoritat 40 kuvanpiirto-operaatiota näytölle, ja komennat DRAWSCREEN. DRAWSCREEN-komentoa ei kannata käyttää kuin kerran ohjelmassasi, yleensä pääloopin lopussa. Sitä ennen suoritetaan kaikki piirto-operaatiot. Koneesi laitteisto määrää kuinka monta kertaa sekunnissa näyttö pystytään piirtämään. Tätä arvoa kutsutaan termillä Frames Per Second, eli FPS.
+
+</p>
+
+<p>
+<b>Sekvenssi</b>			<br>
+   <font color=blue>
+   <i>Sequence</i>
+   </font>
+
+	<br>
+   Animaatiosarja. Kuvat, jotka muodostavat yhden kokonaisen animaation. Esim. kävely ja hyppy ovat eri sekvenssejä.
+
+</p>
+
+<p>
+<b>Silmukat</b>			<br>
+   <font color=blue>
+   <i>Loops</i>
+   </font>
+
+	<br>
+   Silmukat ovat koodilohkoja, joiden sisään kirjoitetaan komentoja. Näitä komentoja toistetaan niin kauan, kunnes silmukan yhteydessä annettu ehto on joko <font color=#FF00FF face="courier">TOSI</font> tai <font color=#FF00FF face="courier">EPÄTOSI</font>. CoolBasicissa on usean tyyppisiä silmukoita. Silmukat voidaan rikkoa <font color=#FF00FF face="courier">EXIT-käskyllä</font>. Katso myös: <a href="commands/for.html"> FOR-rakenne</a>, <a href="commands/repeat.html">REPEAT...UNTIL</a> ja <a href="commands/while.html">WHILE...WEND</a>. 
+
+</p>
+
+<p>
+   Yleensä pääohjelmassa on ns. päälooppi tai pääsilmukka. Sen sisään on kirjoitettu kaikki funktiot tai komennot, jotka pitävät huolen pelin toiminnasta (tekoälystä, kontrolleista, näytön piirtämisestä ym.). Tämä silmukka usein joko lopetetaan kun jotain nappulaa painetaan, tai sitten kun joku muuttuja vaihtaa arvonsa.
+
+</p>
+
+<p>
+<b>Sprite</b>			<br>
+   Nimitystä käytetään pelimaailman (esim Tilekartassa olevista) hahmoista. Yleensä spritet ovat vielä animoituja. CoolBasicissa "Sprite" ladataan <font color=#FF00FF face="courier">LoadAnimImage-komennolla</font> ja se animoidaan piirrettäessä lisäparametrilla <i>frame</i>.
+
+</p>
+
+<p>
+<b>Taulukot</b>			<br>
+   <font color=blue>
+   <i>Arrays</i>
+   </font>
+
+	<br>
+   Taulukot ovat kokoelma muuttujia, joille on varattu tilaa muistista peräkkäisenä jonona. Niillä on kuitenkin yksi ja sama nimi. Muuttujat erotetaan toisistaan indeksiluvuilla, joka ilmaisee muuttujan paikan taulukossa. Taulukossa voi olla useampia ulottuvuuksia, jolloin indeksilukujen määrä kasvaa. Taulukoissa voi olla maksimissaan viisi (5) ulottuvuutta. Taulukot määritellään  <font color=#FF00FF face="courier">DIM</font>-avainsanalla. Saadaksesi lisää tietoa niiden käytöstä, katso komentokohtainen ohje  DIM-avainsanalle.
+
+</p>
+
+<p>
+<b>Taustakerros</b>			<br>
+   <font color=blue>
+   <i>BACK Layer / Background</i>
+   </font>
+
+	<br>
+   Tilekartan alimmainen kerros, joka piirretään aivan ensimmäiseksi. Objektit piirtyvät tämän päälle.
+</p>
+
+<p>
+<b>Tekstuuri</b>			<br>
+   <font color=blue>
+   <i>Texture</i>
+   </font>
+
+	<br>
+   Kuva, jolla objekti päällystetään.
+
+</p>
+
+<p>
+<b>Tiedosto-osoitin</b>			<br>
+   <font color=blue>
+   <i>File Pointer</i>
+   </font>
+
+	<br>
+   Aina kun tiedostosta luetaan tai siihen kirjoitetaan, sen sisäinen tiedosto-osoitin siirtyy eteenpäin, jotta seuraava kirjoitus menisi oikeaan paikkaan. Kun tiedosto avataan, tiedosto-osoitin on tiedosto alussa, ja on silloin nolla. Tiedosto-osoitinta voidaan siirtää komennolla <font color=#FF00FF face="courier">SeekFile</font>.
+
+</p>
+
+<p>
+<b>Tietotyypit (Datatyypit)</b>			<br>
+   <font color=blue>
+   <i>Data Types</i>
+   </font>
+
+	<br>
+   CoolBasic antaa sinun käyttää kokonaislukuja, desimaalilukuja ja merkkijonoja. Jokainen kokonaisluku vie muistista  <font color=#FF00FF face="courier">4 tavua</font>, desimaali <font color=#FF00FF face="courier">8 tavua</font> ja merkkijono <font color=#FF00FF face="courier">4+pituus tavua</font>. Jos muuttujat ovat erityyppisiä kuin kokonaisluvut, joudut lisäämään "#" tai "$" nimen loppuun. Kokonaisluku voi olla mikä tahansa väliltä -2147483648 ja 2147483647. Desimaaliluku voi olla mikä tahansa väliltä 3.4e -38 ja 3.4e +38 (7 numeroa). CoolBasicin funktiot ovat hyvin tarkkoja siitä, minkä tyyppistä tietoa niille annetaan. Jos tyyppi on väärä, annetaan "<font color=#FF00FF face="courier">Type mismatch</font>"-virhe. Tyyppimuunnokset suoritetaan käskyillä <font color=#FF00FF face="courier">Int, Float ja Str</font>. Merkkijonoille vain ( + )-operaatiot ja vertailuoperaatiot ovat sallittuja.
+
+</p>
+
+<p>
+<b>Tile</b>			<br>
+   <font color=blue>
+   <i>Tilemaps</i>
+   </font>
+
+	<br>
+   Tilesetin jäsen, pikkukuva, jolla tilekarttaa piirretään.
+</p>
+
+<p>
+<b>Tilekartat</b>			<br>
+   <font color=blue>
+   <i>Tilemaps</i>
+   </font>
+
+	<br>
+   Tilekartat muodostuvat ruudukosta. Jokaiseen ruutuun piirretään jokin kuva. Kukin kuva on <font color=#FF00FF face="courier">tilesetin</font> jäsen. Tilekartat vievät hyvin vähän muistia verrattuna saman kokoiseen bittikarttaan. Se onkin ihanteellinen tapa luoda suuria maailmoja  2D-peleihisi. Tilekarttoja tehdään jollakin Tilemap-editorilla, esimerkiksi CoolBasicin mukana tulevalla Tilesterillä.
+</p>
+
+<p>
+
+<b>Tilesetit</b>			<br>
+   <font color=blue>
+   <i>Tilesets</i>
+   </font>
+
+	<br>
+   Yksi iso kuva, joka sisältää järjestettynä kaikki pienemmät kuvat, jotka piirretään tilekarttaan. CoolBasic lataa kuvat vasemmalta oikealle, ylhäältä alas järjestyksessä 1, 2, 3, 4, ...
+
+</p>
+
+<b>Tilester</b>			<br>
+   <font color=blue>
+   <i>Tilester</i>
+   </font>
+
+	<br>
+   Apuohjelma. CoolBasicin mukana tuleva työkalu pelikarttojen luomiseen. Tilesterillä tehtyjä karttoja ladataan MAP-komentosarjalla (<font color=#FF00FF face="courier">LoadMap</font>).
+
+</p>
+
+<p>
+<b>Translaatio</b>			<br>
+   <font color=blue>
+   <i>Translate / Translation</i>
+   </font>
+
+	<br>
+   Fys. termi, joka viittaa liikkeeseen. CoolBasicissa translate liikuttaa objektia tai kameraa riippumatta sen nykyisestä kulmasta.
+
+</p>
+
+<p>
+<b>TXT-formaatti</b>			<br>
+   <font color=blue>
+   <i>TXT File Type</i>
+   </font>
+
+	<br>
+   Yksinkertainen ASCII-tiedostomuoto, johon tallennetaan yleensä "selkokielistä" tekstiä.
+
+</p>
+
+<p>
+<b>TYYPPI / tyypit / kokoelmat</b>			<br>
+   <font color=blue>
+   <i>TYPE / Linked List / Collection</i>
+   </font>
+
+	<br>
+   Ohjelmoijan määrittelemä kokoelma, joka muodostaa kahteen suuntaan linkitetyn listan. Listaan voidaan lisätä tai siitä voidaan poistaa jäseniä. Jokaisella jäsenellä on kopio kokoelman muuttujista. Voit tavallaan luoda "objekteja". Jokainen listan jäsen on itsenäinen, ja sillä on omat lokaalit muuttujansa. Runsaasti lisätietoa manuaalista.
+
+</p>
+
+<p>
+<b>Tyyppimuuttuja / tyypitetty muuttuja</b>			<br>
+   <font color=blue>
+   <i>Type Variable / List Pointer</i>
+   </font>
+
+	<br>
+   Muuttuja, joka toimii osoittimena tiettyyn listan jäseneen. Tällaisen muuttujan avulla pääset käsiksi kunkin jäsenen omiin muuttujiin. Osoitinta tarvitaan myös jäsenen poistamiseen. Osoitinmuuttujille ei voida suorittaa laskutoimituksia.
+
+</p>
+
+<p>
+<b>Törmäys</b>			<br>
+   <font color=blue>
+   <i>Collision</i>
+   </font>
+
+	<br>
+   Tapahtuma, kun kaksi objektia tai kuvaa siirtyvät päällekkäin, vaikka edellisellä kerralla päällekkäisyyttä ei ollut. Törmäyksen seurauksena objekti voi joko liukua pitkin pintaa tai pysähtyä. CoolBasicissa on automaattinen törmäyssysteemi. Törmäys voi perustua suorakulmioihin, ympyröihin, polygoneihin, törmäysviivoihin tai pikselintarkkaan tunnistukseen.
+
+</p>
+
+<p>
+<b>Törmäyskerros</b>			<br>
+   <font color=blue>
+   <i>HIT Layer / Collision Layer</i>
+   </font>
+
+	<br>
+   Tilekartan piirtämätön kerros, joka sisältää vain tiedon kartan niistä kohdista, joiden läpi ei voi kävellä. Kerros sisältää vain nollia ja ykkösiä. TOSI=seinä.
+</p>
+
+<p>
+<b>Unaarinen miinus</b>		<br>
+   <font color=blue>
+   <i>Unary minus</i>
+   </font>
+
+	<br>
+   Toisin kuin ( - )-operaattorilla vähennettäisiin luvusta A luku B, niin unaarinen miinus kääntää luvun etumerkin. Esimerkiksi <font color=#FF00FF face="courier">-5 + 6 = 1</font>. Unaarista miinusta voidaan käyttää kaikkiin lausekkeisiin, kuten <font color=#FF00FF face="courier">-(muuttuja / 2)</font> tai <font color=#FF00FF face="courier">k = -int(-abs(luku))</font>.
+
+</p>
+
+<p>
+<b>Videomuisti</b>		<br>
+   <font color=blue>
+   <i>Video Memory</i>
+   </font>
+
+	<br>
+   On RAM-muistia, joka on rakennettu näytönohjaimeesi. Jos esimerkiksi tekstuuri ladataan RAM-muistin sijasta videomuistiin, sen käsittely on nopeampaa.
+
+</p>
+
+<p>
+<b>Värisyvyys</b>		<br>
+   <font color=blue>
+   <i>Color Bit Depth</i>
+   </font>
+
+	<br>
+   Yksi pikseli voi sisältää tiedon 8, 16, 24 tai 32-bittiselle värille. Bitti kuvaa tietokoneen muistin perusyksikköä, pienintä mahdollista määrää tietoa, mitä muistiin voidaan kirjoittaa. 8-bittinen kuvapiste on sama kuin 1 tavu, ja voi sisältää tiedon 256 eri värille. 16-bittinen kuvapiste voi koodata 32768 eri väriä ja 32-bitillä päästään noin 16.7 miljoonaan värisävyyn.
+
+</p>
+
+<p>
+<b>Väriarvot</b>		<br>
+   <font color=blue>
+   <i>Color Values</i>
+   </font>
+
+	<br>
+   Kaikki CoolBasicin värikomennot vaativat kolmen komponentin esittelyä: <font color=#FF00FF face="courier">punainen, vihreä ja sininen</font> (tässä järjestyksessä). Järjestelmä tunnetaan nimellä <font color=#FF00FF face="courier">RGB-koodaus</font>. Siinä voidaan ilmoittaa jokainen 16.7 miljoonasta väristä kolmen värin avulla, kun jokainen niistä saa arvon <font color=#FF00FF face="courier">0-255</font>. Saadaksesi lisätietoa, katso kohta <font color=#FF00FF face="courier">"RGB-arvot"</font>.
+
+</p>
+
+<p>
+<b>WAV-formaatti / aaltoääni</b>		<br>
+   <font color=blue>
+   <i>Wav Sound Format</i>
+   </font>
+
+	<br>
+   Pitää sisällään pakkaamatonta äänidataa. Kun tämä soitetaan, se kulkee äänikortin läpi tuottaen kirjaimellisesti mitä tahansa. Lähes kaikki äänieditorit osaavat kirjoittaa tähän muotoon.
+
+</p>
+
+
+<!{END} -->
+
+</font>
+</body>
+
+</HTML>

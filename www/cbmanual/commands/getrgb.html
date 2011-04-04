@@ -1,0 +1,192 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Grafiikka</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>GETRGB</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Palauttaa nykyisen piirtovärin punaisen, vihreän tai sinisen komponentin. Eli RGB-arvot. Jos et tiedä mitä tämä tarkoittaa, et tarvitse tätä funktiota :)</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+GETRGB (kanava)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>kanava</b> = RED, GREEN tai BLUE.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="pickcolor.html">PICKCOLOR</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'THIS PROGRAM WILL CHALLENGE MS PAINT  </font></font><br>
+<br>
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load palette  </font></font><br>
+palette= <font color="#40FFFF">LoadImage</font>("Media\palette.bmp")<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Make canvas  </font></font><br>
+canvas= <font color="#40FFFF">MakeImage</font>(300,300)<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<font color="#40FFFF">DrawToImage</font> canvas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Cls</font><br>
+<font color="#40FFFF">DrawToScreen</font><br>
+<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<font color="#40FFFF">Color</font> cbblack<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'add info  </font></font><br>
+<font color="#40FFFF">Locate</font> 110,10<br>
+<font color="#40FFFF">AddText</font> "Pick a color via palette right click"<br>
+<font color="#40FFFF">AddText</font> "Draw using the mouse"<br>
+<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw palette</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> palette,0,0,0,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw preview</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> 20,220,20,20<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 20,260,<font color="#40FFFF">GetRGB</font>(<font color="#40FFFF">RED</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 20,270,<font color="#40FFFF">GetRGB</font>(<font color="#40FFFF">GREEN</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 20,280,<font color="#40FFFF">GetRGB</font>(<font color="#40FFFF">BLUE</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'pick colour</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">MouseDown</font>(2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">MouseX</font>()<100 <font color="#40FFFF">And</font> <font color="#40FFFF">MouseY</font>()<200 <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PickColor</font> <font color="#40FFFF">MouseX</font>(),<font color="#40FFFF">MouseY</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">MouseDown</font>(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">MouseX</font>()>100 <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawToImage</font> canvas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Line</font> oldx-100,oldy,<font color="#40FFFF">MouseX</font>() -100,<font color="#40FFFF">MouseY</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldx=<font color="#40FFFF">MouseX</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldy=<font color="#40FFFF">MouseY</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawToScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw canvas</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> canvas,100,0,0,<font color="#40FFFF">OFF</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstgraphics.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

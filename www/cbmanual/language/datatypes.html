@@ -1,0 +1,123 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Tietotyypit</h2>
+
+<font color="#ff0000"><H4>Mikä muisti on?</H4></font>
+
+<p>
+Tietokoneen muisti koostuu pitkästä pötköstä <b>bittejä</b>. Bittiä voi kuvitella kolona, joka voi olla täynnä tai tyhjä. <b>Bitillä voi siis olla 2 erilaista arvoa</b> - nolla tai yksi. Bitti on pienin mahdollinen yksikkö, johon voidaan tallentaa tietoa tietokoneen muistissa.
+</p>
+
+<p>
+No mitenkäs, kun tarvitseekin tallentaa vaikkapa kokonaisluku? Siihen ei nolla tai ykkönen riitä. Silloin otetaan avuksi monta bittiä, joilla tallennettava kokonaisluku voidaan koodata. Tästä päästäänkin <b>tavuihin</b>. Tavu on 8 bitin pötkö. Kahdeksasta bitistä voidaan muodostaa 256 erilaista yhdistelmää, joten erilaisia tavuja on noin monta kappaletta. Tämä ei kuitenkaan vielä riitä tallentamaan suurempia lukuja kuin 255 (nolla on ensimmäinen).
+</p>
+
+<p>
+Avuksi täytyy ottaa lisää tavuja. Yleisin tapa tallentaa kokonaisluku tietokoneen muistiin on käyttää 4 tavua, eli 32 bittiä. Niiden avulla voidaan koodata yli 4 miljardia erilaista kokonaislukua. Sen pitäisi riittää. Jokainen <b>kokonaisluku vie siis muistista 4 tavua</b>.
+</p>
+
+<p>
+Samalla tapaa voidaan tallentaa myös desimaalilukuja. Ne vain koodataan hieman eri tavalla, joten on tärkeää tietää minkä tyyppistä tietoa muistipaikasta luetaan. Muuten voi tulla yllättäviä tuloksia.
+</p>
+
+
+<font color="#ff0000"><H4>CoolBasicin tietotyypit</H4></font>
+
+<p><font size=1>
+<li><b>Kokonaisluku</b> (integer) vie 4 tavua muistia
+<li><b>Desimaaliluku</b> (float) vie 4 tavua muistia
+<li><b>Merkkijono</b> (string) vie 4 tavua muistia + 1 tavu jokaista merkkiä kohden
+<li><b>Lyhyt kokonaisluku</b> (short) vie 2 tavua muistia, mutta siihen ei voi kirjoittaa suurempia lukuja kuin 65536
+<li><b>Tavu</b> (byte) vie vain 1 tavun muistia, mutta siihen ei voi kirjoittaa suurempia lukuja kuin 255
+</font></p>
+
+<font color="#ff0000"><H4>Näiden erot?</H4></font>
+
+<p>
+No, kokonaislukuihin ei tietenkään voi tallentaa desimaaliarvoja. Käytä kokonaislukuja aina kun mahdollista. Desimaalilukuja käytät silloin kun tarvitset tarkkaa liikkumista/kääntymistä/pyöreyttä jne. Yleensä esim. pelihahmon koordinaatit ovat desimaalilukuja kun taas esimerkiksi <i>HEALTH</i> tai panssari on kokonaisluku. 
+</p>
+
+<p>
+Merkkijonot ovat luku sinänsä. Niihin tallennetaan lähinnä tekstiä eikä niillä voi tehdä juurikaan muita laskutoimituksia kuin yhdistää kaksi merkkijonoa. Lisää merkkijonoista myöhemmin tässä oppaassa.
+</p>
+
+<p>
+<b>Tulet tarvitsemaan lähinnä kolmea edellä mainittua. Lyhyitä kokonaislukuja ja tavuja harvoin tarvitaan, ja ne ovat CoolBasicissa lähinnä kokeneempia käyttäjiä varten.</b>
+</p>
+
+<font color="#ff0000"><H4>Rajoitukset</H4></font>
+
+<p>
+<li>Kokonaisluvut (ja heksat) voivat olla väliltä: [-2147483647 , 2147483647].
+<li>Desimaaliluvut voivat olla väliltä: 3.4E +/- 38 (7 numeroa).
+<li>Lyhyet kokonaisluvut <font face=courier>(<font color="#0000ff">As Short</font>)</font> voivat olla väliltä [0 , 65536].
+<li>Tavut <font face=courier>(<font color="#0000ff">As Byte</font>)</font> voivat olla väliltä [0 , 255].
+<li>Merkkijonoilla ei ole pituusrajoitusta.
+</p>
+
+<font color="#ff0000"><H4>Leikkimään!</H4></font>
+
+<p>
+CoolBasic tarjoaa ohjelmoijalle mahdollisuuden suorittaa nopeita tehtäviä musitissa muistipalojen avulla. Lisätietoa manuaalin KOMENNOT-osasta.
+</p>
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

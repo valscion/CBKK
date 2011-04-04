@@ -1,0 +1,272 @@
+﻿<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - newbies</TITLE>
+
+<STYLE type=text/css>
+   BODY {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   TABLE {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   A:link {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:visited {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:hover {COLOR: #6380FD; TEXT-DECORATION: underline}
+</STYLE>
+
+</HEAD>
+
+<style type="text/css">
+body {
+SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+SCROLLBAR-SHADOW-COLOR:#ffffff;
+SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+SCROLLBAR-ARROW-COLOR:#000000;
+SCROLLBAR-TRACK-COLOR:#dddddd;
+SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+</style>
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+
+<!{START} -->
+
+
+<h2>Alkuun pääseminen</h2>
+
+
+
+<p>
+CoolBasic ohjelmointikieli kuuluu nimensä mukaisesti Basic-perheeseen. Siinä on yhtäläisyyksiä muiden Basic-kielten kanssa. Basic on erityisen aloittelijaystävällinen,
+ja juuri sen takia valitsimme Basicin.
+</p>
+
+<h3>Perusteet</h3>
+
+<p>
+Katsotaanpa ensin yksinkertaista esimerkkiä. Voit kirjoittaa sen editoriin ja ajaa sen (paina F5).
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Print "Hello World"<br>
+WaitKey
+</font>
+</p>
+
+<p>
+Huomaa, että kirjoittaessasi CoolBasic värjää sanan "Print" ja "WaitKey" sinisiksi. Ne ovat komentoja. Lainauksessa oleva lausahdus värjätään violetiksi.
+Se on merkkijono.
+</p>
+
+<p>
+Kun ajat ohjelman, pitäisi ruudulle ilmestyä teksti "Hello World". Ohjelma loppuu, kun painat mitä tahansa näppäintä. Ensimmäinen ohjelmasi on valmis. Osaatko muuttaa sitä niin, että
+se tulostaa oman nimesi?
+</p>
+
+<p>
+Mutta miksi meillä on "WaitKey"? Syy on yksinkertainen. Ohjelma pysäytetään odottamaan näppäimen painallusta ja lopetetaan sen jälkeen. Jos riviä ei olisi siinä, et ikinä ehtisi nähdä
+tulostetta. Kokeile vaikka.
+</p>
+
+<p>
+Ohjelman suoritus loppuu, kun suoritettava koodi loppuu tai kun kohdataan "End"-käsky. Seuraava koodi on käytännössä sama:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Print "Hello World"<br>
+WaitKey<br>
+End
+</font>
+</p>
+
+<hr>
+
+<p>
+Voit toki myös kommentoida koodia. Tämä helpottaa ymmärtämään koodin merkitystä vaikka parin viikon tauon jälkeen. Kannattaa opetella kommentoimaan koodia.
+Se on omaksi parhaaksesi.
+</p>
+
+<p>
+Kommentointi tapahtuu kirjoittamalla heittomerkki ('), joka sijaitsee tähtinäppäimessä. Vaihtoehtoisesti voit aloittaa kommentin kahdella kauttaviivalla (//).
+Kaikki, mitä samalla rivillä on näiden merkkien jälkeen, on kommenttia. CoolBasic värjää kommentit vihreiksi. Kommentit eivät vaikuta mitenkään ohjelman suoritukseen - CoolBasic
+ei välitä niistä. Seuraava esimerkki havainnollistaa kommentointia:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Print "Hello World" 'Tämä rivi tässä kirjoittaa tekstiä ruudulle
+</font>
+</p>
+
+<p>
+Ymmärrät kuitenkin kohta, että tuo kommentti on melko typerä, koska luultavasti viimeistään arvaat mitä Print-komento tekee. Katso syvällisemmät esimerkit
+kommentoinnista <a href="../language/comments.html">täältä</a>.
+</p>
+
+<hr>
+
+
+<h3>Tietotyypit</h3>
+
+<p>
+CoolBasic osaa käsitellä tietoa 3 eri muodossa. Oletkin jo törmännyt niistä yhteen, merkkijonoon. Tämän lisäksi CoolBasic käsittelee kokonaislukuja ja
+desimaali- eli liukulukuja. Numeerisille arvoille voidaan suorittaa laskutoimituksia, kuten plussa, miinus, kerto ja jako.
+<br><br>
+Lisätietoa:<br>
+<a href="../language/datatypes.html">Tietotyypit</a>
+</p>
+
+<hr>
+
+<h3>Muuttujat</h3>
+
+<p>
+Muuttujat taas säilövät tietoa. Niitä käytetään kuin mitä tahansa lukua ja niillä voidaan myös laskea yhtä pätevästi kuin 5+3. Voidaan siis ajatella, että
+annat arvolle vain toisen nimen. Luvut ovat lukuja, eikä niitä voi muuttaa. Mutta muuttujia voi. Muuttujaan voidaan sijoittaa arvoja. Oheinen esimerkki valaisee asiaa:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+A = 5<br>
+B = A + 7<br>
+Print B
+</font>
+</p>
+
+<p>
+Ohjelmassa on kaksi muuttujaa: A ja B. Muuttujaan sijoitetaan arvo "="-operaattorilla. Muuttujan nimi voi olla mikä tahansa sana tai kirjain, mutta se voi sisältää
+vain merkkejä A-Z, a-z sekä numerot ja alaviiva. Muuttuja ei saa alkaa numerolla.
+</p>
+
+<p>
+Myös muuttujilla on tyyppi. Voit käyttää kokonaisluku-, desimaaliluku- ja merkkijonomuuttujia. Jos käytät muuta kuin kokonaislukumuuttujaa, täytyy sinun kirjoittaa
+muuttujan nimen perään tyyppitunniste seuraavalla kaavalla:
+</p>
+
+<li>$-merkki merkkijonomuuttujille. Esimerkiksi: otsikko$
+<li>#-merkki desimaalimuuttujille. Esimerkiksi: painovoima#
+
+<p>
+<font color=ff00ff face=courier size=2>
+vauhti# = 0.5<br>
+vauhti# = vauhti# + 1.24<br>
+Print vauhti# 'tulostaa 1.74<br>
+otsikko$ = "Suorapeli"<br>
+Print otsikko$
+</font>
+</p>
+
+<p>
+Merkkijonoja voidaan "liimata" yhteen "+"-operaattorilla:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+A$ = "Hello"<br>
+B$ = " "<br>
+C$ = "World"<br>
+D$ = A$ + B$ + C$<br>
+Print D$
+</font>
+</p>
+
+<p>
+Riittää kuitenkin, että kirjoitat tyyppitunnisteen vain ensimmäisellä kerralla. Sen jälkeen voit käyttää kyseistä muuttujaa ilman tyyppitunnistinta, koska CoolBasic tietää jo
+muuttujan tyypin, ja muistaa sen.
+<br><br>
+Lisätietoa:<br>
+<a href="../language/variables.html">Muuttujat</a>
+</p>
+
+<hr>
+
+<h3>Taulukot</h3>
+
+<p>
+Mutta entä jos haluaisit käsitellä suuria määriä tietoa. Tuskin haluat luoda 50 muuttujaa tyyliin: vihulainen01X, vihulainen01Y, vihulainen02X, vihulainen02Y, ... Niitä on hyvin
+tuskallista ylläpitää ja muokata.
+</p>
+
+<p>
+Juuri tähän apuun tulevat taulukot. Saman muuttujanimen alle voi kuulua monta pientä "lokeroa". Jokaisella lokerolla on oma indeksinumeronsa, jonka avulla eri lokerot eroavat 
+toisistaan.
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Dim vihulainen(50)
+</font>
+</p>
+
+<p>
+Nyt meillä on kokonaislukutaulukko (samat tyyppisäännöt kuin muuttujille), jonka nimi on "vihulainen" ja joka sisältää yhteensä 51 lokeroa (0, 1, 2, ..., 50). Taulukoita käytetään
+ilmoittamalla sen nimen perään suluissa lokeron indeksiluku:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+vihulainen(1)=100<br>
+vihulainen(2)=103<br>
+vihulainen(3)=45<br>
+</font>
+</p>
+
+<p>
+Mutta entäs kun haluamme sijoittaa samaan taulukkoon vaikka vihulaisten X- ja Y-koordinaatit. Määrittelemme sitten uuden ulottuvuuden.
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Dim vihulainen(50, 1)
+</font>
+</p>
+
+<p>
+Näin ollen viimeisen ulottuvuuden nollas lokero olisi X ja ensimmäinen lokero Y.
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+vihulainen(1,0)=10<br>
+vihulainen(1,1)=64<br>
+vihulainen(2,0)=17<br>
+vihulainen(2,1)=9<br>
+</font>
+</p>
+
+<p>
+Nyt ensimmäisen vihulaisen koordinaatit olisivat (10,64) ja toisen (17,9). Kun haluat piirtää kaikki vihulaiset, voit käydä sen <a href="../commands/for.html">toistorakenteella</a> läpi.
+</p>
+
+<p>
+Voit määritellä korkeintaan 5 ulottuvuutta taulukoille.
+<br><br>
+Lisätietoa:<br>
+<a href="../language/arrays.html">Taulukot</a>
+</p>
+
+
+
+
+
+
+
+
+<hr>
+
+<center>
+<b>	tutustu Basic:iin	</b>
+<br>
+<a href="ostep2.html">Seuraava</a>
+</center>
+
+
+
+<!{END} -->
+
+</font>
+</body>
+
+</HTML>

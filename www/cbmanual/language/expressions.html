@@ -1,0 +1,265 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Laskutoimitukset ja lausekkeet</h2>
+
+<font color="#ff0000"><H4>Operaattorit</H4></font>
+
+<p>
+Operaattorit ovat sellaisia merkkej‰, jotka suorittavat kahdelle tai yhdelle arvolle (tai muuttujalle) jonkin <b>laskutoimituksen</b>, jonka tuloksena on vain yksi arvo. Esimerkiksi lausekkeessa A <b><font color="#0000ff">+</font></b> B operaattorina on plus (+). Samalla A ja B h‰vi‰v‰t, ja koko hoidon tilalle tulee C, joka on siis laskutoimituksen tulos. CoolBasicissa on monenlaisia operaattoreita. Ne on listattu oheiseen taulukkoon laskuj‰rjestyksen mukaan (ylimm‰t lasketaan ensiksi):
+</p>
+
+<table border=1 bgcolor="#ffffff" width="380">
+<tr>
+<td>
+<font face="verdana,arial" size=2>
+<b>Operaattori</b>
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=2>
+<b>Kuvaus</b>
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+(,)
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Sulkeet. Kaikki sulkeiden sis‰ll‰ suoritetaan ensin. <b>Esim. 2*(5+6)=22</b>.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
++,-
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Itseisarvo ja unaarinen miinus. Tarvitsevat vain yhden arvon, <b>esim. -7</b>.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+^
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Potenssiin korotus. Esim. <b>2^5</b>.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+*,/,Mod
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Kertolasku, jakolasku ja jakoj‰‰nnˆs. Jakoj‰‰nnˆksest‰ lis‰tietoa manuaalista komennolle Mod.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+Shl,Shr,Sar
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Bittitason siirto-operaattorit. Lis‰tietoa manuaalista.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
++,-
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Normaali plus- ja miinuslasku. <font color="#ff0000">Plus-lasku toimii myˆs merkkijonojen kanssa</font>.
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+=,<>,<,>,<=,>=
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Vertailuoperaattorit: <i>yht‰_suuri_kuin, eri_suuri_kuin, pienempi_kuin, suurempi_kuin, pienempi_tai_yht‰_suuri_kuin, suurempi_tai_yht‰_suuri_kuin</i>. <b>Esim. A&gt;B</b>
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+And,Or,Xor
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Loogiset operaattorit: <i>JA, TAI, JOKO-TAI</i>. <b>Esim. A Or B</b>
+</font>
+</td>
+
+</tr>
+<tr>
+
+<td>
+<font face="verdana,arial" size=2>
+Not
+</font>
+</td>
+<td>
+<font face="verdana,arial" size=1>
+Unaarinen Ei-operaattori. Lis‰tietoa manuaalista. <b>Esim. i=Not i</b>. Unaarinen, eli yhden arvon operaattori.
+</font>
+</td>
+
+</tr>
+</table>
+
+<font color="#ff0000"><H4>Laskutoimituksia koskevat s‰‰nnˆt</H4></font>
+
+<p>
+<li>Jos operaattorien ^,+,-,*,/ tai Mod laskutoimituksien annettavista arvoista jompikumpi on desimaali, on tuloskin desimaaliluku.
+<li>Shl, Shr ja Sar hyv‰ksyv‰t vain kokonaislukuja.
+<li>Merkkijonoille voidaan tehd‰ plus-lasku, joka yhdist‰‰ kaksi merkkijonoa toisiinsa. Merkkijonoille ei voi tehd‰ muita laskutoimituksia.
+<li>Jos merkkijono osallistuu yhteenk‰‰n lausekkeeseen, koko lauseke konvertoidaan merkkijonoksi.
+<li>Vertailuoperaattoreita ja loogisia operaattoreita voi k‰ytt‰‰ kaikille tietotyypeille, paitsi omille TYPE-tyypeille.
+<li>Monet CoolBasicin funktioista ja komennoista muuntavat numeerisia arvoja automaattisesti tarvittavaan muotoon (esim. kokonaisluku->desimaaliluku)
+<li>Tyyppej‰ voi muuntaa muodosta toiseen Int, Float ja Str -funktioilla.
+<li>Vertailuoperaattorit ja loogiset operaattorit palauttavat aina totuusarvon kokonaislukuna (0 tai 1).
+</p>
+
+<font color="#ff0000"><H4>Esimerkkej‰:</H4></font>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+part1$="Hello"<br>
+part2$="World"<br>
+<br>
+// Merge two strings together<br>
+Print part1$+" "+part2$<br>
+<br>
+<br>
+// Print an expression. Examine the result.<br>
+Print 1+2+"HELLO!"+5<br>
+<br>
+WaitKey
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<font color="#ff0000"><H4>Testaa taitosi</H4></font>
+
+<p>
+N‰iss‰ lausekkeissa on virheit‰. Etsi ja perustele ne. Kaikki lausekkeet eiv‰t ole virheellisi‰. ƒl‰ kokeile lausekkeita CoolBasicissa, harjoituksen tarkoituksena on oppia ymm‰rt‰m‰‰n mik‰ on laillista ja mik‰ ei.
+</p>
+
+<p>
+<li>Print -5+6*7+(+(-8))
+<li>Print (((7-23.0)/5.1)^Pii#
+<li>Print (10/3.0) Shl 2
+<li>If A<8 And A=8 Then
+<li>If A>=9 Xor (Not 6) Then
+<li>Blink=(Not Blink) + 1
+</p>
+
+<p><font size=1>Vastaukset:</font> <font Size=1 color="#ffffff">oikein,v‰‰rin,tavallaan v‰‰rin,v‰‰rin,oikein,v‰‰rin<font></p>
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

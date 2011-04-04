@@ -1,0 +1,177 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Kuvat</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>LOADANIMIMAGE</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Lataa kuvan kiintolevyltä. Tämän jälkeen kuva voidaan piirtää <b>DrawImage</b>-komennolla.</p>
+
+<p>Toisin kuin <b>LoadImage</b>, tällä komennolla voit ladata animoituja kuvasarjoja. Sen sijaan, että lataisit kaikki animaation framet eri tiedostoista, voit ladata kaikki yhdestä tiedostosta. Tämä yksinkertaistaa kuvien piirtämistä huomattavasti. Animoitu kuva piirretään normaalisti <b>DrawImage</b>-komennolla, mutta sen perään kirjoitetaan ylimääräinen parametri, joka kertoo CoolBasicille piirrettävän framen numeron. Ensimmäinen frame on nolla.</p>
+
+<p>Jotta kuvasarja voidaan ladata oikein, täytyy CoolBasicille kertoa kaikkien framejen koko, sekä kuvasarjan pituus. Oikeaoppinen kuvasarja sisältää tasakokoisia kuvia, jotka on sijoitettu vieri viereen ilman erottavia pikseleitä. Esimerkki:</p>
+
+<p><img src="note.jpg"></p>
+
+<p>Tuetut formaatit ovat: <b><font color="#ff0000" size="1">bmp, jpg, png ja tga</font></b></p>
+
+<p>Kaikki ladatut kuvat tuhoutuvat, kun SCREEN-komentoa käytetään ikkunakoon tai resoluution vaihtamiseen. Lataa kuvat uudelleen, ennen kuin yrität käyttää niitä. Muutoin ohjelma kaatuu.</p>
+
+<p>Funktio palauttaa nollan, jos kuvaa ei voitu ladata.</p>
+
+<p><b><font color="#ff0000">Älä koskaan lataa kovalevyltä mitään silmukan sisällä! Tätä komentoa tulisi käyttää vain ohjelman alussa.</font><b></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+LOADANIMIMAGE (tiedostonimi, frame_leveys, frame_korkeus, aloitus, pituus)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tiedostonimi</b> = Merkkijono. Ladattavan kuvan nimi tai polku.
+<li><b>frame_leveys</b> = Kokonaisluku. Framen leveys pikseleinä.
+<li><b>frame_korkeus</b> = Kokonaisluku. Framen korkeus pikseleinä.
+<li><b>aloitus</b> = Kokonaisluku. Monesko on ensimmäinen frame kuvatiedostossa. Yleensä nolla.
+<li><b>pituus</b> = Kokonaisluku. Montako framea kuvasarjassa on (esimerkkikuvassa on 8).
+</p>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadanimimage.html">LOADANIMIMAGE</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Brackground white </font></font><br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<br>
+anim=<font color="#40FFFF">LoadAnimImage</font>("Media/note.bmp",32,32,0,8) <br>
+<font color="#40FFFF">MaskImage</font> anim,cbmagenta<br>
+<br>
+<font color="#40FFFF">While</font> <font color="#40FFFF">Not</font> <font color="#40FFFF">EscapeKey</font>()<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Draw the image</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> anim,184,134,f<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'animate</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> k=0 <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f=f+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> f>7 <font color="#40FFFF">Then</font> f=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;k=k+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> k>2 <font color="#40FFFF">Then</font> k=0 <font color="#00FF00">'change frame every 3. time</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Wend</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstimage.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

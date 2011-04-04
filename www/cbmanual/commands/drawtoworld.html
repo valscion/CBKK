@@ -1,0 +1,185 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Grafiikka</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>DRAWTOWORLD</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Pelimaailman koordinaatit ovat erilaisia kuin ruudun koordinaatit:</p>
+
+<p><img src="../pics/screen.gif">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../pics/world.gif"></p>
+
+<p>Normaalisti piirtokomennot (line, box, circle, jne.) piirtävät ruutukoordinaattien mukaan. CoolBasicissa on kuitenkin mahdollista piirtää esimerkiksi viivoja myös pelimaailman sisälle, jolloin kameran sijainti vaikuttaa siihen, mikä osa viivasta on näkyvissä. Voit käyttää viivaa tällä tavoin esimerkiksi sädetykin (<i>rail gun</i>) toteuttamiseen. Samaan tapaan voit piirtää ympyröitä ja laatikoita pelimaailman osaksi.</p>
+
+<p>Jotta grafiikka piirtyisi oikein, on yleensä hyvä kutsua piirtokomentoja <b>DrawGame</b>- ja <b>DrawScreen</b>-komentojen välissä. Normaalistihan DrawGamea ei tarvitse käyttää, koska CoolBasic suorittaa sen automaattisesti, mutta muutoin on vaara, että esimerkiksi kartta peittää grafiikan, koska se piirretään grafiikan jälkeen. Kokeile esimerkkiä ilman <b>DrawGame</b>-komentoa ja sen kanssa.</p>
+
+<p>Teksti ja kuvat piirtyvät myöskin oletuksellisesti ruutukoordinaattien mukaan, mutta voit tällä komennolla vaikuttaa niidenkin sijaintiin. Esimerkiksi pelihahmojen tietoja voidaan tulostaa niiden viereen pelimaailmassa.</p>
+
+<p>Toiminto on oletuksellisesti pois päältä, joten piirtokomennot noudattavat totuttuja ruutukoordinaatteja.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DRAWTOWORLD piirtokomennot, [kuvat], [teksti]
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>piirtokomennot</b><br>
+<font size="1" color="#ff0000"><b>ON</b> = piirrä viivat, laatikot, ympyrät, ovaalit ja pisteet pelimaailmaan<br>
+<b>OFF</b> = piirrä normaalisti</font><br>
+<li><b>kuvat</b> <font color="#ff0000" size="1">(valinnainen)</font> <br>
+<font size="1" color="#ff0000"><b>ON</b> = piirrä pelimaailmaan<br>
+<b>OFF</b> = piirrä kuvat normaalisti (oletus)</font><br>
+<li><b>teksti</b> <font color="#ff0000" size="1">(valinnainen)</font> <br>
+<font size="1" color="#ff0000"><b>ON</b> = piirrä teksti (Text-komento) pelimaailmaan<br>
+<b>OFF</b> = piirrä teksti normaalisti (oletus)</font><br>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'Set all drawing commands to draw to game world </font></font><br>
+<font color="#40FFFF">DrawToWorld</font> <font color="#40FFFF">ON</font><br>
+<br>
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Create scene </font></font><br>
+grass= <font color="#40FFFF">MakeObjectFloor</font>()<br>
+lawn= <font color="#40FFFF">LoadImage</font>("Media\grass.bmp")<br>
+<font color="#40FFFF">PaintObject</font> grass, lawn<br>
+<br>
+character= <font color="#40FFFF">LoadObject</font>("Media\guy.bmp",72)<br>
+<br>
+<font color="#40FFFF">AddText</font> "Use arrows to move..."<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Guide</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> character,5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> character, -5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> character,2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> character, -2<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Camera follow</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneCameraPosition</font> character<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawGame</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw a hollow circle at the center</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font>-5,5,10,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw a line</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Line</font> 0,0,50, -50<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw a box</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font>-100,100,200,160,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstgraphics.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

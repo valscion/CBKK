@@ -1,0 +1,227 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>OBJECTPICK</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Objekti suorittaa poiminnan. Poimintaviiva lähtee suoraan objektin osoittamaan suuntaan, ja CoolBasic tarkastaa mihin se osuu. Voit tarkastaa poimitun objektin funktiolla <b>PickedObject</b>. Osumapisteen saat funktioista <b>PickedX</b> ja <b>PickedY</b>.</p>
+
+<p>Komennon ihanteellinen käyttötarkoitus on ns. <i>instant hit bullets</i>, eli luodin osuma. Luoti liikkuu äärettömän nopeasti, ja osuu ensimmäiseen seinään tai objektiin. Kaikki "poimittavat" objektit pitää esitellä komennolla <b>ObjectPickable</b>.</p>
+
+<p>Poiminnat suoritetaan täysin matemaattisesti, mikä tekee niistä erittäin nopeita. Itseensä ei voi osua, joten objektin sisältä lähtenyt luoti ei töksähdä omaan ulkokuoreen.</p>
+
+<p>Huomaa, että piilotettuja objekteja ei voi poimia.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+OBJECTPICK objektimuuttuja
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>objektimuuttuja</b> = Se muuttuja, mihin objekti ladattiin tai luotiin.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="objectpickable.html">OBJECTPICKABLE</a>,
+<a href="pixelpick.html">PIXELPICK</a>,
+<a href="camerapick.html">CAMERAPICK</a>,
+<a href="pickedobject.html">PICKEDOBJECT</a>, 
+<a href="pickedx.html">PICKEDX</a>, 
+<a href="pickedy.html">PICKEDY</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'This is for the gun-splash </font></font><br>
+<font color="#40FFFF">Type</font> EFFECTS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Field</font> x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Field</font> y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Field</font> size<br>
+<font color="#40FFFF">End</font> <font color="#40FFFF">Type</font><br>
+<br>
+<font color="#40FFFF">DrawToWorld</font> <font color="#40FFFF">ON</font> <font color="#00FF00">'draw circles onto game world</font><br>
+<font color="#40FFFF">FrameLimit</font> 40 <font color="#00FF00">'limit speed for fast computers</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load the map and the hero </font></font><br>
+map=<font color="#40FFFF">LoadMap</font>("Media\cdm2.til","Media\tileset.bmp")<br>
+soldier=<font color="#40FFFF">LoadObject</font>("Media\soldier.bmp",360)<br>
+<br>
+<font color="#40FFFF">RotateObject</font> soldier,90 <font color="#00FF00">'make the soldier face upwards</font><br>
+<font color="#40FFFF">SetupCollision</font> soldier,map,1,4,2 <font color="#00FF00">'create sliding collision</font><br>
+<font color="#40FFFF">ObjectRange</font> soldier,30 <font color="#00FF00">'set collision range for radius 15</font><br>
+<br>
+<font color="#40FFFF">ObjectPickable</font> map,<font color="#40FFFF">ON</font> <font color="#00FF00">'make map pickable</font><br>
+<font color="#40FFFF">PlayObject</font> map,0,0,1 <font color="#00FF00">'animate map</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Load and set a custom mouse pointer (the crosshair) </font></font><br>
+crosshair=<font color="#40FFFF">LoadImage</font>("Media\crosshair.bmp")<br>
+<font color="#40FFFF">ShowMouse</font> crosshair<br>
+<br>
+<font color="#40FFFF">AddText</font> "Move: WASD, Aim: Mouse, Shoot: Mouse1"<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Get the angle to the crosshair and turn to it</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;aim=<font color="#40FFFF">GetAngle</font>(200,150,<font color="#40FFFF">MouseX</font>(),<font color="#40FFFF">MouseY</font>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">RotateObject</font> soldier,aim<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update Controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyDown</font>(cbkeys) <font color="#40FFFF">Then</font> <font color="#40FFFF">TranslateObject</font> soldier,0, -3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyDown</font>(cbkeyw) <font color="#40FFFF">Then</font> <font color="#40FFFF">TranslateObject</font> soldier,0,3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyDown</font>(cbkeyd) <font color="#40FFFF">Then</font> <font color="#40FFFF">TranslateObject</font> soldier,3,0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyDown</font>(cbkeya) <font color="#40FFFF">Then</font> <font color="#40FFFF">TranslateObject</font> soldier, -3,0 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update shooting</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">MouseDown</font>(1) <font color="#40FFFF">And</font> reload=0 <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ObjectPick</font> soldier<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">PickedObject</font>() <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect.EFFECTS=<font color="#40FFFF">New</font>(EFFECTS)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect\x=<font color="#40FFFF">PickedX</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect\y=<font color="#40FFFF">PickedY</font>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect\size=2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reload=6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> reload <font color="#40FFFF">Then</font> reload=reload-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw objects and then EFFECTS</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawGame</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoSub</font> updateEFFECTS<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'stick the camera to the soldier and draw screen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">UpdateGame</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneCameraPosition</font> soldier <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+<font color="#40FFFF">End</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'::::::::::::::::::::::::::::::::::::::::::::: </font></font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'This sub-program will update all existing EFFECTS </font></font><br>
+updateEFFECTS:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Iterate all</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> effect.EFFECTS=<font color="#40FFFF">Each</font> EFFECTS<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Draw efefct</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbyellow<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> effect\x-effect\size,effect\y+effect\size,effect\size*2,<font color="#40FFFF">OFF</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update effect size</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;effect\size=effect\size+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Remove effect when it gets too large</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> effect\size>10 <font color="#40FFFF">Then</font> <font color="#40FFFF">Delete</font> effect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> effect<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font color="#40FFFF">Return</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

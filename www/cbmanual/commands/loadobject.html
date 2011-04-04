@@ -1,0 +1,173 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>LOADOBJECT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Lataa kuvan ja tekee siitä objektin. Sallitut kuvamuodot ovat:  <b><font color="#ff0000" size="1">bmp, jpg, png ja tga.</font></b></p>
+
+<p>Objektit ovat pelimaailmaan ladattavia hahmoja, esineitä, vihollisia tai kerättäviä power-uppeja. Niitä voi erikseen liikuttaa, sijoittaa, pyörittää, osoittaa, animoida, teksturoida ja tappaa. Lisäksi ne voivat reagoida keskenään mm. törmäten toisiinsa. Myös kartat ja partikkelilähteet ovat objekteja.</p>
+
+<p>Objektit ovat siitä kivoja, että kaikkia voi ohjata samoilla objektikomennoilla. Voit esimerkiksi animoida tilekartan samaan tapaan kuin normaalin objektin.</p>
+
+<p>Jokaisella objektilla on oma kulma. Niitä voi pyörittää kaikkiin suuntiin, ja ne liikkuvat aina siihen suuntaan mihin osoittavat. Samalla tavalla kuin ihminen liikkuu sinne minne nenä osoittaa.</p>
+
+<p>Jos lataat objektin, jota on tarkoitus voida pyörittää, anna sille ylimääräinen parametri, joka määrittää kuinka sulavasti objekti pyörii ruudulla. Oikeastaan <b>tämä määrittää kuinka moneen eri suuntaan objekti voi osoittaa.</b> Arvo 8 saa objektin katsomaan 8 eri suuntaan sen kulmasta riippuen. Arvon tulee olla väliltä 1-360. <font color="#ff0000">Mitä isompi sitä sulavampi kääntyvyys</font>. Isojen objektien lataaminen parhaalla pyörityslaadulla saattaa kuitenkin olla hidasta. Parhaan kääntyvyysarvon saat, kun jaat 360/käännösnopeus, missä käännösnopeus on se arvo millä kulmaa kasvatetaan tai vähennetään kun pelaaja haluaa kääntää objektia. Esimerkissä ihannearvo on 72, koska objekti kääntyy 5 astetta kerralla, ja 360/5=72.</p>
+
+<p>Jos lataat paljon samaa objektia, kannattaa mieluummin kopioida se funktiolla <b>CloneObject</b>. Se on PALJON nopeampaa. Alkuperäistä objektia ei silloin kuitenkaan voi poistaa tai käsitellä millään tavalla. Lisätietoja komennosta <b>CloneObject</b>.</p>
+
+<p>Funktio palauttaa nollan, jos objektia ei voitu ladata.</p>
+
+<p><b><font color="#ff0000">Älä koskaan lataa kovalevyltä mitään silmukan sisällä! Tätä komentoa tulisi käyttää vain ohjelman alussa.</font><b></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+LOADOBJECT (tiedostonimi, [pyörityslaatu])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tiedostonimi</b> = Merkkijono. Määrittää ladattavan kuvan tiedostonimen tai polun.
+<li><b>pyörityslaatu</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku väliltä 1-360. Kuinka moneen suuntaan objekti voi katsoa. Oletuksena 1 (ei käänny).
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadanimobject.html">LOADANIMOBJECT</a>,
+<a href="makeobjectfloor.html">MAKEOBJECTFLOOR</a>,
+<a href="loadmap.html">LOADMAP</a>,
+<a href="cloneobject.html">CLONEOBJECT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'limit speed for fast machines </font></font><br>
+<font color="#40FFFF">FrameLimit</font> 40 <br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load player </font></font><br>
+guy= <font color="#40FFFF">LoadObject</font>("Media\guy.bmp", 72)<br>
+<br>
+<font color="#40FFFF">Color</font> cbblack<br>
+<font color="#40FFFF">AddText</font> "Move via arrows..."<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<br>
+<font color="#40FFFF">Repeat</font> <font color="#00FF00">'THE MAIN LOOP</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy, 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> guy, -5 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy, 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">MoveObject</font> guy, -2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

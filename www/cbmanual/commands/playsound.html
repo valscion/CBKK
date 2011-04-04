@@ -1,0 +1,195 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Äänet</b></font> : <font color="#0000ff"><b>hybridit</b></font></p>
+<H2>PLAYSOUND</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Soittaa kaikenlaisia ääniä. Tämän komennon erikoisuus on siinä, että sitä voidaan käyttää moneen tarkoitukseen. Sillä voi:</p>
+
+<p><font size=1>
+<li>Soittaa aiemmin ladatun äänen
+<li>Soittaa musiikkia suoraan kovalevyltä
+<li>Soittaa CD-raitoja
+<li>Asettaa äänen voimakkuuden, sijainnin, taajuuden ja toiston
+</font></p>
+
+<p>
+<b>Ladatun äänen soittaminen</b><br>
+Ensimmäiseksi parametriksi kirjoitat äänimuuttujan nimen, eli sen muuttujan, mihin ääni ladattiin funktiolla <i>LoadSound</i>.
+</p>
+
+<p>
+<b>Musiikin soittaminen</b><br>
+Ensimmäiseksi parametriksi kirjoitat merkkijonon, joka on soitettavan musiikkitiedoston tiedostonimi. Musiikki soitetaan suoraan kovalevyltä, eikä sitä tarvitse erikseen ladata muistiin. Tunnetut tiedostoformaatit ovat: <b><font color="#ff0000" size="1">raw, mod, s3m, xm, it, mid, rmi, wav, mp2, mp3, ogg, wma, asf ja mo3</font></b>.
+</p>
+
+<p>
+<b>CD-raidan soittaminen</b><br>
+Ensimmäiseksi parametriksi kirjoitat kokonaisluvun väliltä 0-99. Luku määrittää soitettavan raidan järjestysnumeron.
+</p>
+
+<p>Voit lisäksi valinnaisilla parametreilla muuttaa äänen voimakkuutta, sijaintia ja taajuutta. Sijainti muuttaa äänen paneerausta vasemman ja oikean kaiuttimen välillä. Jos haluat muuttaa äänen jatkuvalle soitolle, käytä siihen <b>SetSound</b>-komentoa.</p>
+
+<p>Tätä komentoa voi käyttää myös funktiona (ilmoitetaan sulkeiden kanssa), jolloin se palauttaa äänikanavan, jonne ääni ohjattiin. Äänikanavan avulla voit myöhemmin säätää äänen voimakkuutta, toistoa, sijaintia ja taajuutta lennossa. Lisätietoja <b>SetSound</b>-komennon ohjeesta.</p>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+PLAYSOUND soitto, [voimakkuus], [sijainti], [taajuus]<br>
+&nbsp;&nbsp;tai<br>
+PLAYSOUND (soitto, [voimakkuus], [sijainti], [taajuus])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>soitto</b> = Äänimuuttuja, merkkijono tai kokonaisluku väliltä 0-99. Katso lisätietoja ylhäältä.
+<li><b>voimakkuus</b> <font color="#ff0000" size="1">(valinnainen)</font> = Luku väliltä 0-100. Nolla on ei ääntä, 100 on täysillä. Oletuksena 100. Tätä parametria ei ole pakko kirjoittaa.
+<li><b>sijainti</b> <font color="#ff0000" size="1">(valinnainen)</font> = Luku väliltä -100 ja 100. Nolla on keskitetty ääni, -100 on vasen kaiutin ja 100 oikea kaiutin. Oletuksena 0. Tätä parametria ei ole pakko kirjoittaa.
+<li><b>taajuus</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokeile lukuja 8000-44000. Ilmoitetaan hertseinä. Jätä pois, jos et halua muuttaa taajuutta.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="setsound.html">SETSOUND</a>,
+<a href="loadsound.html">LOADSOUND</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">PlaySound</font> "Media\SK_Battle2.mp3" <font color="#00FF00">'start playing background music</font><br>
+<br>
+sfx=<font color="#40FFFF">LoadSound</font>("Media\Blaster.wav")<br>
+<br>
+<font color="#40FFFF">AddText</font> "Hit SPACE to play a laser sound"<br>
+<font color="#40FFFF">AddText</font> "Try arrows"<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyspace) <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;laserchannel=<font color="#40FFFF">PlaySound</font>(sfx,50) <font color="#00FF00">'play sound at 50% volume</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'play in left speaker</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyleft) <font color="#40FFFF">Then</font> <font color="#40FFFF">PlaySound</font> sfx, 100, -100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'play in right speaker</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyright) <font color="#40FFFF">Then</font> <font color="#40FFFF">PlaySound</font> sfx,100, 100<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'play high pitch</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyup) <font color="#40FFFF">Then</font> <font color="#40FFFF">PlaySound</font> sfx,100,0,60000<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'play low pitch</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeydown) <font color="#40FFFF">Then</font> <font color="#40FFFF">PlaySound</font> sfx,100,0,8000<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'print some info</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 60,200,"Laser sound playing: "+<font color="#40FFFF">SoundPlaying</font>(laserchannel)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstsound.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

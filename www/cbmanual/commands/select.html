@@ -1,0 +1,310 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>koodirakenteet</b></font></p>
+<H2>SELECT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Toivottavasti tunnet jo IF-lauseen, koska tämä on vähän sama. Select-rakenne vastaa sarjaa ElseIf-lausekkeita. Esitystapa on vain hieman erilainen, ehkäpä mukavampi.</p>
+
+<p>
+Select-rakenteella voidaan tarkastaa useita ehtoja. Se vertaa sille annettuun arvoon muita esiteltyjä arvoja. Komento on ihanteellinen, kun katsotaan
+minkälaisia arvoja muuttujassa on. Rakenne menee näin:
+</p>
+<p><font size=1>
+<li> 1) SELECT muuttuja
+<li> 2) CASE arvo
+<li> 3) komento
+<li> 4) [CASE arvo]
+<li> 5) [komento]
+<li> 6) [DEFAULT]
+<li> 7) [komento]
+<li> 8) END SELECT
+</font></p>
+Hakasulkeella olevat kohdat ovat valinnaisia. Kuulostaako hämmentävältä? Otetaan esimerkki:
+</p>
+
+<p>
+<font color="#FFF00FF" face="courier">
+TARKASTELE muuttujaa<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ONKO 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEE JOTAIN...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ONKO 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEE JOTAIN<br>
+LOPETA TARKASTELU
+</font>
+</p>
+
+<p>
+<b>Oikeastaan se tekee siis saman, kuin sarja IF- tai ELSEIF-käskyjä.</b> CoolBasicin kielellä tämä olisi: 
+</p>
+
+<p>
+<font color="#FFF00FF" face="courier">
+SELECT muuttuja<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "yksi"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "kaksi"<br>
+END SELECT
+</font>
+</p>
+
+<p>
+Jos mikään ehdoista ei täsmää, voit haluta ottaa senkin huomioon. DEFAULT-käsky vastaa IF-rakenteen ELSE-käskyä.
+</p>
+
+<p>
+<font color="#FFF00FF" face="courier">
+SELECT muuttuja<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "yksi"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "kaksi"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DEFAULT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "joku muu"<br>
+END SELECT
+</font>
+</p>
+
+
+<p>
+Voit myös yhdistellä ehtoja samoin kuin IF-rakenteessa OR-avainsanan avulla:
+</p>
+
+<p>
+<font color="#FFF00FF" face="courier">
+SELECT muuttuja<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "yksi"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE 2, 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "kaksi tai kolme"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;DEFAULT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PRINT "joku muu"<br>
+END SELECT
+</font>
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+SELECT vertailuarvo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CASE lista<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'komentoja...<br>
+END SELECT
+</font>
+</td>
+</tr></table>
+<p>
+
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="../language/core.html#select">TOINEN SELITYS</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'A TEXT ADVENTURE </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'======================================== </font></font><br>
+<br>
+beginning:<br>
+<font color="#40FFFF">ClearText</font><br>
+<font color="#40FFFF">ClearKeys</font><br>
+<font color="#40FFFF">CloseInput</font><br>
+<br>
+<font color="#40FFFF">AddText</font> "What would you like to do?"<br>
+<font color="#40FFFF">AddText</font> ""<br>
+<font color="#40FFFF">AddText</font> "1. Go out"<br>
+<font color="#40FFFF">AddText</font> "2. Go to fishing"<br>
+<font color="#40FFFF">AddText</font> "3. Eat an apple"<br>
+<font color="#40FFFF">AddText</font> ""<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c=<font color="#40FFFF">Input</font>("?")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">KeyHit</font>(cbkeyreturn)<br>
+<br>
+<font color="#40FFFF">Select</font> c<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> outside<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> fishing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> eat<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Default</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">AddText</font> "Invalid choise"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Wait</font> 2000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> beginning<br>
+<font color="#40FFFF">End</font> <font color="#40FFFF">Select</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font color="#00FF00"><font color="#00FF00">'---------------------------------------</font></font><br>
+<br>
+outside:<br>
+<font color="#40FFFF">ClearText</font><br>
+<font color="#40FFFF">ClearKeys</font><br>
+<font color="#40FFFF">CloseInput</font><br>
+<br>
+<font color="#40FFFF">AddText</font> "OK, you're on your yard. What to do now?"<br>
+<font color="#40FFFF">AddText</font> ""<br>
+<font color="#40FFFF">AddText</font> "1. Go back inside"<br>
+<font color="#40FFFF">AddText</font> "2. Go to fishing"<br>
+<font color="#40FFFF">AddText</font> ""<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c=<font color="#40FFFF">Input</font>("?")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">KeyHit</font>(cbkeyreturn)<br>
+<br>
+<font color="#40FFFF">Select</font> c<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> beginning<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Case</font> 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> fishing<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Default</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">AddText</font> "Invalid choice"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Wait</font> 2000<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoTo</font> outside<br>
+<font color="#40FFFF">End</font> <font color="#40FFFF">Select</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'---------------------------------------</font></font><br>
+<br>
+fishing:<br>
+<font color="#40FFFF">ClearText</font><br>
+<font color="#40FFFF">ClearKeys</font><br>
+<font color="#40FFFF">CloseInput</font><br>
+<br>
+<font color="#40FFFF">AddText</font> "You noticed you are quite a good angler."<br>
+<font color="#40FFFF">AddText</font> "You finished this game, congrats!"<br>
+<br>
+<font color="#40FFFF">DrawScreen</font><br>
+<font color="#40FFFF">Wait</font> 10000<br>
+<font color="#40FFFF">End</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'---------------------------------------</font></font><br>
+<br>
+eat:<br>
+<font color="#40FFFF">ClearText</font><br>
+<font color="#40FFFF">ClearKeys</font><br>
+<font color="#40FFFF">CloseInput</font><br>
+<br>
+<font color="#40FFFF">AddText</font> "Yamm.. no need of Doctor for a while."<br>
+<br>
+<font color="#40FFFF">DrawScreen</font><br>
+<font color="#40FFFF">Wait</font> 3000<br>
+<br>
+<font color="#40FFFF">GoTo</font> beginning<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

@@ -1,0 +1,193 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>DIM</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>
+Luo taulukon muistiin. Taulukoissa voi olla useita ulottuvuuksia, mutta enintään viisi. Uuden ulottuvuuden määritteleminen voi kasvattaa dramaattisesti taulukon kokoa. Taulukot ovat käteviä, kun halutaan sijoittaa paljon tietoa yhden muuttujanimen taakse. Taulukoita voidaan käydä tehokkaasti läpi <a href="for.html">For...Next-rakenteella</a> (katso esimerkki). Sen sijaan, että loisit 52*7 eri muuttujaa sijoittamaan vuoden oikeat lottorivit, voit varata taulukon (52,7). Vähentää kummasti kirjoitustyötä :)
+</p>
+
+<p>
+Kuvittele, että taulukot ovat laatikoita. Jos taulukkosi on 1-ulotteinen, ja sisältää 6 solua, se sisältää siis 6 laatikkoa. Oletetaan, että määrittelet uuden ulottuvuuden, jossa on 5 solua. Silloin jokaiseen kuuteen laatikkoon ilmestyy 5 pienempää laatikkoa. Ja jos määrittelet taas uuden ulottuvuuden, vaikka 45 solulla, on sinulla kuusi laatikkoa, jokaisessa niistä 5 pienempää laatikkoa, ja jokaisen niiden sisällä vielä 45 pienempää laatikkoa. Sinulla on siis yhteensä 6*5*45=1350 solua taulukossasi.
+</p>
+
+<p>
+Huomioi kuitenkin, että kun määrittelet kuinka monta solua yhteen ulottuvuuteen tulee, myös nolla on mukana. Eli jos käsket Dim t(5), varaat oikeasti tilaa kuudelle paikalle: {0,1,2,3,4,5}.
+</p>
+
+<p>
+Kaikki taulukot ovat globaaleja, eli ne "näkyvät" myös kaikissa funktioissa. Älä yritä lukea/kirjoittaa sellaisiin paikkoihin taulukossa, joita ei ole olemassa.
+</p>
+
+<p>
+Voit esittää myös muuttujia tietyn tyyppisiksi. Tällöin käytetään AS-avainsanaa ja tyyppitunnistetta: <i><b>Integer, Float, String, Byte tai Short</b></i>. Lisätietoa kahdesta viimeisestä löydät manuaalin kohdasta "Tietotyypit". Huomaa, että voit määritellä useita muuttujia ja taulukoita samalla DIM-komennolla, kunhan ne on erotettu pilkulla. Esimerkki valaisee asiaa.
+</p>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DIM muuttuja (ulottuvuus1_elementit [,ulottuvuus2_elementit] [,ulottuvuus3_elementit} [,ulottuvuus4_elementit] [,ulottuvuus5_elementit])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>ulottuvuus1_elementit</b> = Kokonaisluku, joka määrittää ensimmäisen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus2_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää toisen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus3_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää kolmannen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus4_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää neljännen ulottuvuuden solujen määrän.
+<li><b>ulottuvuus5_elementit</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku, joka määrittää viidennen ulottuvuuden solujen määrän.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="redim.html">REDIM</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Dim</font> enemy_x#(100)<br>
+<font color="#40FFFF">Dim</font> enemy_y#(100)<br>
+<font color="#40FFFF">Dim</font> enemy_plusx(100) <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font>,enemy_plusy(100) <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font><br>
+<br>
+<font color="#40FFFF">Dim</font> i <font color="#40FFFF">As</font> <font color="#40FFFF">Integer</font><br>
+<font color="#40FFFF">Dim</font> angle <font color="#40FFFF">As</font> <font color="#40FFFF">Integer</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'First apply a random position for all enemies </font></font><br>
+<font color="#40FFFF">For</font> i=1 <font color="#40FFFF">To</font> 100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enemy_x(i)=<font color="#40FFFF">Rand</font>(390)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enemy_y(i)=<font color="#40FFFF">Rand</font>(290)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;angle=<font color="#40FFFF">Rand</font>(360)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enemy_plusx(i)=<font color="#40FFFF">Cos</font>(angle)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enemy_plusy(i)=<font color="#40FFFF">Sin</font>(angle)<br>
+<font color="#40FFFF">Next</font> i<br>
+<br>
+<font color="#40FFFF">Color</font> 0,255,0<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'The main loop </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'update all enemies</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> i=1 <font color="#40FFFF">To</font> 100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> enemy_x(i),enemy_y(i),10,10,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'move</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemy_x(i)=enemy_x(i)+enemy_plusx(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enemy_y(i)=enemy_y(i)+enemy_plusy(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'bounce</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> enemy_x(i)<0 <font color="#40FFFF">Or</font> enemy_x(i)>390 <font color="#40FFFF">Then</font> enemy_plusx(i)= -enemy_plusx(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> enemy_y(i)<0 <font color="#40FFFF">Or</font> enemy_y(i)>290 <font color="#40FFFF">Then</font> enemy_plusy(i)= -enemy_plusy(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> i<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

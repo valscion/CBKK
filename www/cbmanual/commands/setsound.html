@@ -1,0 +1,173 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Äänet</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>SETSOUND</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Muuttaa äänen olemusta. Äänen pitää olla jo soimassa, jotta tätä komentoa voisi käyttää. Tätä varten ääni piti soittaa funktiona, jotta saat kanavamuuttujan. Katso esimerkki :)</p>
+
+<p>Voit muuttaa äänen voimakkuutta, sijaintia ja taajuutta. Sijainti muuttaa äänen paneerausta vasemman ja oikean kaiuttimen välillä. Saat näin vaikka hienon vaikutelman helikopterin ohilentämisestä.
+
+<p>Voit asettaa <i>ladatun</i> äänen jatkuvaksi soitoksi komentamalla: <b>SetSound kanavamuuttuja,ON</b></p>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+SETSOUND kanavamuuttuja, efekti, [voimakkuus], [sijainti], [taajuus]
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>kanavamuuttuja</b> = Kanavamuuttuja, jonka sait PlaySound-funktiolta.
+<li><b>efekti</b> = Äänen erikoissoittotapa: <b>OFF</b> ei toistoa, <b>ON</b> toistuva ääni.
+<li><b>voimakkuus</b> <font color="#ff0000" size="1">(valinnainen)</font> = Luku väliltä 0-100. Nolla on ei ääntä, 100 on täysillä. Oletuksena 100. Tätä parametria ei ole pakko kirjoittaa.
+<li><b>sijainti</b> <font color="#ff0000" size="1">(valinnainen)</font> = Luku väliltä -100 ja 100. Nolla on keskitetty ääni, -100 on vasen kaiutin ja 100 oikea kaiutin. Oletuksena 0. Tätä parametria ei ole pakko kirjoittaa.
+<li><b>taajuus</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokeile lukuja 8000-44000. Ilmoitetaan hertseinä. Jätä pois, jos et halua muuttaa taajuutta.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadsound.html">LOADSOUND</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">AddText</font> "Hit SPACE to play a laser sound"<br>
+<font color="#40FFFF">AddText</font> "Try arrows"<br>
+<br>
+vol=100 <font color="#00FF00">'default full volume</font><br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'endless loop of music</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">SoundPlaying</font>(music)=<font color="#40FFFF">OFF</font> <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;music=<font color="#40FFFF">PlaySound</font>("Media\SK_Battle2.mp3")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'change pan</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> pan=pan-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> pan=pan+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> pan< -100 <font color="#40FFFF">Then</font> pan= -100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> pan>100 <font color="#40FFFF">Then</font> pan=100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'change volume</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> vol=vol+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> vol=vol-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> vol<0 <font color="#40FFFF">Then</font> vol=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> vol>100 <font color="#40FFFF">Then</font> vol=100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'apply changes</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">SetSound</font> music,0,vol,pan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 40,40,"Volume: "+vol<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 40,55,"Pan: "+pan<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstsound.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

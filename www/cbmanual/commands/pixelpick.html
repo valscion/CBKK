@@ -1,0 +1,208 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>PIXELPICK</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Objekti suorittaa poiminnan. Poimintaviiva lähtee suoraan objektin osoittamaan suuntaan, ja CoolBasic tarkastaa mihin se osuu. Ero <b>ObjectPick</b>iin on se, että poiminta suoritetaan objektin sisältä. Komento on suunniteltu kuvaan perustuvaan kenttään. Ainahan ei ole pakko käyttää tilekarttaa : )</p>
+
+<p>Komennon ihanteellinen käyttötarkoitus on ns. <i>instant hit bullets</i>, eli luodin osuma. Luoti liikkuu äärettömän nopeasti, ja osuu ensimmäiseen seinään. Kaikki "poimittavat" objektit pitää esitellä komennolla <b>ObjectPickable</b> arvolle <font color="#ff0000"><b>3</b></font>.</p>
+
+<p>Huomaa, että piilotettuja objekteja ei voi poimia. Voit käyttää komentoa vaikkapa luolalenteltyihin, jossa kenttä ladataan objektina (<u>ilman</u> pyöritysarvoa), ja jonka sisällä alukset lentelevät.</p>
+
+<p>Valinnaisella täydellisyysarvolla määritetään poiminnan tarkkuus. Suuremmat arvot toimivat nopeammin suurilla etäisyyksillä. Oletuksena 1, joka on tarkin mahdollinen poiminta.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+PIXELPICK objektimuuttuja, [täydellisyys]
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>objektimuuttuja</b> = Se muuttuja, mihin objekti ladattiin tai luotiin
+<li><b>täydellisyys</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku 1 ->. Poiminnan tarkkuus/nopeus. Oletuksena 1 (tarkin)
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="objectpickable.html">OBJECTPICKABLE</a>,
+<a href="objectpick.html">OBJECTPICK</a>,
+<a href="camerapick.html">CAMERAPICK</a>,
+<a href="pickedobject.html">PICKEDOBJECT</a>, 
+<a href="pickedx.html">PICKEDX</a>, 
+<a href="pickedy.html">PICKEDY</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Const</font> gravity= -0.02<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'declare variables as decimal </font></font><br>
+<font color="#40FFFF">Dim</font> target_movex <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font>, target_movey <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font><br>
+<font color="#40FFFF">Dim</font> movex <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font>, movey <font color="#40FFFF">As</font> <font color="#40FFFF">Float</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'change the display mode (low reolution, zoomed display) </font></font><br>
+<font color="#40FFFF">SCREEN</font> 320,240,16,cbsizable<br>
+<font color="#40FFFF">SetWindow</font> "",3<br>
+<font color="#40FFFF">DrawToWorld</font> <font color="#40FFFF">ON</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the image-map (NO rotation detail) </font></font><br>
+map=<font color="#40FFFF">LoadObject</font>("Media\level.bmp")<br>
+<font color="#40FFFF">ObjectPickable</font> map,3<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load the ship </font></font><br>
+ship=<font color="#40FFFF">LoadObject</font>("Media\ship.bmp",72)<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;oldx#=<font color="#40FFFF">ObjectX</font>(ship) <font color="#00FF00">'memorize the old coordinates</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;oldy#=<font color="#40FFFF">ObjectY</font>(ship)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'turn the ship</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> ship,5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <font color="#40FFFF">TurnObject</font> ship, -5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'thrust/update physics</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target_movex=<font color="#40FFFF">Cos</font>(<font color="#40FFFF">ObjectAngle</font>(ship))*3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;target_movey=<font color="#40FFFF">Sin</font>(<font color="#40FFFF">ObjectAngle</font>(ship))*3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> target_movex< movex <font color="#40FFFF">Then</font> movex=movex-0.05<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> target_movex> movex <font color="#40FFFF">Then</font> movex=movex+0.05<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> target_movey< movey <font color="#40FFFF">Then</font> movey=movey-0.05<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> target_movey> movey <font color="#40FFFF">Then</font> movey=movey+0.05<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'move the ship according to physics</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;movey=movey+gravity<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> movey< -4 <font color="#40FFFF">Then</font> movey= -4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">TranslateObject</font> ship,movex,movey<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'make the camera follow the ship</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CloneCameraPosition</font> ship <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'COLLISION FOR THE LEVEL</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">CameraPick</font> 160,120<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">PickedObject</font>()=map <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PositionObject</font> ship,oldx,oldy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;movey=0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawGame</font> <font color="#00FF00">'for drawing</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'figure out where the pick intersects with the level</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PixelPick</font> ship<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">PickedObject</font>() <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> <font color="#40FFFF">PickedX</font>() -5,<font color="#40FFFF">PickedY</font>()+5,10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

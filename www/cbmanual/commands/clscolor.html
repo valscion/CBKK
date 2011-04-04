@@ -1,0 +1,162 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Grafiikka</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>CLSCOLOR</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Asettaa ruudun taustavärin. Väri annetaan kolmena komponenttina RGB-standardin mukaisesti. Lisätietoa väreistä oppitunnista 6 ja sanakirjasta. Katso esimerkki. </p>
+
+<p>Jos et halua määrittää väriä kolmessa komponentissa, voit myös jättää kaksi ensimmäistä parametria nollaksi ja antaa miinusmerkkisen arvon 1-16.7 milj. </p>
+
+<p>Voit käyttää väriarvojen tilalla myös CoolBasicin sisäänrakennettua värivakiota. Siten <b>Color cbRed</b> on sama kuin <b>Color 255,0,0</b>. Listan värivakioista löydät <a href="../colour.html">täältä</a>.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+CLSCOLOR punainen, vihreä, sininen<br><br>
+&nbsp;&nbsp;&nbsp;tai<br><br>
+CLSCOLOR 0, 0, pikseliarvo<br><br>
+&nbsp;&nbsp;&nbsp;tai<br><br>
+CLSCOLOR värivakio
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>punainen</b> = Kokonaisluku. Punainen komponentti.
+<li><b>vihreä</b> = Kokonaisluku. Vihreä komponentti.
+<li><b>sininen</b> = Kokonaisluku. Sininen komponentti.
+<li><b>pikseliarvo</b> = Kokonaisluku. Muuttujaan luettu 32-bittinen pikseli tai kokonaisluku -16,7 milj -> 0.
+<li><b>värivakio</b> = Joku CoolBasicin <a href="../colour.html">värivakioista.</a>
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="color.html">COLOR</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Set new background colour</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ClsColor</font> w,w,w<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Some normal graphics and text</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> 255,0,0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> 100,100,200,100<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> 255,255,0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 0,0,"Going Down... Again"<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Update fading</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;w=w+10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> w>255 <font color="#40FFFF">Then</font> w=0<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstgraphics.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

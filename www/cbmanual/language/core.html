@@ -1,0 +1,218 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Pikaohje rakenteisiin</h2>
+
+<font color="#ff0000"><H4>Ehtolauseke</H4></font>
+
+<p>
+<i>If ... Then</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+If {lauseke} Then {komennot1} Else {komennot2} 
+</i>
+</blockquote>
+</p>
+
+<p>
+Suorittaa JOS-lausekkeen. Jos tulos on TOSI (ei nolla), suoritetaan THEN-sanan j‰lkeiset komennot. Jos tulos oli EPƒTOSI (nolla), ELSE-sanan j‰lkeiset komennot suoritetaan. <b>Else on valinnainen</b>, CoolBasic suorittaa kaikki komennot rivin loppuun.
+</p>
+
+<p>
+<blockquote>
+<i>
+If {ehto1}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot1} <br>
+ElseIf {ehto2}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot2} <br>
+ElseIf {ehto3}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot3}<br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot4} <br>
+EndIf <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+T‰llainen muoto JOS-rakenteesta mahdollistaa useamman komennon suorittamisen ehdon yhteydess‰. ELSEIF ja ELSE ovat valinnaisia. ELSE suoritetaan ainoastaan, jos yksik‰‰n ehdoista ei ollut TOSI. Muutoin CoolBasic kokeilee jokaista JOS-lauseketta kunnes joku niist‰ on TOSI.
+</p>
+
+<a name="while"></a>
+<font color="#ff0000"><H4>While-silmukka</H4></font>
+
+<p>
+<i>While ... Wend</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+While {lauseke/ehto} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot} <br>
+Wend <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+Muodostaa silmukan, jota toistetaan niin kauan, kun While-ehto on TOSI (ei nolla).
+</p>
+
+<a name="repeat"></a>
+<font color="#ff0000"><H4>Repeat-silmukka</H4></font>
+
+<p>
+<i>Repeat ... Until</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+Repeat <br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot} <br>
+Until {lauseke/ehto} <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+Muodostaa silmukan, jota toistetaan niin kauan, kunnes Until-ehto on TOSI (ei nolla). <b>Voit pist‰‰ Until-sanan tilalle myˆs Forever:in</b>, jolloin silmukkaa toistetaan loputtomiin tai kunnes siit‰ rikkoudutaan irti Exit-komennolla.
+</p>
+
+<a name="for"></a>
+<font color="#ff0000"><H4>L‰pik‰ynti-rakenteet</H4></font>
+
+<p>
+<i>For ... Next</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+For {muuttuja}={alkuarvo} To {loppuarvo} Step {hyppy}  <br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot} <br>
+Next {muuttuja} <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+For..Next sijoittaa ensin {alkuarvon} {muuttujaan}, jonka j‰lkeen aloitetaan silmukka. Silmukkaa toistetaan niin kauan, ett‰ {muuttuja} saavuttaa {loppuarvon}. Sen j‰lkeen silmukasta poistutaan automaattisesti. Jokaisella silmukkakerralla {muuttujan} arvoa kasvatetaan {hyppyarvolla}. STEP on valinnainen, ja jos se j‰tet‰‰n pois, oletuksena on 1.
+</p>
+
+<a name="each"></a>
+<p>
+<i>For ... Each</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+For {muuttuja}=Each {tyyppinimi} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;{komennot} <br>
+Next {muuttuja} <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+T‰m‰ on erikoisempi l‰pik‰yntirakenne. Se k‰y l‰pi ohjelmoijan m‰‰rittelem‰n tyypin kaikki elementit. K‰tev‰‰ esimerkiksi kaikkien ammuksien tai vihollisten l‰pik‰ymiseen. Huomaa, ett‰ muuttuja pit‰‰ esitt‰‰ tyyppimuuttujaksi (kirjoittamalla piste ja tyyppinimi, esim. <b>pati.AMMUKSET</b>).
+</p>
+
+<hr>
+
+<p>
+<b>Silmukoista ja FOR-rakenteesta voidaan paeta milloin tahansa kutsumalla EXIT-komentoa.</b>
+</p>
+
+<hr>
+
+<a name="select"></a>
+<font color="#ff0000"><H4>Valintarakenne</H4></font>
+
+<p>
+<i>Select ... Case</i>
+</p>
+
+<p>
+<blockquote>
+<i>
+Select {lauseke} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Case {kokeiluarvot1}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{komennot1} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Case {kokeiluarvot2} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{komennot2}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Default <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{komennot3} <br>
+End Select <br>
+</i>
+</blockquote>
+</p>
+
+<p>
+Ensin suoritetaan Select-lausekkeen arvo. Sen j‰lkeen l‰pik‰yd‰‰n koko Case-lista, ja kokeillaan miss‰ kohtaa arvot t‰sm‰‰v‰t. Kun oikea pari lˆytyy, suoritetaan kyseisen Casen komennot, jonka j‰lkeen poistutaan koko Select-rakenteesta. DEFAULT-lohko suoritetaan, jos yksik‰‰n pari ei t‰sm‰nnyt. DEFAULT on valinnainen. <b>Rakenne on hyvin l‰hell‰ vastaavaa If..ElseIf..EndIf -rakennetta</b>, mutta on hieman nopeampi.
+</p>
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

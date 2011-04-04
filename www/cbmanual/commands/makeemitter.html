@@ -1,0 +1,166 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Efektit</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>MAKEEMITTER</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Luo parikkelilähteen koordinaatteihin (0,0). Partikkelilähteitä käytetään koristamaan peliä luomalla savua, kipinöitä, tulta tai säteilyä. Partikkelit ovat pieniä objekteja, joita tarvitaan paljon. Suurien määrien hallitseminen on paitsi hidasta myös sekavaa ja työlästä. Tämän takia CoolBasic hoitaa tämän puolestasi. Täysin konekieliset ja erittäin optimoidut rutiinit takaavat mahdollisimman nopean partikkelipäivityksen. Ja mikä parasta - ohjelmoijan ei tarvitse huolehtia juuri mistään sen jälkeen kun lähde on luotu! CoolBasic tekee kaiken puolestasi.</p>
+
+<p>
+<b>Näin voit tehdä raketin jälkeensä jättämän hienon savu-efektin:</b><br>
+Liimaa lähde objektiin (pitämällä sitä jatkuvasti samalla kohdalla). Aseta partikkelien nopeudeksi nolla, aseta animoitu savukuva ja anna painovoiman arvoksi nolla. Kun ammus räjähtää seinään, voidaan lähdekin tuhota. Samalla tapaa voit luoda esimerkiksi avaruusaluksen jälkipolttimen.
+</p>
+
+<p>
+Partikkelilähde käyttäytyy kuin mikä tahansa objekti. Sitä voidaan liikuttaa ja kääntää normaaleilla objektikomennoilla. Sille voidaan lisäksi asettaa elämä, jonka jälkeen se tuhotaan automaattisesti. Jopa törmäys- ja poiminta-komennot toimivat lähteiden kanssa.
+</p>
+
+<p>Voit poistaa partikkelilähteen komennolla <b>DeleteObject</b>.</p>
+
+<p>
+Tälle funktiolle välitetään kaksi parametria: kuva ja eloaika. Eloaika on kokonaisluku, joka määrittää kuinka monta kertaa ruutu piirretään ennen kuin partikkeli häviää. Ei siis lähde, vaan lähteestä tullut partikkeli. Jos olet esimerkiksi rajoittanut pelisi toimimaan 40 kertaa sekunnissa (FrameLimit-komento), arvo 80 pitää partikkeleja elossa 2 sekuntia.
+</p>
+
+<p>
+Partikkeleiden ominaisuuksia voi monipuolisesti säätää komennoilla <b>ParticleEmission</b>, <b>ParticleMovement</b> ja <b>ParticleAnimation</b>.
+</p>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+MAKEEMITTER (kuvamuuttuja, eloaika)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>kuvamuuttuja</b> = Se muuttuja, mihin kuva ladattiin. Lähde suoltaa näitä kuvia.
+<li><b>eloaika</b> = Kokonaisluku, kuinka monen ruudun piirron verran partikkelit ovat olemassa.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="particlemovement.html">PARTICLEMOVEMENT</a>,
+<a href="particleanimation.html">PARTICLEANIMATION</a>,
+<a href="particleemission.html">PARTICLEEMISSION</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+img=<font color="#40FFFF">LoadImage</font>("Media\particle.bmp")<br>
+<br>
+par=<font color="#40FFFF">MakeEmitter</font>(img,120) <font color="#00FF00">'lifetime for 3 seconds</font><br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font> <br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lsteffects.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

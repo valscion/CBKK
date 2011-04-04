@@ -1,0 +1,194 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Objektit</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>LOADANIMOBJECT</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Tämä on vähän niin kuin LoadAnimImagen ja LoadObjectin välimuoto. Jos et vielä ole katsonut <b>LoadObject</b>ia, tee se nyt. Funktio lataa kuvan ja tekee siitä objektin. Sallitut kuvamuodot ovat  <b><font color="#ff0000" size="1">bmp, jpg, png ja tga</font></b>. Ero <b>LoadObject</b>iin on se, että voit ladata kuvasarjan, joka muodostaa animoitavan objektin.</p>
+
+<p>Voit animoida objektin komennoilla <b>PlayObject</b> ja <b>LoopObject</b>.</p>
+
+<p>Jos lataat objektin, jota on tarkoitus voida pyörittää, kirjoita koko hoidon perään ylimääräinen parametri, joka määrittää kuinka sulavasti objekti pyörii ruudulla. Oikeastaan <b>tämä määrittää kuinka moneen eri suuntaan objekti voi osoittaa.</b> Arvo 8 saa objektin katsomaan 8 eri suuntaan sen kulmasta riippuen. Arvon tulee olla väliltä 1-360. <font color="#ff0000">Mitä isompi sitä sulavampi kääntyvyys</font>.</p>
+
+<p><font color="#ff0000"><b>VAROITUS!</b></font> Isojen objektien lataaminen korkeilla pyörityslaaduilla saattaa olla erittäin hidasta. Joudut usein tekemään kompromissin laadun ja latausaikojen välillä. On ainakin suositeltavaa pistää peliin latausteksti tai -taustakuva, että käyttäjä tietää peliä ladattavan.</p>
+
+<p>Jos lataat paljon samaa objektia, kannattaa mieluummin kopioida se funktiolla <b>CloneObject</b>. Se on PALJON nopeampaa. <font color="#ff0000">Animoidut ja raskaat objektit hyötyvät tästä TODELLA paljon.</font> Alkuperäistä objektia ei silloin kuitenkaan voi poistaa tai käsitellä millään tavalla. Lisätietoja komennosta <b>CloneObject</b>.</p>
+
+<p>Funktio palauttaa nollan, jos objektia ei voitu ladata.</p>
+
+<p><b><font color="#ff0000">Älä koskaan lataa kovalevyltä mitään silmukan sisällä! Tätä komentoa tulisi käyttää vain ohjelman alussa.</font><b></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+LOADANIMOBJECT (tiedostonimi, frame_leveys, frame_korkeus, aloitus, pituus, [pyörityslaatu])
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tiedostonimi</b> = Merkkijono. Määrittää ladattavan kuvan tiedostonimen tai polun.
+<li><b>frame_leveys</b> = Kokonaisluku. Framen leveys pikseleinä.
+<li><b>frame_korkeus</b> = Kokonaisluku. Framen korkeus pikseleinä.
+<li><b>aloitus</b> = Kokonaisluku. Monesko on ensimmäinen frame kuvatiedostossa. Yleensä nolla.
+<li><b>pituus</b> = Kokonaisluku. Kuvasarjan framejen määrä.
+<li><b>pyörityslaatu</b> <font color="#ff0000" size="1">(valinnainen)</font> = Kokonaisluku väliltä 1-360. Kuinka moneen suuntaan objekti voi katsoa. Oletuksena 1 (ei käänny).
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadobject.html">LOADOBJECT</a>,
+<a href="playobject.html">PLAYOBJECT</a>,
+<a href="loopobject.html">LOOPOBJECT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'make screen a bit zoomed </font></font><br>
+<font color="#40FFFF">SCREEN</font> 250,188,0,cbsizable <br>
+<br>
+<font color="#40FFFF">FrameLimit</font> 40 <font color="#00FF00">'limit game speed</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'load animation for both directions </font></font><br>
+zeroright=<font color="#40FFFF">LoadAnimObject</font>("Media\zerorun1.bmp",47,51,0,12)<br>
+<font color="#40FFFF">MaskObject</font> zeroright,cbmagenta<br>
+<br>
+zeroleft=<font color="#40FFFF">LoadAnimObject</font>("Media\zerorun2.bmp",47,51,0,12)<br>
+<font color="#40FFFF">MaskObject</font> zeroleft,cbmagenta<br>
+<font color="#40FFFF">ShowObject</font> zeroleft,<font color="#40FFFF">OFF</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'default direction </font></font><br>
+zero=zeroright<br>
+<br>
+<font color="#40FFFF">Color</font> cbblack<br>
+<font color="#40FFFF">AddText</font> "Try arrows"<br>
+<font color="#40FFFF">ClsColor</font> cbwhite<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'MAIN LOOP </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'run right!</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> zeroright,<font color="#40FFFF">ON</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> zeroleft,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zero=zeroright<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PlayObject</font> zero,2,11,0.25 <font color="#00FF00">'animate at speed 0.25</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'run left!</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ElseIf</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> zeroleft,<font color="#40FFFF">ON</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">ShowObject</font> zeroright,<font color="#40FFFF">OFF</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zero=zeroleft<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PlayObject</font> zero,2,11,0.25 <font color="#00FF00">'animate at speed 0.25</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Else</font> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'nothing is pressed so freeze</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">PlayObject</font> zero,0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">EndIf</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstobject.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

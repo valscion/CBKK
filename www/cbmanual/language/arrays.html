@@ -1,0 +1,179 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Taulukot</h2>
+
+<font color="#ff0000"><H4>Mik‰ on taulukko</H4></font>
+
+<p>
+Kuvitellaan, ett‰ haluat ruudullesi 100 kappaletta vihollisia. Jokainen niist‰ liikkuu satunnaisesti ruudulla. Sinun pit‰isi jotenkin hallita kaikkien koordinaatteja. Sin‰ <b>voisit</b> l‰hte‰ kirjoittamaan:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="courier">
+Vihulainen001X=400<br>
+Vihulainen001Y=200<br>
+Vihulainen002X=400<br>
+Vihulainen002Y=200<br>
+Vihulainen003X=400<br>
+Vihulainen003Y=200<br>
+Vihulainen004X=400<br>
+Vihulainen004Y=200<br>
+...<br>
+... koodia ...<br>
+...<br>
+Vihulainen100X=400<br>
+Vihulainen100Y=200<br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Siin‰ olisi kuitenkin hirvitt‰v‰ tyˆ, joten se ei olisi kovin j‰rkev‰‰. Juuri t‰t‰ tarkoitusta varten ohjelmointikieliss‰ on taulukot. <b>Taulukoiden avulla jopa tuhansille muuttujille annetaan yksi nimi, ja niit‰ voidaan hallita helposti l‰pik‰yntirakenteen For...Next avulla.</b> Taulukko on siis tavallaan kuin "muuttujanippu". Edellinen esimerkki voidaan kirjoittaa paljon lyhemmin ja mukavammin muotoon:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000FF">Dim</font></b> VIHULAISET (100, 2)<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;For i = 1 to 100<br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIHULAISET (i, 1) = 400<br>
+<b>6</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VIHULAISET (i, 2) = 200<br>
+<b>7</b> <br>
+<b>8</b>&nbsp;&nbsp;&nbsp;&nbsp;Next i
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+N‰in olemme asettaneet kaikkien vihollisten koordinaateiksi 400 ja 200! Samalla tavalla kaikki viholliset voidaan piirt‰‰:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;For i = 1 to 100<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DrawImage vihuKuva, VIHULAISET (i, 1), VIHULAISET (i, 2)<br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;Next i
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<font color="#ff0000"><H4>Siis t‰?</H4></font>
+
+<p>
+Kuvittele taulukkoa laatikkona. Sen sis‰ll‰ on pieni‰ laatikoita. Ja jokaisen pienen laatikon sis‰ll‰ voi olla pienempi‰ laatikoita jne... ulottuvuuksien mukaan. P‰‰set aina k‰siksi johonkin laatikkoon kun tied‰t koko polun sen luokse.
+</p>
+
+<font color="#ff0000"><H4>Lis‰‰ asiaa</H4></font>
+
+<p>
+Taulukot varataan Dim-sanalla. Taulukkonimen per‰‰n kirjoitetaan sulkeet, joiden sis‰‰n tulee lista ulottuvuuksista. Taulukoilla voi olla 1-5 ulottuvuutta, ja ne erotetaan pilkuilla. <b>Taulukot on aina esitett‰v‰ sulkeiden kanssa</b>. Taulukot varataan yhden kerran ohjelman alussa - ennen kuin niit‰ yritet‰‰n k‰ytt‰‰.
+</p>
+
+<p>
+Yll‰ olevassa esimerkiss‰ varasimme kaksiulotteisen <b>kokonaislukutaulukon</b>. Taulukko voi olla mit‰ tahansa tyyppi‰. T‰ss‰ varataan kaksi taulukkoa: desimaalitaulukko ja merkkijonotaulukko:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000FF">Dim</font></b> VIHULAISET_X<b>#</b> (100)<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000FF">Dim</font></b> VIHULAISET_NIMET (100) <b>AS STRING</b><br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Ei ole v‰li‰ kumpaa tapaa k‰yt‰t tyypin m‰‰rittelyss‰, se on totuttelukysymys. <b>Kun k‰yt‰t t‰llaisia taulukoita, sen nimen per‰‰n EI kirjoiteta tyyppitunnistetta</b>. Pelkk‰ "<font color="#008800">VIHULAISET_X</font>" ja sulkeet.
+</p>
+
+<p>
+Taulukoita voidaan uudelleenvenytt‰‰ <b>Redim</b>-komennolla, jolloin sen kokoa voidaan kasvattaa tai supistaa. Ulottuvuuksien m‰‰r‰‰ ei kuitenkaan voi muuttaa. Voit itse vaikuttaa siihenkin, tuhotaanko taulukon sis‰ltˆ uudelleenvenytyksess‰ k‰ytt‰m‰ll‰ <b>ClearArray</b>-komentoa. Lis‰tietoa kyseisten komentojen manuaalista.
+</p>
+
+
+<p>
+<b>Lis‰‰ taulukoista manuaalin DIM-k‰skyn komentokohtaisesta oppaasta...</b>
+</p>
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

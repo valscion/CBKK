@@ -1,0 +1,176 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Järjestelmä</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>SAVEPROGRAM</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Tämä komento tallentaa pelin kaikki muuttujat ja taulukot tallennustiedostoon, joka voidaan myöhemmin ladata, ja pelitilanne palauttaa.</p>
+
+<p>Huomaa, että komento ei tallenna tietoa kuvista, äänistä eikä mistään muustakaan ladatusta mediasta. Latauksen jälkeen kaikki kuvat ja muu media on ladattava takaisin ennen kuin peli voi jatkua. Komento ei siis sellaisenaan sovi suuren pelin pikatallennukseen/lataukseen.</p>
+
+<p><b><font color="#ff0000">VAROITUS! Pelin tallennus on erittäin herkkä virhetilanteille. Tätä ominaisuutta tulisi käyttää vasta kun peli on valmis. Yhdenkin muuttujan lisääminen ohjelmaan tallennustiedoston tekemisen jälkeen voi sotkea niiden arvot latausvaiheessa. Siksi on hyvä mainita, että tallennustiedostot eivät ole yhteensopivia päivitettyjen peliversioiden kanssa.</font></b></p>
+
+<p>Suosittelemme edelleen, että kirjoitat oman tallennus- ja latauskoodin peliäsi varten.</p>
+
+<p><font color="#ff0000" size="1"><b>Komento on tarkoitettu edistyneemmille käyttäjille.</b></font></p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+SAVEPROGRAM tiedostonimi
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>tiedostonimi</b> = Merkkijono, tallennustiedoston nimi tai polku.
+</font>
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="loadprogram.html">LOADPROGRAM</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'Prevent the game from running too fast </font></font><br>
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#40FFFF">AddText</font> "Move around using the arrows"<br>
+<font color="#40FFFF">AddText</font> "F5 = Save game"<br>
+<font color="#40FFFF">AddText</font> "F7 = Load game"<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Default Position </font></font><br>
+x=200<br>
+y=150<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Upadte controls</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">LeftKey</font>() <font color="#40FFFF">Then</font> x=x-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">RightKey</font>() <font color="#40FFFF">Then</font> x=x+1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">UpKey</font>() <font color="#40FFFF">Then</font> y=y-1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">DownKey</font>() <font color="#40FFFF">Then</font> y=y+1 <br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'draw the ball</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Color</font> cbred<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> x-16,y-16,32,32<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'Save/load</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyf5) <font color="#40FFFF">Then</font> <font color="#40FFFF">SaveProgram</font> "savegame.sav"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> <font color="#40FFFF">KeyHit</font>(cbkeyf7) <font color="#40FFFF">Then</font> <font color="#40FFFF">LoadProgram</font> "savegame.sav"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;s$=<font color="#40FFFF">Input</font>("?")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 300,0,x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 300,20,y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstsystem.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

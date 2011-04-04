@@ -1,0 +1,134 @@
+﻿<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - newbies</TITLE>
+
+<STYLE type=text/css>
+   BODY {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   TABLE {COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica;}
+   A:link {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:visited {COLOR: #0000ff; TEXT-DECORATION: underline}
+   A:hover {COLOR: #6380FD; TEXT-DECORATION: underline}
+</STYLE>
+
+</HEAD>
+
+<style type="text/css">
+body {
+SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+SCROLLBAR-SHADOW-COLOR:#ffffff;
+SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+SCROLLBAR-ARROW-COLOR:#000000;
+SCROLLBAR-TRACK-COLOR:#dddddd;
+SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+</style>
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+
+<!{START} -->
+
+
+<h2>Lausekkeet</h2>
+
+
+<p>
+Kaikennäköiset laskutoimitukset ovat olennainen osa ohjelmointia. Laskulausekkeet kirjoitetaan samaan tapaan kuin mitä olet oppinut matematiikan tunneilla.
+Ensin sulkeet, sitten potenssit, kerto- ja jakolaskut, sitten yhteen- ja vähennyslaskut, ja lopuksi harvinaisemmat laskutoimitukset.
+</p>
+
+<h3>Laskulausekkeiden laskeminen</h3>
+
+<p>
+Laskulausekkeissa voi olla lukuja:<br>
+Print -(5*(6+7)-4)/7.0
+
+<br><br>
+...muuttujia...<br>
+Print leveys/5
+
+<br><br>
+... ja funktioita:<br>
+Print KerroKahdella(Int(5/7.0*Abs(kerroin#)))
+
+<br><br>
+Lisätietoa:<br>
+<a href="../language/expressions.html">Laskulausekkeet</a>
+</p>
+
+<hr>
+
+<h3>Boolean-operaatiot</h3>
+
+<p>
+Voit käyttää myös vertailu- ja loogisia operaattoreita. Lisätietoa <a href="../language/expressions.html">täällä</a>. Voit näin yhdistellä ehtoja
+mm. JA, TAI-operaattoreilla, esim:<br>
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+If i=1 AND k<5 Then '...
+</font>
+
+<br><br>
+Lisätietoa:<br>
+<a href="../commands/if.html">Ehdot</a>
+</p>
+</p>
+
+<hr>
+
+<h3>Parametrit</h3>
+
+<p>
+Osaat jo erottaa komennot (siniset sanat) koodista. Joskus komentojen perään täytyy kirjiottaa jotain muutakin. Esimerkiksi Print-käsky. Jos et kirjoita 
+Print-komennon jälkeen tulostettavaa arvoa tai merkkijonoa, CoolBasic pysähtyy siihen kohtaan: <font color=red>OK, Tulostetaan... öööh, mitäs pitää tulostaa?</font>
+Toisin sanoen jotkut komennot vaativat hieman lisätietoa siitä mitä tehdään.
+</p>
+
+<p>
+Tätä lisätietoa kutsutaan nimellä parametri. Jos parametreja vaaditaan useampia, ne erotetaan pilkulla. Seuraavassa parametrit on värjätty punaisella:
+</p>
+
+<p>
+<font color=ff00ff face=courier size=2>
+Print <font color=red>"Hello World"</font><br>
+i = Abs(<font color=red>-5</font>)<br>
+SCREEN <font color=red>640</font>,<font color=red>480</font>,<font color=red>16</font>,<font color=red>cbWindowed</font>
+</font>
+</p>
+
+<hr>
+
+<h3>Hyvä rakenne</h3>
+
+<p>
+Jotta koodi olisi mahdollisimman selvää, kannattaa kirjoittaa yksi komento mahdollisine parametreineen per rivi. Voit kirjoittaa useita komentoja samalle
+riville, kunhan ne erotetaan kaksoispisteellä, mutta silloin käännösvirheen sattuessa virhettä ei ole yhtä helppo paikallistaa.
+</p>
+
+<p>
+Kannattaa myös sisentää koodi. Käytä sarkainta aina uuteen "lohkoon siirryttäessä". Tällaisia ovat esimerkiksi If, For, Repeat, While, Select ja Case.
+Katso esimerkkiä komentojen esimerkeistä.
+</p>
+
+
+<hr>
+
+<center>
+<b>	lausekkeet	</b>
+<br>
+<a href="ostep1.html">Edellinen</a>
+</center>
+
+
+
+<!{END} -->
+
+</font>
+</body>
+
+</HTML>

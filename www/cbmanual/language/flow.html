@@ -1,0 +1,187 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Ohjelmarakenne</h2>
+
+<font color="#ff0000"><H4>Esimerkki</H4></font>
+
+<p>
+Lähdekoodin rakenne on hyvä silloin kun se on selkeä. Kaikki osat ovat järjestetty tyyppinsä ja aihepiirinsä mukaan. Esimerkiksi:
+</p>
+
+<p>
+<li>Vakiot, globaalit, taulukot, tyypit ja moduulit (include)
+<li>Pääohjelma
+<li>Mahdolliset aliohjelmat (Gosub)
+<li>Mahdolliset funkiot
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+'Headers<br>
+<br>
+Const CONSTANT1=1<br>
+Const CONSTANT2=2<br>
+<br>
+Global img1,img2<br>
+Global sound1,sound2<br>
+<br>
+Dim ARRAY1(1) As String<br>
+Dim ARRAY2(1) As Integer<br>
+<br>
+'Include files<br>
+Include "inc1.cb"<br>
+Include "inc2.cb"<br>
+<br>
+'--------------------------------<br>
+<br>
+'Main Program<br>
+<br>
+Repeat<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'code here...<br>
+<br>
+Forever<br>
+<br>
+End<br>
+<br>
+'--------------------------------<br>
+<br>
+'Sub Programs<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'code here...<br>
+<br>
+'--------------------------------<br>
+<br>
+'Functions<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'code here...<br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<font color="#ff0000"><H4>Modularisuus</H4></font>
+
+<p>
+Nämä voidaan jakaa myös osiin, ja sijoittaa koodimoduuleihin.
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+Include "HEADERS.cb"<br>
+<br>
+'Main Program<br>
+<br>
+Repeat<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'code here...<br>
+<br>
+Forever<br>
+<br>
+End<br>
+<br>
+<br>
+Include "SUBS.cb"<br>
+<br>
+Include "FUNCTIONS.cb"<br>
+<br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Joskus pääohjelma koostuu joko Gosub-käskyistä tai funktiokutsuista tai jopa includeista:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+Gosub UpdateGame<br>
+Gosub UpdateControls<br>
+Gosub UpdateAI<br>
+Gosub UpdateWeapons<br>
+Gosub DrawAll<br>
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<font color="#ff0000"><H4>Tyylinsä kullakin</H4></font>
+
+<p>
+Koodilohkot (If..Then, For..Next, Repeat..Until jne..) yleensä sisennetään, koska se helpottaa koodin lukemista huomattavasti. Jokaiselle ohjelmoijalle muodostuu ajan mittaan uniikki tyyli kirjoittaa koodia. Se näkyy yleensä voimakkaimmin kommenttien ulkoasussa. Myös pitkiä rivejä pyritään välttämään. Lisää asiasta kohdasta <i>tyylisäännöt</i> myöhemmin tässä oppaassa.
+</p>
+
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

@@ -1,0 +1,158 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Matematiikka</b></font> : <font color="#0000ff"><b>funktiot</b></font></p>
+<H2>CURVEANGLE</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Sama kuin <b>CurveValue</b>, mutta pitää kulman välillä 0-360. Funktion toinen ihanuus on se, että CoolBasic valitsee automaattisesti sen lyhimmän polun, eli käännytään siihen suuntaan kun se olisi loogisinta.
+
+<p>Tämä funktio muuntaa lukuarvoa vähitellen toisen suuruiseksi. Voit itse määrittää muunnoksen nopeuden. Tekniikkaa kutsutaan interpoloinniksi, joka tarkoittaa "automaattista väliarvojen laskemista".</p>
+
+<p>Funktio on ihanteellinen, kun halutaan liikkeisiin ja kääntymisiin pyöreyttä. Se saa pelin näyttämään sulavammalta ja paremmalta.</p>
+
+<p>Funktio palauttaa desimaaliluvun. Suosittelemme käyttämään desimaalimuuttujia, kuten esimerkki näyttää.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+CURVEANGLE (uusi, vanha, pyöreys)
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>uusi</b> = Tämä on se arvo, jota kohti lukua pyöristetään. Mielellään desimaaliluku tai -muuttuja.
+<li><b>vanha</b> = Nykyinen arvo. Mielellään desimaaliluku tai -muuttuja.
+<li><b>pyöreys</b> = Luku 1 (ei pyöreyttä) - 100 (erittäin pyöreä).
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="curvevalue.html">CURVEVALUE</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">FrameLimit</font> 40<br>
+<br>
+<font color="#40FFFF">AddText</font> "The line will point to mouse"<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'this is the angle that the line SHOULD point at</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;newangle#=<font color="#40FFFF">GetAngle</font>(200,150,<font color="#40FFFF">MouseX</font>(),<font color="#40FFFF">MouseY</font>())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'this is the interpolated (current) angle</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;angle#=<font color="#40FFFF">CurveAngle</font>(newangle#,angle#,15.0)<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Circle</font> 200-16,150-16,32,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Line</font> 200,150,200+<font color="#40FFFF">Cos</font>(angle#)*48,150-<font color="#40FFFF">Sin</font>(angle#)*48<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstmath.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

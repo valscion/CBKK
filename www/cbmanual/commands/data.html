@@ -1,0 +1,178 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Ydin</b></font> : <font color="#0000ff"><b>koodirakenteet</b></font></p>
+<H2>DATA</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Luo ohjelman sisälle datalistan, johon ohjelmoija voi tallentaa tietoa kokonaislukuina, desimaalilukuina tai merkkijonoina. Näin voit esimerkiksi sisällyttää yksinkertaisen pelikentän suoraan ohjelmaan.</p>
+
+<p>Ei ole väliä, onko sinulla yksi iso datalista vai monta pienempää listaa. Kaikki yhteenkuuluvat listat pitää kuitenkin kirjoittaa peräkkäin ilman, että välissä on muuta koodia. Jos luet listan yli, saat siitä virheilmoituksen.</p>
+
+<p>Voit sekoittaa erilaisia tietotyyppejä listaan, kunhan muistat lukea niitä oikeassa järjestyksessä. Datalistaa luetaan funktiolla <b>Read</b>.</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DATA datalista
+</font>
+</td>
+</tr></table>
+<p>
+Datalista sisältää arvoja, jotka erotetaan pilkulla.
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="read.html">READ</a>, 
+<a href="restore.html">RESTORE</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back2.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#40FFFF">Dim</font> map(6,5)<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'----------------------</font></font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'read level 1 </font></font><br>
+<font color="#40FFFF">Restore</font> level1<br>
+<br>
+<font color="#40FFFF">For</font> y=1 <font color="#40FFFF">To</font> 5<br>
+<font color="#40FFFF">For</font> x=1 <font color="#40FFFF">To</font> 6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;map(x,y)=<font color="#40FFFF">READ</font>() <br>
+<font color="#40FFFF">Next</font> x<br>
+<font color="#40FFFF">Next</font> y<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'----------------------</font></font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'main loop </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> y=1 <font color="#40FFFF">To</font> 5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">For</font> x=1 <font color="#40FFFF">To</font> 6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">If</font> map(x,y) <font color="#40FFFF">Then</font> <font color="#40FFFF">Box</font> x*40,y*40,40,40<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> x<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Next</font> y<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Box</font> 40,40,240,200,<font color="#40FFFF">OFF</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+<font color="#40FFFF">End</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'----------------------</font></font><br>
+<font color="#00FF00"><font color="#00FF00">'you can store more levels, too. </font></font><br>
+<br>
+level1:<br>
+<br>
+<font color="#40FFFF">DATA</font> 0,0,0,0,0,0<br>
+<font color="#40FFFF">DATA</font> 0,0,0,1,0,0<br>
+<font color="#40FFFF">DATA</font> 0,0,1,1,1,0<br>
+<font color="#40FFFF">DATA</font> 0,0,0,1,0,0<br>
+<font color="#40FFFF">DATA</font> 1,0,0,0,0,1<br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstbasic.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

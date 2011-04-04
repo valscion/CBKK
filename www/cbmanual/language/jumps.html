@@ -1,0 +1,197 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Paikasta toiseen hyppiminen</h2>
+
+<font color="#ff0000"><H4>Goto</H4></font>
+
+<p>
+Hyppiminen paikasta toiseen Goto:lla on joidenkin ohjelmoijien mielestä erittäin epäsuotava tapa kirjoittaa koodia. Perusteeksi esitetään, että se sotkee ohjelmarakenteen, ja tekee koodista sekavaa luettavaa. Ominaisuus on CoolBasicissa mukana, koska se on tuettu kaikissa muissakin BASIC-kielissä. Lisäksi Goto voi kuitenkin osoittautua erittäin hyödylliseksi tietyissä tilanteissa. Pohjustetaan selitystä ensin esimerkin avulla:
+</p>
+
+<p>
+<table border="1" width="100%">
+<tr>
+<td bgcolor="#ffffff">
+<font face="Courier">
+<b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;Print "Ohjelma alkaa"<br>
+<b>2</b> <br>
+<b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">Goto jatko</font></b><br>
+<b>4</b> <br>
+<b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;Print "Tämä teksti ei ikinä tulostu"<br>
+<b>6</b> <br>
+<b>7</b>&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#0000ff">jatko:</font></b><br>
+<b>9</b> <br>
+<b>10</b>&nbsp;&nbsp;&nbsp;Print "Ohjelma loppui"<br>
+<b>11</b> <br>
+<b>12</b>&nbsp;&nbsp;&nbsp;WaitKey
+</font>
+</td>
+</tr>
+</table>
+</p>
+
+<p>
+Sinisellä kirjoitetut lihavoidut sanat liittyvät hyppyihin. Silmäile koodi läpi ja aja se. Huomaat, että riviä 5 ei ikinä suoriteta. Miksi? Koska hyppäsimme sen yli. <b>Hyppyrakenteessa pitää aina olla kohde, tässä tapauksessa rivi 7</b>. Kohde voi olla ennen tai jälkeen Goto-kutsun, eli missä tahansa kohtaa koodia (ei koko totuus). Voit tietysti kirjoittaa monta Goto-käskyä, jotka kaikki johtavat samaan kohteeseen. Kohdetta kutsutaan kirjanmerkiksi, ja sen perään kirjoitetaan kaksoispiste. Muuta samalla rivillä ei saa olla.
+</p>
+
+<p>
+Sinulla ei saa olla kahta saman nimistä kirjanmerkkiä (paitsi jos toinen niistä on eri funktiossa). Isoilla ja pienillä kirjaimilla ei ole väliä.
+</p>
+
+<font color="#ff0000"><H4>Gosub</H4></font>
+
+<p>
+Gosub on toinen tapa hyppiä ohjelman sisällä. Ero Gotoon on se, että voit palata takaisin kutsukohtaan komennolla Return. <b>Tällaisia lohkoja kutsutaan aliohjelmiksi</b>. Aliohjelma voi esiintyä ainoastaan pääohjelmassa, Gosub ei siis ole sallittu funktoissa. Kaikki muut Goto-säännöt pätevät. Gosub-lohkoa käytetään yleisesti <b>"käy tuolla tekemässä jotain ja palaa sitten takaisin"</b>-tarkoitukseen. Pelisi rakenne voisi olla vaikka seuraavanlainen:
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+<font color="#00FF00"><font color="#00FF00">'Pelisi pääsilmukka: </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'------------------------------------------ </font></font><br>
+<font color="#40FFFF">Repeat</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoSub</font> kontrollit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoSub</font> päivitä_viholliset<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoSub</font> päivitä_efektit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">GoSub</font> piirrä_kaikki <br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font><br>
+<br>
+<font color="#40FFFF">Until</font> <font color="#40FFFF">EscapeKey</font>()<br>
+<font color="#40FFFF">End</font><br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Aliohjelmat: </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'------------------------------------------ </font></font><br>
+<br>
+kontrollit:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'tähän koodia...</font><br>
+<br>
+<font color="#40FFFF">Return</font><br>
+<br>
+päivitä_viholliset:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'tähän koodia...</font><br>
+<br>
+<font color="#40FFFF">Return</font><br>
+<br>
+päivitä_efektit:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'tähän koodia...</font><br>
+<br>
+<font color="#40FFFF">Return</font><br>
+<br>
+piirrä_kaikki:<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'tähän koodia...</font><br>
+<br>
+<font color="#40FFFF">Return</font><br>
+<br>
+<br>
+<font color="#00FF00"><font color="#00FF00">'Funktiot </font></font><br>
+<font color="#00FF00"><font color="#00FF00">'------------------------------------------ </font></font><br>
+<br>
+&nbsp;<font color="#00FF00">'tähän kaikki funkiot...</font><br>
+</font>
+</td>
+</tr></table>
+
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+<p>
+Älä unohda Returnia! Se palauttaa ohjelman samaan paikkaan mistä aliohjelmaa kutsuttiin, eli tässä tapauksessa takaisin pääsilmukkaan.
+</p>
+
+<hr>
+
+<p>
+Älä riko seuraavia sääntöjä:
+</p>
+
+<p><font size=1>
+<li><font color="#ff0000"><b>Älä ikinä siirry Goto:lla pois Gosub-aliohjelmasta!</b> Voit siirtyä aliohjelman sisällä, mutta älä hyppää siitä ulos. Sitä varten on <b>Return</b>.</font>
+<li>Et voi hyppiä funktion sisäisiin kirjanmerkkeihin ko. funktion ulkopuolelta. Et voi myöskään paeta funktiosta Goto:lla. Funktioissa on oma Goto-alueensa, eikä saman nimiset kirjanmerkit päde siellä.
+<li>Goto sekavoittaa helposti koodia. Käytä sitä harkiten ja suunnitellusti. Goto:sta ei voi palata (käytä silloin Gosub-aliohjelmaa).
+<li><b>SAAT LISÄTIETOA JA LISÄÄ ESIMERKKEJÄ NÄIDEN KOMENTOJEN OPPAASTA.</b>
+</font></p>
+
+
+
+<!{END} -->
+
+<br>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>

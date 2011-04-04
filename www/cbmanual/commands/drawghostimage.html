@@ -1,0 +1,160 @@
+﻿<HTML>
+<HEAD>
+<TITLE>CB Help - commands</TITLE>
+<style>
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+}
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+</style>
+</HEAD>
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<p><font color="#ff0000"><b>Kuvat</b></font> : <font color="#0000ff"><b>komennot</b></font></p>
+<H2>DRAWGHOSTIMAGE</h2>
+
+<br>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KUVAUS</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<p>Tällä komennolla voit piirtää läpinäkyvän kuvan. Tekniikka kutsutaan myös nimellä alpha-blending eli alfa-blendaus, blend. Toisin kuin GhostObject, myös musta väri osallistuu läpinäkyvyyteen. Arvo nolla piilottaa objektin kokonaan (silti objekti osallistuu törmäyksentunnistukseen). Arvo 100 on yhtä kuin täysin näkyvä kuva. Arvo 50 taas on puolinäkyvä. Voit itse päättää läpinäkyvyyden tason asteikolla 1-99.</p>
+
+<p>
+<b><font color="#ff0000">VAROITUS! läpinäkyvien kuvien piirtäminen on melkoisen raskas urakka nykykoneillekin ilman laitteistokiihdytystä (3D). Sen liiallinen käyttö saattaa vaikuttaa dramaattisesti pelin suorituskykyyn. Käytä ominaisuutta säästeliäästi ja mieluiten lähinnä pienikokoisille kuville.</font></b>
+</p>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<!{END} -->
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;KÄYTTÖ</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="verdana,arial,tahoma" size="2">
+<table border="1" width="100%" bgcolor="#ffffff"><tr>
+<td>
+<font face="courier, courier new" size="2">
+DRAWGHOSTIMAGE kuvamuuttuja, x, y, [frame], [läpinäkyvyys]
+</font>
+</td>
+</tr></table>
+<p>
+<li><b>kuvamuuttuja</b> = Se muuttuja, joka sisältää kuvan.
+<li><b>x</b> = Kokonaisluku tai desimaaliluku. Kuvan sijainti leveyssuunnassa.
+<li><b>y</b> = Kokonaisluku tai desimaaliluku. Kuvan sijainti pystysuunnassa.
+<li><b>frame</b> = Kokonaisluku. Kuvan animaatio-frame. Jos et tarvitse framea, laita arvoksi nolla tai OFF.
+<li><b>läpinäkyvyys</b> Arvo väliltä 1-99. Kuinka läpinäkyvä kuva on
+</p>
+</font>
+</td>
+
+</tr>
+</table></p>
+
+<p>
+Katso myös:
+<a href="ghostobject.html">GHOSTOBJECT</a>
+</p>
+
+<p><table width="100%" style="border: 1px solid #333333"><tr>
+
+<td bgcolor="#5F8CCD" background="../tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;ESIMERKKI</b></font>
+</font>
+</td>
+
+</tr><tr>
+
+<td bgcolor="#E4EAF2" valign="top">
+<font face="coolb, courier, courier new" size="2">
+
+<table border="1" width="100%" bgcolor="#3C67A8"><tr>
+<td>
+<font face="coolb, courier, courier new" size="2" color="#ffffff">
+map= <font color="#40FFFF">LoadImage</font>("Media\map.bmp")<br>
+tex= <font color="#40FFFF">LoadImage</font>("Media\grass.bmp")<br>
+<br>
+alpha=100<br>
+<br>
+<font color="#40FFFF">AddText</font> "A/Z to alter transparency"<br>
+<br>
+<font color="#40FFFF">Repeat</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00FF00">'alter transparency</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;alpha= alpha+(<font color="#40FFFF">KeyDown</font>(cbkeya) -<font color="#40FFFF">KeyDown</font>(cbkeyz))<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawImage</font> map,0,0 <font color="#00FF00">'draw a regular image</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawGhostImage</font> tex, 136, 86, 0, alpha <font color="#00FF00">'draw the transparent image</font><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">Text</font> 0,40,<font color="#40FFFF">FPS</font>()+"  "+alpha <font color="#00FF00">'show how fast the game is able to render</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#40FFFF">DrawScreen</font>()<br>
+<br>
+<font color="#40FFFF">Forever</font><br>
+
+</font>
+</td>
+</tr></table>
+</font>
+</td>
+
+</tr>
+</table>
+
+</font>
+</td>
+
+</tr>
+</table></p>
+
+
+<p><font size="1"><b>&lt;&lt;<a href="lstimage.html">TAKAISIN<a></b></font></p>
+
+</font>
+</body>
+
+</HTML>

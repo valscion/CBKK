@@ -1,0 +1,2437 @@
+﻿<HTML>
+
+<HEAD>
+
+<TITLE>CB Help - index</TITLE>
+
+<style>
+
+body
+{
+	color: #000000;
+	font: 10pt verdana;
+	background: #eeeeee;
+		SCROLLBAR-HIGHLIGHT-COLOR:#ffffff;
+		SCROLLBAR-SHADOW-COLOR:#ffffff;
+		SCROLLBAR-3DLIGHT-COLOR:#eeeeee;
+		SCROLLBAR-ARROW-COLOR:#000000;
+		SCROLLBAR-TRACK-COLOR:#dddddd;
+		SCROLLBAR-BASE-COLOR:#eeeeee;
+
+}
+
+
+a
+{
+  	color: #0000ff;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ffffff;
+	background: #0088ee;
+	text-decoration: none;
+}
+
+
+
+
+</style>
+
+
+</HEAD>
+
+
+<body text=000000 link=blue, alink=red, vlink=blue bgcolor=eeeeee>
+<font face="verdana,arial,helvetica,courier" size=2>
+
+<!{START} -->
+
+<H2>Virheilmoitukset</h2>
+
+<H4>Käännöksenaikaiset virheet</H4>
+
+<p>
+Koska tietokone on tyhmä kuin tynnyri, se ei ymmärrä epäselviä ohjeita. Siksi ohjelmointikielten rakenne on hyvin pikkutarkka virheistä. On vain yksi ja oikea tapa kertoa koneelle käskyjä. Syntaksi. CoolBasicin kääntäjä on tavallaan tulkki CoolBasicin ja konekielen välillä. CoolBasic kääntää ohjelmointikielen koneen ymmärtämään muotoon. Ja koska virheille ei ole varaa, käännöksen on onnistuttava täydellisesti. Tästä syystä CoolBasic tarkastaa kaikki virheet koodista ennen kuin ohjelma voidaan ajaa. Valtaosa kaikista virheilmoituksista syntyvät juuri käännösvaiheessa.
+</p>
+
+<p>
+Virheen syynä voi olla se, että CoolBasic ei ymmärrä jonkun rivin rakennetta täysin. Tällöin puhutaan syntaksivirheistä, eli kieliopin vastaista esityksistä. Virheenä voi myös olla se, että ohjelmoija yrittää esim. syöttää desimaalilukua funktiolle, joka vaatii kokonaisluvun. Tällaisia virheitä kutsutaan semanttisiksi virheiksi. Niissä ei ole kieliopillisesti mitään väärää, mutta ne ovat loogisesti puutteellisia.
+</p>
+
+<br>
+
+
+<a name="code1">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>1</b> : Remark block error. End block wihout start block</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#1</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Remark block error. End block wihout start block
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Vääränlainen kommentti.</a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kun kommentoit sanoilla remstart ja remend, pitää "palan" olla yhtenäinen. Se alkaa remstart:lla ja loppuu remend:llä.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Etsi kohta, johon puuttuva remstart kuuluu ja lisää se. Tai poista remend.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code10">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>10</b> : Cannot process due to irregular string marks</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#10</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Cannot process due to irregular string marks
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Törmättiin puuttuvaan lainausmerkkiin.</a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kyseisellä rivillä on pariton määrä merkkijonon aloittavia ja lopettavia (kaksinkertaisia) lainausmerkkejä. Tavallisin syy on se, että ohjelmoija on <i>unohtanut</i> kirjoittaa merkkijonon päättävän lainausmerkin. Tosin tällaisen virheen huomaa melko helposti, kun editori värjää koko koodin alaosan merkkijonovärillä. Huomaa, että merkkijonon sisällä ei voi olla kaksinkertaisia lainausmerkkejä. Käytä yksinkertaisia ('sana') lainauksia tai Chr(34)-funktiota. Esim. tämä koodi sisällyttää merkkijonoon lainauksen:
+</p>
+<p>
+<font color="#008800">jono$ = Chr(34) + "Hello World" + Chr(34) : Print jono$ : WaitKey</font>
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Etsi kohta, johon puuttuva lainausmerkki kuuluu ja lisää se.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code11">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>11</b> : Cannot process due to irregular brackets</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#11</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Cannot process due to irregular brackets
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Lausekkeessa on väärät sulkeet.</a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kyseisellä rivillä on pariton määrä sulkeita "( tai )". Tavallisin syy on se, että ohjelmoija on <i>unohtanut</i> kirjoittaa aloittavan tai lopettavan sulkumerkin. Sulkeet kuuluvat matemaattisen esityksen sääntöihin. Sulkeilla osoitetaan laskujärjestys ja esitetään taulukot ja funktiot.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Etsi kohta, johon puuttuva sulkumerkki kuuluu ja lisää se.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code32">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>32</b> : Duplicate identifier name</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#32</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Duplicate identifier name
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Tunnistenimi esitettiin toisen kerran eri asiayhteydessä.</a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kyseinen tunniste on esitelty esim. vakioksi (Const), mutta CoolBasic törmää riviin, jossa sama yritetään esittää taulukkona, funktiona tai globaalina muuttujana. Toisin sanoen: Yrität käyttää jo aikaisemmin määriteltyä tunnistetta väärin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Käytä eri nimeä uudelle tunnisteelle.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code37">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>37</b> : Variable is not defined</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#37</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Variable is not defined. You have chosen to force variable declaration before usage. Read the manual for more info
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Törmättiin muuttujaan, vaikka sitä ei ole ensin määritelty avainsanojen Global tai Dim avulla. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Tämä virhe tapahtuu, kun olet rastittanut kääntäjän asetuksista "Force variable declaration" -toiminnon päälle. Tämä toiminto pakottaa ohjelmoijan esittelemään kaikki muuttujat ennen käyttöä. Esittely tapahtuu joko Dim ja Global -sanoilla. Katso lisätietoa niiden komentokohtaisesta ohjeesta. Tämä toiminto on oletuksellisesti pois päältä.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Poista toiminto käytöstä tai esittele muuttujat ohjelman alussa käyttämällä Dim tai Global -sanoja. Lisätietoa näiden komentojen ohjeesta.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code38">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>38</b> : Invalid identifier name</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#38</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Invalid identifier name. You can't define "" as identifier
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Viallinen muuttujan tai tunnisteen nimi. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität käyttää sellaista nimeä muuttujalle tai tunnisteelle, joka sisältää epäkelpoja merkkejä tai nimi ei muuten ole sääntöjen mukainen.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Käytä toista nimeä. Sallitut merkit ovat kaikki normaalit kirjaimet - mukaan lukien skandinaaviset merkit. "ÿ" (ASCII 255) ei ole sallittu merkki. Nimi ei saa alkaa numerolla, mutta niitä voi muuten esiintyä nimessä. Tyyppitunnisteita $, % tai # pitää olla vain yksi kappale ja sen pitää olla nimessä viimeisenä. Alaviiva on sallitu, kunhan niitä ei ole useampaa peräkkäin nimen alussa. Erikoismerkit eivät ole sallittuja. Isoilla ja pienillä kirjaimilla ei ole väliä.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code39">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>39</b> : Invalid identifier name</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#39</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Invalid identifier name. Custom type not defined for identifier ""
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Tyypitetyn (TYPE) muuttujan kenttää (FIELD) ei löydy. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Olet määritellyt muuttujan, jonka tyyppi on luotu TYPE-avainsanalla. Yrität käyttää sellaista kentän nimeä (\), jota ei ole esitelty tyypin esittelyn yhteydessä.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Tarkista, että haluttu kenttä on olemassa. Tavallisin syy virheeseen on kirjoitusvirhe.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code41">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>41</b> : Wrong usage of a keyword.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#41</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Wrong usage of a keyword. Keyword "" needs to be expressed with a set of brackets
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Haluttua tunnistetta on käytettävä sulkeiden kanssa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Taulukot ja funktiot vaativat, että niiden nimen perässä on aina sulkeet, joihin mahdolliset parametrit kirjoitetaan. Vaikka esim. funktio ei tarvitse yhtään parametria, on sen perään silti kirjoitettava tyhjät sulkeet.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kirjoita sulkeet ja mahdolliset parametrit. Esim. <font color="#008800">Print TIMER <b>()</b></font>
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code42">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>42</b> : Wrong usage of a keyword.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#42</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Wrong usage of a keyword. Keyword "" is out of place
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Komento on väärässä paikassa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Komennot kirjoitetaan aina rivin alkuun. Ei keskelle eikä loppuun. Poikkeuksena sellaiset koodirakenteet, joiden eri osia erottavat varsinaisen komennon piiriin kuuluvat tytärkomennot. Esim. FOR on tällainen moniosainen komento.
+</p>
+<p>
+<li>Oikein: <font color="#008800">Print 1</font>
+<li>Väärin: <font color="#008800">Print 1+<b>WaitKey</b></font>
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Korjaa lauseke ja siirrä väärä komento seuraavalle riville.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code46">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>46</b> : Wrong usage of a constant</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#46</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Wrong usage of a constant. Constant "" is out of place
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Luku, vakio tai merkkijono on väärässä paikassa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Lausekkeessa on kieliopillinen virhe. Luku, merkkijono tai vakio on esitelty väärin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Tarkista lauseke. Kahden tunnisteen, muuttujan tai vakion välissä pitää olla joku laskutoimitus.
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code47">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>47</b> : Constant statement error</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#47</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Constant statement error. Constant must have a number or string applied to it
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Vakioon ei voi pistää muuttujaa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kun esittelet vakiota Const-avainsanalla, täytyy sinun antaa sille jokin arvo. Arvon täytyy pysyä vakiona. Kelvollinen arvo on luku tai merkkijono.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+<li>Oikein: <font color="#008800">Const MAX_LIFES = 5</font>
+<li>Väärin: <font color="#008800">Const MAX_LIFES = PlayerName$</font>
+</p>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code50">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>50</b> : Sorry, but you can't assign a custom type to global variables or arrays</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#50</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Sorry, but you can't assign a custom type to global variables or arrays. This feature might be added in the future coming versions
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Mukautettua tyyppiä (TYPE) ei toistaiseksi voida soveltaa globaaleihin muuttujiin. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Global-avainsanalla esitellään globaalit muuttujat, eli sellaiset muuttujat, jotka säilyttävät arvonsa myös funktioissa. Toistaiseksi ei ole mahdollista määritellä  globaaleja tyypitettyjä muuttujia. Eli TYPE-ominaisuutta ei voi tähän soveltaa :( Pyrimme lisäämään tämän ominaisuuden myöhemmin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+-
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code55">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>55</b> : This should be an assignment statement.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#55</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Function not found. Variable cannot be used like this. This should be an assignment statement.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Kielioppivirhe. Tätä oletetaan sijoituslausekkeeksi, mutta sen rakenne ei täsmää. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Jos aloitat rivin muuttujalla, on sen oltava sijoituslause.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+Oikein: <font color="#008800"><b>lifes = </b>lifes + 1</font>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code56">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>56</b> : Syntax error</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#56</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Syntax error. Read the usage of this keyword in the manual
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Komentoa käytetään väärin. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Komentoa käytetään väärin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+Tarkasta komennon käyttö manuaalista.
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code57">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>57</b> : Syntax error</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#57</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Syntax error. Read the usage of this keyword in the manual
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Kielioppivirhe. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+CoolBasic ei ymmärrä jonkin rivin rakennetta täysin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+Virheen syntymiseen on miljoona syytä. Tavallisesti virhe on kuitenkin helppo löytää, kun riviä silmäilee.
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code58">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>58</b> : Forbidden operation</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#58</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Forbidden operation. The only allowed operations to strings are comparison, and 'plus'
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Merkkijonoille voi suorittaa vain plus-laskun ja vertailun. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität suorittaa matemaattisen toimenpiteen merkkijonoille. Ainoat sallitut operaattorit ovat: +,<,>,=,<=,>=,<>,AND,OR,XOR ja NOT.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<li>Sallittu: <font color="#008800">name$ = name$ + " Collins"</font>
+<li>Sallittu: <font color="#008800">If login$ = "John" Then Text 0,0,"Welcome"</font>
+<li>Väärin: <font color="#008800">name$ = name$ - 5</font>
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code59">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>59</b> : Type declaration out of place / Variable "" can't be used like this</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#59</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Type declaration out of place / Variable "" can't be used like this
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> AS-sanan väärinkäyttö tai kielioppivirhe muuttujan kanssa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität käyttää jotain muuttujaa samaan tapaan kuin taulukkoa tai funktiota. Eli kirjoitat alkavat sulkeet sen perään.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+-
+</font>
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code60">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>60</b> : Syntax error. Empty brackets not allowed</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#60</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Syntax error. Empty brackets not allowed. Invalid array definition for ""
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Tässä kohtaa ei voi esittää tyhjiä sulkuja. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität määritellä taulukon Dim-avainsanalla, mutta et ole pistänyt sulkeisiin yhtään ulottuvuutta. Taulukoissa on oltava 1-5 ulottuvuutta. Lisätietoja <a href="commands/dim.html">Dim-komennon</a> ohjeesta.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Lisää ulottuvuus / ulottuvuudet.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+
+<a name="code61">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>61</b> : Syntax error. A function requires a set of brackets.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#61</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Syntax error. A function requires a set of brackets.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Funktion perään täytyy kirjoittaa sulkeet. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität käyttää funktiota väärin. Funktion perään täytyy kirjoittaa sulkeet, joiden sisään myös parametrit kirjoitetaan.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Lisää sulkeet.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code62">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>62</b> : Syntax error. You can't declare function variable without optional assignment after optional parameters are defined.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#62</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Syntax error. You can't declare function variable without optional assignment after optional parameters are defined.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Funktion määrittelyssä on virhe. Valinnaisten parametrien jälkeen ei voi kirjoittaa ei-valinnaisia parametreja. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Virhe ilmenee Function-komennossa. Olet määritellyt valinnaisia parametreja (muuttuja=arvo) funktion syntaksiin, mutta olet niiden jälkeen käyttänyt vielä normaalejakin parametreja (muuttuja).
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Anna lopuillekin paremetreille valinnainen oletusarvo tai korjaa funktiosi syntaksi muutoin. Lisätietoja saat <b>Function</b>-komennon ohjeesta.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+
+<a name="code66">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>66</b> : Too many dimensios for array ""</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#66</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Too many dimensios for array ""
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Olet määritellyt liian monta parametria taulukkoa varten. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Taulukoille voi antaa maksimissaan 5 ulottuvuutta (uskomme sen riittävän). Olet kuitenkin määritellyt enemmän.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Määritä vähemmän ulottuvuuksia.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code69">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>69</b> : Function block out of place.</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#69</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Function block out of place. A function can't be inside other functions.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Funktio ei voi ilmetä toisen funktion sisällä. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+CoolBasic löytää funktion määrittelyn, vaikka edellisestä ei ole tultu pois. Tavallisin syy on <b>End Function</b>in unohtuminen.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta funktiopalat ja lisää puuttuva End Function.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code75">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>75</b> : Variable "" already defined with another type</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#75</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Variable "" already defined with another type
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Muuttuja on jo esitetty erityyppiseksi. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+CoolBasic törmää muuttujaan, joka on esitelty jo aiemmin, mutta erityyppiseksi. Esim. muuttuja on esitelty kokonaislukumuuttujaksi, mutta yrität nyt esittää sitä uudestaan merkkijonona ($-merkillä).
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Yleensä kannattaa esitellä muuttujan tyyppi vain ensimmäisellä kerralla: <i>nimi$</i>. Tämän jälkeen sinun ei tarvitse kuin kirjoittaa aina <i>nimi</i>. Toisin päin ei toimi.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code78">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>78</b> : Not enough parameters</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#78</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Variable "" already defined with another type
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Ei tarpeeksi parametreja. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Funktiolle, taulukolle tai komennolle on esitetty liian vähän parametreja.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkista komennon ohjeesta mitä parametreja se vaatii ja kirjoita puuttuvat parametrit.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code79">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>79</b> : Too many parameters</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#79</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Too many parameters
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Liikaa parametreja. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Funktiolle, taulukolle tai komennolle on esitetty liikaa parametreja.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkista komennon ohjeesta mitä parametreja se vaatii.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code80">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>80</b> : Invalid STEP-value</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#80</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Invalid STEP-value. Please make it simplier. It must be a positive or negative integer number or an integer constant.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Viallinen STEP-arvo. Sen täytyy olla yksi kokonaisluku tai -vakio. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+For-lausekkeessa on virhe. Olet määrännyt STEP-arvon, joka ei ole yksi luku tai vakio. Muuttujia ja funktioita ei sallita.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Kirjoita kelvollinen STEP-arvo. Se ei saa olla lauseke, esim. 1+2
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code82">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>82</b> : "" must be used inside main program</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#82</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+"" must be used inside main program.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Tämä rakenne on esitettävä pääohjelmassa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Global, Constant, Type ja Field-kenttiä ei voida esittää funktioissa.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Kuulitko, EI funktioissa!
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code86">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>86</b> : Error in structure. Can't find ending block</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#86</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Error in structure. Can't find ending block
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Koodirakenteesta puuttuu lopettava komento. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Koodirakenteen (esim. While..Wend/Repeat..Until/For..Next/If..EndIf) lopettava komento puuttuu.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta manuaalista KOMENNOT/PERUS ja kyseisen rakenteen oikea käyttötapa ja kirjoita puuttuva komento.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code87">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>87</b> : Error with "" Command out of place</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#87</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Error with "" Command out of place
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Komento on väärässä paikassa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Lausekkeessa (rivillä) on syntaksivirhe, koska törmättiin komentoon, joka voidaan esittää vain rivin alussa.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Komento pitää kirjoittaa rivin alkuun. Sitä seuraa mahdolliset parametrit ja lausekkeet.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code88">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>88</b> : Can't find missing "". Structure start block missing</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#88</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Can't find missing "". Structure start block missing
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Koodirakenteesta puuttuu aloittava komento. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+CoolBasic törmää koodirakenteen (esim. While..Wend/Repeat..Until/For..Next/If..EndIf) lopettavaan komentoon, mutta sitä ennen ei ole esiintynyt koodilohkon aloittavaa komentoa.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Joskus alkukomento on unohtunut, tai se on lipsahtanut väärään paikkaan. Tarkasta manuaalista KOMENNOT/PERUS ja kyseisen rakenteen oikea käyttötapa ja kirjoita puuttuva komento.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code90">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>90</b> : Label not found</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#90</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Label "" not found
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Pyydettyä kirjanmerkkiä ei löytynyt. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Ongelma ilmenee Goto- Gosub- tai Return-käskyn yhteydessä, kun se viittaa kirjanmerkkiin, jota ei ole esitelty lähdekoodissa. Huomaa, että funktioissa on omat vaikutusalueensa, joten pääohjelmasta ei voi siirtyä funktion sisällä olevaan kirjanmerkkiin tai päinvastoin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta oikeinkirjoitus, ja että kirjanmerkki on olemassa ja kirjoitettu oikealle vaikutusalueelle.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code99">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>99</b> : Can't find missing FUNCTION -statement</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#99</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Can't find missing FUNCTION -statement
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Function-lauseketta ei löytynyt. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Function-lauseketta ei löytynyt, vaikka sen lopettavaan <i>End Function</i>:iin törmättiin
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Ratkaisu on sama kuin virheessä #88.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code101">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>101</b> : Type mismatch</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#101</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Type mismatch. You must pass a different type of parameter to this function or command or array.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Yritit antaa funktiolle tai komennolle vääräntyyppistä tietoa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kun yrität välittää esimerkiksi desimaalilukua sellaiselle funktiolle, joka välttämättä vaatii siinä kohtaa kokonaislukua.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta tietotyyppi, jota yrität välittää. Tyyppejä voi myös muuttaa muodosta toiseen <b>Int</b>, <b>Float</b> ja <b>Str</b>-funktioilla. Lisätietoja noiden komentojen ohjeesta.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+<a name="code102">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>102</b> : Operand type mismatch</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#102</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Operand type mismatch. You can't perform this mathematical operation to these operands.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Yritit laitonta laskutapaa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Esimerkiksi merkkijonoille ei sallita kuin (+)-operaatio sekä vertailut ja JA/TAI/JOKO TAI-operaatiot. Potenssiin ei voi korottaa merkkijonoa jne...
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta rivin koodi.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+<a name="code103">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>103</b> : Type mismatch</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#103</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Type mismatch. Only integers are allowed as array dimensions.
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Taulukoiden ulottuvuuksiin voi viitata vain kokonaisluvuilla. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Yrität välittää ei-kokonaislukua, kun viittaat taulukkoon ja sen ulottuvuuksiin.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Tarkasta tietotyyppi, jota yrität välittää. Tyyppejä voi myös muuttaa muodosta toiseen <b>Int</b>, <b>Float</b> ja <b>Str</b>-funktioilla. Lisätietoja noiden komentojen ohjeesta.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+
+<a name="code200">
+<p>
+<table width="100%" style="border: 1px solid #333333"><tr>
+
+<td colspan="2" bgcolor="#5F8CCD" background="tile_back.gif" height="20" >
+<font face="verdana,arial,tahoma" size=3>
+<font color="#ffffff"><b>&nbsp;&nbsp;&nbsp;<b>200</b> : Can't write program!</b></font>
+</font>
+</td>
+</tr><tr>
+<td width="100" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Koodi
+</font>
+</td>
+<td width="*" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ilmoitus
+</font>
+</td>
+</tr><tr>
+<td width="100" >
+<font face="verdana,arial,tahoma" size=2>
+<b>#200</b>
+</font>
+</td>
+<td width="*" >
+<font face="verdana,arial,tahoma" size=2>
+Can't write program!
+<br>
+<font size="1" color="#ff00ff"><b>Suomennos:</b> Ohjelmaa ei voitu kirjoittaa. </a>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Milloin tapahtuu:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+<font face="verdana,arial,tahoma" size=2>
+<p>
+Kun yrität kääntää ohjelman, mutta edellinen ohjelman ajo on vielä kesken.
+</p>
+</font>
+</td>
+</tr><tr>
+<td colspan="2" bgcolor="#5F8CCD" background="tile_sub.gif" >
+<font face="verdana,arial,tahoma" size=2>
+Ehdotuksia asian korjaamiseksi:
+</font>
+</td>
+</tr><tr>
+<td colspan="2" >
+Sulje edellinen ohjelma. Yritä sitten uudestaan.
+</td>
+
+</tr>
+</table>
+</p>
+
+
+
+
+<!{END} -->
+
+<hr>
+
+<p><font size="1"><b>&lt;&lt;<a href="index.html">TAKAISIN<a></b></font></p>
+
+
+</font>
+</body>
+
+</HTML>
