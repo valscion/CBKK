@@ -57,8 +57,11 @@
                 echo "<tr><th class='cName'>Koodin nimi</th><th class='cCat'>Kategoria</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAdded'>Lis&auml;tty</th></tr>";
                 
                 while ($result->fetch()) {
-                    echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . substr($desc,0,40) . "...</p></td>
-                            <td><a href='index.php?pId=listaa&amp;cat=" . $category . "'>" . $categoryArray[$category] ."</a></td><td>" . $author . "</td><td>" . date('d.m.Y',strtotime($added)) . "</td></tr>";
+                    $desc = strlen($desc) > 43 ? substr($desc,0,40) . '...' : $desc;
+                    echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . $desc . "</p></td>" .
+                            "<td><a href='index.php?pId=listaa&amp;cat=" . $category . "'>" . $categoryArray[$category] ."</a></td>" .
+                            '<td><a href="/?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
+                            "<td>" . date('d.m.Y',strtotime($added)) . "</td></tr>";
                 }
             echo "</table>";
         } else {
@@ -68,8 +71,10 @@
                 echo "<tr><th class='cName'>Koodin nimi</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAdded'>Lis&auml;tty</th></tr>";
                 
                 while($result->fetch()) {
-                    echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . substr($desc,0,40) . "...</p></td>
-                            <td>" . $author . "</td><td>" . date('d.m.Y',strtotime($added)) . "</td></tr>";
+                    $desc = strlen($desc) > 43 ? substr($desc,0,40) . '...' : $desc;
+                    echo '<tr><td><a href="index.php?pId=naytakoodi&amp;cId=' . $id . '">' . $name . '</a><p class="tableDesc">' . $desc . '</p></td>' .
+                            '<td><a href="/?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
+                            '<td>' . date("d.m.Y",strtotime($added)) . '</td></tr>';
                 }
             echo "</table>";
         }

@@ -17,11 +17,11 @@
         <link rel="stylesheet" type="text/css" href="style/reset.css" />
         <link rel="stylesheet" type="text/css" href="style/main.css" />
         <link rel="stylesheet" type="text/css" href="style/cb.css" />
-        <?php if (isset($_GET['pId'])) echo $_GET['pId'] === 'naytakoodi' ? '<link rel="stylesheet" type="text/css" href="style/colorbox.css" />' : ''; ?>
+        <?php if (isset($_GET['pId']) && $_GET['pId'] === 'naytakoodi' ) echo '<link rel="stylesheet" type="text/css" href="style/colorbox.css" />'; ?>
         
         <script type="text/javascript" src="js/form.js"></script>
         <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
-        <?php if (isset($_GET['pId'])) echo $_GET['pId'] === 'naytakoodi' ? '<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>' : ''; ?>
+        <?php if (isset($_GET['pId']) && $_GET['pId'] === 'naytakoodi' ) echo '<script type="text/javascript" src="js/jquery.colorbox-min.js"></script>'; ?>
 
     </head>
     
@@ -43,9 +43,10 @@
                                 echo "<input type='password' name='password' id='password' class='text' /><br />";
                                 echo "<input type='submit' value='Kirjaudu' />";
                             echo "</form>";
-                            echo "<a href='index.php?pId=register'>[Rekister&ouml;idy]</a>";
+                            echo "<a href='index.php?pId=register'>[Rekisteröidy]</a>";
                         } else {
                             echo "<a href='inc/logout.php'>Kirjaudu ulos [" . $_SESSION['currentUser'] . "]</a>";
+                            echo '<br><a href="/?pId=listaa&amp;cat=user&amp;q=' . $_SESSION['currentUser'] . '">Omat koodit</a>';
                         }
                     ?>
                 </div>

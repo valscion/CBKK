@@ -6,7 +6,7 @@
         $q = "%" . $_GET['q'] . "%";
         $query = "SELECT type,name,category,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE name LIKE ? OR description LIKE ? ORDER BY name ASC";
         echo "<h1>Haun tulokset</h1>";
-    } else if ($cat == 'all') { //Listaa kaikki koodit
+    } elseif ($cat == 'all') { //Listaa kaikki koodit
         echo "<h1>Kaikki koodit</h1>";
         
         $sort = $_GET['sort'];
@@ -24,16 +24,23 @@
         echo "</form>";
         
         $query = "SELECT type,name,category,description,author,added,id FROM " . $config['db_prefix'] . "codes ORDER BY " . $sort . " ASC";
+    } elseif ( $cat == 'user' ) { // Tietyn käyttäjän koodien listaus
+        $user = $_GET['q'];
+        echo "<h1>Koodit tekijältä $user</h1>";
+        
+        $query = "SELECT type,name,category,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE author = ? ORDER BY name ASC";
     } else { //Normaali kategorialistaus
         $query = "SELECT type,name,description,author,added,id FROM " . $config['db_prefix'] . "codes WHERE category = ? ORDER BY name ASC";
         echo "<h1>" . $categoryArray[$cat] . "</h1>";
     }
     
     
-    if ($cat == 'search' || $cat == 'all') {
+    if ($cat == 'search' || $cat == 'all' || $cat == 'user') {
         if ($stmt = $conn->prepare($query)) {
             if ($cat == 'search') {
                 $stmt->bind_param("ss",$q,$q);
+            } elseif ($cat == 'user') {
+                $stmt->bind_param("s",$user);
             }
             $stmt->execute();
 
