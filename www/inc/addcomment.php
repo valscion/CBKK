@@ -7,13 +7,17 @@
     $user = $_SESSION['currentUser'];
     $cId = $_POST['code'];
     
-    if ($stmt = $conn->prepare("INSERT INTO " . $config['db_prefix'] . "comments(author,content,codeId) VALUES (?,?,?)")) {
-        $stmt->bind_param("ssi",$user,$comment,$cId);
-        $stmt->execute();
-        
-        echo "<meta HTTP-EQUIV='REFRESH' content='0; url=" . $_SESSION['back'] . "' />";
+    if( strlen($comment) > 0 && !empty($user) && !empty($cId) ) {
+        if ($stmt = $conn->prepare("INSERT INTO " . $config['db_prefix'] . "comments(author,content,codeId) VALUES (?,?,?)")) {
+            $stmt->bind_param("ssi",$user,$comment,$cId);
+            $stmt->execute();
+            
+            echo "<meta HTTP-EQUIV='REFRESH' content='0; url=" . $_SESSION['back'] . "' />";
+        } else {
+            echo $conn->error;
+        }
     } else {
-        echo $conn->error;
+        echo "<meta HTTP-EQUIV='REFRESH' content='0; url=" . $_SESSION['back'] . "' />";
     }
 ?>
     
