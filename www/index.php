@@ -46,7 +46,6 @@
                             echo "<a href='index.php?pId=register'>[Rekisteröidy]</a>";
                         } else {
                             echo "<a href='inc/logout.php'>Kirjaudu ulos [" . $_SESSION['currentUser'] . "]</a>";
-                            echo '<br><a href="/?pId=listaa&amp;cat=user&amp;q=' . $_SESSION['currentUser'] . '">Omat koodit</a>';
                         }
                     ?>
                 </div>
@@ -57,7 +56,8 @@
                         <li><a href="./">Etusivu</a></li>
                         <?php
                             if(isset($_SESSION['currentUser'])) {
-                                echo "<li><a href='index.php?pId=lisaa'>Lis&auml;&auml koodi</a></li>";
+                                echo "<li><a href='index.php?pId=lisaa'>Lis&auml;&auml koodi</a></li>" . 
+                                     '<li><a href="/?pId=listaa&amp;cat=user&amp;q=' . $_SESSION['currentUser'] . '">Omat koodit</a></li>';
                             }
                         ?>
                     </ul>
