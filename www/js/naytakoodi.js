@@ -35,7 +35,7 @@ $(document).ready(function(){
     if( disableAnimation == false ) {
         $('#codeblock').scroll(function(){
             var scrollAmount = $('#codeblock').scrollLeft();
-            jQobjLn.animate( { left:scrollAmount }, { queue:false, duration:400 } );
+            jQobjLn.animate( { left:scrollAmount }, { queue:false, duration:200 } );
         });
     }
     
