@@ -30,7 +30,8 @@
             echo "<tr><th class='cName'>Koodi ja kommentti</th><th class='cAuthor'>Lis&auml;&auml;j&auml;</th><th class='cAdded'>Lis&auml;tty</th></tr>";
             
             while ($stmt->fetch()) {
-                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $cId . "'>" . $cName . "</a><p class='tableDesc'>&quot;" . substr($content,0,40) . "...&quot;</p></td>
+                $content = strlen($content) > 43 ? substr($content,0,40) . '...' : $content;
+                echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $cId . "'>" . $cName . "</a><p class='tableDesc'>&quot;" . $content . "&quot;</p></td>
                     <td class='cAuthor'>" . $author . "</td><td class='cAdded'>" . date('d.m.Y',strtotime($date)) . "<br />" . date('H:i:s',strtotime($date)) . "</td></tr>";
             }
         echo "</table>";
