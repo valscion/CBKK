@@ -61,7 +61,7 @@
                         <?php
                             if(isset($_SESSION['currentUser'])) {
                                 echo "<li><a href='index.php?pId=lisaa'>Lis&auml;&auml koodi</a></li>" . 
-                                     '<li><a href="/?pId=listaa&amp;cat=user&amp;q=' . $_SESSION['currentUser'] . '">Omat koodit</a></li>';
+                                     '<li><a href="index.php?pId=listaa&amp;cat=user&amp;q=' . $_SESSION['currentUser'] . '">Omat koodit</a></li>';
                             }
                         ?>
                     </ul>

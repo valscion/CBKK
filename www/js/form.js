@@ -61,15 +61,15 @@ function validateForm() {
     var i = 0;
     
     if (!notEmpty(nick)) {
-        errors[0].innerHTML = "Anna k&auml;ytt&auml;j&auml;nimi!";
+        errors[0].innerHTML = "Anna käyttäjänimi!";
         i++;
     } else {
         if (!checkLength(nick,3,15)) {
-            errors[0].innerHTML = "K&auml;ytt&auml;j&auml;nimen tulee olla 3-15 merkki&auml;!";
+            errors[0].innerHTML = "Käyttäjänimen tulee olla 3-15 merkkiä!";
             i++;
         } else {
             if (!isAlphanumeric(nick)) {
-                errors[0].innerHTML = "K&auml;ytt&auml;j&auml;nimi saa sis&auml;lt&auml;&auml; vain numeroita ja kirjaimia Aa-Zz!";
+                errors[0].innerHTML = "Käyttäjänimi saa sisältää vain numeroita ja kirjaimia Aa-Zz!";
                 i++;
             } else {
                 errors[0].innerHTML = "";
@@ -85,21 +85,21 @@ function validateForm() {
     }
     
     if (!doesMatch(pass,rePass)) {
-        errors[2].innerHTML = "Salasanat eiv&auml;t t&auml;sm&auml;&auml;!";
+        errors[2].innerHTML = "Salasanat eivät täsmää!";
         i++;
     } else {
         errors[2].innerHTML = "";
     }
     
     if (!emailValidator(email)) {
-        errors[3].innerHTML = "Anna kelvollinen s&auml;hk&ouml;postiosoite!";
+        errors[3].innerHTML = "Anna kelvollinen sähköpostiosoite!";
         i++;
     } else {
         errors[3].innerHTML = "";
     }
     
     if (!notEmpty(capital)) {
-        errors[4].innerHTML = "Anna p&auml;&auml;kaupunki!";
+        errors[4].innerHTML = "Anna pääkaupunki!";
         i++;
     } else {
         if (!(capital.value.toLowerCase() == "helsinki")) {
@@ -122,7 +122,7 @@ function checkLogin() {
     var nick = document.getElementById('nick');
     var pass = document.getElementById('password');
     
-    if (!notEmpty(nick,"Anna nimerkki.")) {
+    if (!notEmpty(nick,"Anna nimimerkki.")) {
         return false;
     }
     
@@ -140,7 +140,7 @@ function validateCInput() {
     
     if (!notEmpty(name,"Anna koodille nimi!")) return false;
     if (!notEmpty(desc,"Anna koodille kuvaus!")) return false;
-    if (!notEmpty(code,"Sy&ouml;t&auml; koodi")) return false;
+    if (!notEmpty(code,"Syötä koodi")) return false;
     
     return true;
 }

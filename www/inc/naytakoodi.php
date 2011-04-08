@@ -12,7 +12,9 @@
         $stmt->fetch();
         
         echo "<h2>" . $name . "</h2>";
-        echo "<p class='small'>Lis&auml;&auml;j&auml;: " . $author . " Lis&auml;tty: " . date('d.m.Y',strtotime($added)) ."</p>";
+        echo "<p class='small'>Lis&auml;&auml;j&auml;: " . $author . " Lis&auml;tty: " . date('d.m.Y',strtotime($added)) . 
+             ( isset( $_SESSION['currentUser']) && $_SESSION['currentUser'] === $author ? ' <a href="index.php?pId=muokkaa&amp;cId=' . $cId . '">Muokkaa</a>' : '' ) . 
+             '</p>';
         echo "<div class='description'>" . nl2br( $desc, false ) . "</div>";
     } else {
         echo $conn->error;

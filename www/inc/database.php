@@ -60,7 +60,7 @@
                     $desc = strlen($desc) > 43 ? substr($desc,0,40) . '...' : $desc;
                     echo "<tr><td><a href='index.php?pId=naytakoodi&amp;cId=" . $id . "'>" . $name . "</a><p class='tableDesc'>" . $desc . "</p></td>" .
                             "<td><a href='index.php?pId=listaa&amp;cat=" . $category . "'>" . $categoryArray[$category] ."</a></td>" .
-                            '<td><a href="/?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
+                            '<td><a href="index.php?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
                             "<td>" . date('d.m.Y',strtotime($added)) . "</td></tr>";
                 }
             echo "</table>";
@@ -73,7 +73,7 @@
                 while($result->fetch()) {
                     $desc = strlen($desc) > 43 ? substr($desc,0,40) . '...' : $desc;
                     echo '<tr><td><a href="index.php?pId=naytakoodi&amp;cId=' . $id . '">' . $name . '</a><p class="tableDesc">' . $desc . '</p></td>' .
-                            '<td><a href="/?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
+                            '<td><a href="index.php?pId=listaa&amp;cat=user&amp;q=' . $author . '">' . $author . '</a></td>' .
                             '<td>' . date("d.m.Y",strtotime($added)) . '</td></tr>';
                 }
             echo "</table>";

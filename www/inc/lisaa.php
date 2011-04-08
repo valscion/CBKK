@@ -1,7 +1,7 @@
 <?php 
     include_once( 'database.php' );
 ?>
-<h1>Lis&auml;&auml; uusi koodi</h1>
+<h1>Lisää uusi koodi</h1>
 
 <form action='inc/add.php' method='post' onsubmit='return validateCInput()'>
     Koodin nimi:<br />
@@ -24,5 +24,5 @@
 
     </select><br />
 
-    <input type='submit' value='Lis&auml;&auml; koodi' />
+    <input type='submit' value='Lisää koodi' />
 </form>
