@@ -1,7 +1,11 @@
 <?php
     require_once('config.php');
 
-    session_start(); 
+    session_start();
+    if( $_GET['pId'] == 'logout' ) {
+        unset($_SESSION['currentUser']);
+        header( "Location: index.php" );
+    }
     include_once "inc/database.php";
     
     $_SESSION['back'] = $_SERVER['REQUEST_URI'];
@@ -45,7 +49,7 @@
                             echo "</form>";
                             echo "<a href='index.php?pId=register'>[Rekisteröidy]</a>";
                         } else {
-                            echo "<a href='inc/logout.php'>Kirjaudu ulos [" . $_SESSION['currentUser'] . "]</a>";
+                            echo "<a href='index.php?pId=logout'>Kirjaudu ulos [" . $_SESSION['currentUser'] . "]</a>";
                         }
                     ?>
                 </div>
