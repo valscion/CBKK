@@ -43,9 +43,9 @@ $language_data = array (
     'ESCAPE_CHAR' => '',
     'KEYWORDS' => array(
         1 => array(
-            'And','BLUE','Byte','Case','Default','Else','ElseIf','EndFunction','End Function','EndIf','EndSelect','EndSelect', 
-            'EndType','End Type','False','Forever','GREEN','Integer','Next','Not','NULL','OFF','ON','Or','PI','RED','Short',
-            'Step','Then','To','True','Until','Xor'
+            'And','BLUE','Byte','Case','Default','Else','ElseIf','EndFunction','End Function','EndIf','End If','EndSelect',
+            'End Select', 'EndType','End Type','False','Forever','GREEN','Integer','Next','Not','NULL','OFF','ON','Or','PI',
+            'RED','Short','Step','Then','To','True','Until','Xor'
         ),
         2 => array(
             'Abs','ACos','AddText','After','AnimationHeight','AnimationPlaying','AnimationWidth',
